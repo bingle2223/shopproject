@@ -1,0 +1,193 @@
+{% load static %}
+
+{% block head %}
+{% endblock %}
+{% block cj %}
+
+{% endblock %}
+<body>
+<header role="banner" id="header">
+    <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-target="#nav_main" data-toggle="collapse" type="button" name="button">
+                <span class="sr-only">&quot;导航&quot;</span><span class="fa fa-bars"></span></button>
+            <a href="../index.html" class="navbar-brand"><img
+                    src="../../static/images/16-53b2a876a582b6ae80163f887af7c9b2982b866b60a001b919958020228cdf26.png"
+                    title="KnewOne，根本停不下来~" alt="KnewOne" class="shake"/><span class="logo">KnewOne</span></a>
+        </div>
+        <div id="nav_main" class="collapse navbar-collapse">
+            <ul id="nav_primary" class="nav navbar-nav">
+                <li class=""><a href="{% url 'app:index' %}">首页</a></li>
+                <li class=""><a href="../discover.html">发现</a></li>
+                <li class="nav_flyout dropdown"><a href="../things.html">产品<i class="fa fa-caret-down"></i></a>
+                    <ul id="categories-dropdown_menu" class="dropdown-menu">
+                        <li><a href="../discover_detail.html?categories/ge-ren-pei-shi"><i
+                                class="fa fa-fw fa-key"></i><em>个人配饰</em></a>
+                        </li>
+                        <li><a href="../discover_detail.html?categories/sheng-huo"><i
+                                class="fa fa-fw fa-coffee"></i><em>生活</em></a></li>
+                        <li><a href="../discover_detail.html?categories/yin-shi"><i
+                                class="fa fa-fw fa-cutlery"></i><em>饮食</em></a></li>
+                        <li><a href="../discover_detail.html?categories/ge-hu"><i
+                                class="fa fa-fw fa-tint"></i><em>个护</em></a>
+                        </li>
+                        <li><a href="../discover_detail.html?categories/dian-nao"><i
+                                class="fa fa-fw fa-laptop"></i><em>电脑</em></a></li>
+                        <li><a href="../discover_detail.html?categories/lu-xing-yun-dong"><i
+                                class="fa fa-fw fa-car"></i><em>旅行运动</em></a></li>
+                        <li><a href="../discover_detail.html?categories/yin-le"><i
+                                class="fa fa-fw fa-music"></i><em>音乐</em></a></li>
+                        <li><a href="../discover_detail.html?categories/wen-ju"><i
+                                class="fa fa-fw fa-pencil"></i><em>文具</em></a></li>
+                        <li><a href="../discover_detail.html?categories/wan-ju"><i
+                                class="fa fa-fw fa-puzzle-piece"></i><em>玩具</em></a></li>
+                        <li><a href="../discover_detail.html?categories/shou-ji-tong-xin"><i
+                                class="fa fa-fw fa-mobile"></i><em>手机通信</em></a></li>
+                        <li><a href="../discover_detail.html?categories/she-ying"><i
+                                class="fa fa-fw fa-camera"></i><em>摄影</em></a></li>
+                        <li><a href="../discover_detail.html?categories/jian-kang"><i
+                                class="fa fa-fw fa-medkit"></i><em>健康</em></a></li>
+                        <li><a href="../discover_detail.html?categories/you-xi"><i
+                                class="fa fa-fw fa-gamepad"></i><em>游戏</em></a></li>
+                    </ul>
+                </li>
+                <li class=""><a href="article.html">文章</a></li>
+                <li class=""><a href="../activity.html">活动</a></li>
+                <li class=""><a href="../shop.html">商店</a></li>
+                <li class=""><a href="topic_group.html">小组</a></li>
+                <li id="nav_publish"><a href="#" data-label="upload" data-action="create" data-category="thing"
+                                        data-target="#new-thing-modal" data-toggle="modal" id="new_thing_trigger"><i
+                        class="fa fa-plus"></i>分享产品</a></li>
+            </ul>
+            {% if request.session.usernmae %}
+                <div class="user_links login navbar-right">
+                    <div id="user" data-name="阿斗" data-id="54a94b2e31302d3665d10100" data-email="416148489@qq.com"
+                         class="user_link user">
+                        <div class="more dropdown">
+                            <a href="../member_index.html?54a94b2e31302d3665d10100" data-target="#"
+                               data-toggle="dropdown"
+                               class="dropdown-toggle avatar"><img width="35" height="35" alt="17"
+                                                                   src="../../static/images/17.png"/></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="../member_index.html?54a94b2e31302d3665d10100"><i
+                                        class="fa fa-user fa-fw"></i>个人主页</a>
+                                </li>
+                                <li><a href="../member_account.html"><i class="fa fa-cog fa-fw"></i>账户设置</a></li>
+                                <li><a href="../member_order.html"><i class="fa fa-credit-card fa-fw"></i>我的订单</a></li>
+                                <li><a href="/settings/drafts"><i class="fa fa-pencil-square-o fa-fw"></i>我的草稿</a></li>
+                                <li><a href="http://meiqia.com/chat/4075" target="_blank"><i
+                                        class="fa fa-question fa-fw"></i>寻求帮助</a></li>
+                                <li><a href="{% url 'app:logout' %}" data-method="delete" rel="nofollow"><i
+                                        class="fa fa-sign-out fa-fw"></i>安全退出</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="cart_box" class="dropdown user_link cart_box">
+                        <a href="../cart.html" data-toggle="dropdown_box" title="购物车" class="user_link"><i
+                                class="fa fa-shopping-cart fa-fw"></i><span
+                                class="badge badge_success cart_items_count">2</span></a>
+                        <div class="dropdown_box dropdown_box--dark dropdown_box--arrow_right dropdown_box--list">
+                            <header class="cart_box-header">
+                                <i class="fa fa-shopping-cart fa-fw"></i>最近加入的商品
+                            </header>
+                            <section class="cart_box-section">
+                                <div class="spinner">
+                                    <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+                                </div>
+                            </section>
+                            <footer>
+                                <a href="javascript:void(0);"
+                                   class="pull-left dropdown_box_propagate cart_box--clear"><i
+                                        class="fa fa-trash"></i>清空购物车</a>
+                                <a href="../cart.html" class="pull-right"><i class="fa fa-credit-card"></i>去购物车结算</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div id="notification_box" class="user_link notification dropdown">
+                        <a href="/notifications" title="没有未读消息" id="notification_trigger" data-toggle="dropdown_box"><i
+                                class="fa fa-bolt fa-fw"></i><span id="notification_count"
+                                                                   class="badge badge_primary"></span></a>
+                        <div class="dropdown_box dropdown_box--dark dropdown_box--arrow_right dropdown_box--list">
+                            <header>
+                                <ul class="nav nav-justified">
+                                    <li class="disabled"><a href="#" class="dropdown_box_propagate thing"><i
+                                            class="fa fa-pencil fa_alone dropdown_box_propagate"></i></a></li>
+                                    <li class="disabled"><a href="#" class="dropdown_box_propagate reply"><i
+                                            class="fa fa-comment-o fa_alone dropdown_box_propagate"></i></a></li>
+                                    <li class="disabled"><a href="#" class="dropdown_box_propagate friend"><i
+                                            class="fa fa-eye fa_alone dropdown_box_propagate"></i></a></li>
+                                    <li class="disabled"><a href="#" class="dropdown_box_propagate fancy"><i
+                                            class="fa fa-heart-o fa_alone dropdown_box_propagate"></i></a></li>
+                                </ul>
+                            </header>
+                            <section>
+                                <div class="spinner">
+                                    <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+                                </div>
+                            </section>
+                            <footer>
+                                <a href="/settings/notification_settings" class="pull-left"><i class="fa fa-cog"></i>设置</a>
+                                <a href="/notifications" class="pull-right"><i class="fa fa-ellipsis-h"></i>更多</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <a href="../member_letter.html" title="没有未读私信" class="user_link"><i
+                            class="fa fa-envelope-o fa-fw"></i><span
+                            class="badge badge_danger private_messages_count"></span></a>
+                </div>
+                <form method="get" accept-charset="UTF-8" action="/search" role="search" class="navbar-form navbar-right"
+                  id="navbar_search">
+                <input type="hidden" value="✓" name="utf8"/>
+                <div class="form-group search">
+                    <input type="search" spellcheck="false" name="q" class="form-control" autocomplete="off"/>
+                    <i class="fa fa-search"></i>
+                    <i class="fa fa-times"></i>
+                </div>
+                <div class="search_menu">
+                    <div class="search_menu-suggestions"></div>
+                    <div class="search_menu-result"></div>
+                </div>
+                </form>
+            {% else %}
+                <div class="user_links logout navbar-right">
+                    <a href="{% url 'app:login' %}" data-signin-legend="登录" data-target="#login-modal" data-toggle="modal"
+                       data-label="email" data-action="login" data-category="user" class="user_link"><i
+                            class="fa fa-sign-in"></i>登录</a>
+                </div>
+                <div class="user_links logout navbar-right">
+                    <a href="{% url 'app:reg' %}" data-signin-legend="注册" data-target="#login-modal" data-toggle="modal"
+                       data-label="email" data-action="login" data-category="user" class="user_link"><i
+                            class="fa fa-sign-in"></i>注册</a>
+                </div>
+
+{#            <form method="get" accept-charset="UTF-8" action="/search" role="search" class="navbar-form navbar-right"#}
+{#                  id="navbar_search">#}
+{#                <input type="hidden" value="✓" name="utf8"/>#}
+{#                <div class="form-group search">#}
+{#                    <input type="search" spellcheck="false" name="q" class="form-control" autocomplete="off"/>#}
+{#                    <i class="fa fa-search"></i>#}
+{#                    <i class="fa fa-times"></i>#}
+{#                </div>#}
+{#                <div class="search_menu">#}
+{#                    <div class="search_menu-suggestions"></div>#}
+{#                    <div class="search_menu-result"></div>#}
+{#                </div>#}
+{#            </form>#}
+            {% endif %}
+        </div>
+    </nav>
+</header>
+
+
+
+{% block content %}
+
+{% endblock %}
+
+
+{% block footer %}
+
+{% endblock %}
+
+</body>
+</html>

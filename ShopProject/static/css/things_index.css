@@ -1,0 +1,506 @@
+html.home_hits .page-nav,html.things_latest .page-nav {
+	padding: 20px
+}
+
+html.home_hits .page-nav>ul,html.things_latest .page-nav>ul {
+	width: 100%
+}
+
+html.home_hits .page-nav>ul:before,html.home_hits .page-nav>ul:after,html.things_latest .page-nav>ul:before,html.things_latest .page-nav>ul:after {
+	content: " ";
+	display: table
+}
+
+html.home_hits .page-nav>ul:after,html.things_latest .page-nav>ul:after {
+	clear: both
+}
+
+@media (min-width: 768px) {
+	html.home_hits .page-nav>ul,html.things_latest .page-nav>ul {
+		margin-left: auto;
+		margin-right: auto
+	}
+}
+
+html.home_hits .page-nav>ul>li,html.things_latest .page-nav>ul>li {
+	float: left;
+	height: 30px;
+	line-height: 28px;
+	padding-bottom: 2px;
+	text-align: center;
+	width: 50%
+}
+
+html.home_hits .page-nav>ul>li>a,html.things_latest .page-nav>ul>li>a {
+	color: #aaa;
+	vertical-align: middle
+}
+
+html.home_hits .page-nav>ul>li.active,html.things_latest .page-nav>ul>li.active {
+	border-bottom: 2px solid #47b2e2;
+	padding-bottom: 0
+}
+
+html.home_hits .page-nav>ul>li.active>a,html.things_latest .page-nav>ul>li.active>a {
+	color: #777
+}
+
+@media (min-width: 992px) {
+	html.home_hits .page-nav,html.things_latest .page-nav {
+		padding-left: 0;
+		padding-right: 0;
+		padding-top: 0
+	}
+
+	html.home_hits .page-nav>ul>li,html.things_latest .page-nav>ul>li {
+		float: none;
+		font-size: 24px;
+		padding-bottom: 0;
+		width: auto
+	}
+
+	html.home_hits .page-nav>ul>li,html.home_hits .page-nav>ul>li::after,html.home_hits .page-nav>ul>li>a,html.things_latest .page-nav>ul>li,html.things_latest .page-nav>ul>li::after,html.things_latest .page-nav>ul>li>a {
+		display: inline-block;
+		height: 46px;
+		line-height: 46px;
+		vertical-align: middle
+	}
+
+	html.home_hits .page-nav>ul>li.active,html.things_latest .page-nav>ul>li.active {
+		border-bottom: 0
+	}
+
+	html.home_hits .page-nav>ul>li::after,html.things_latest .page-nav>ul>li::after {
+		color: #ccc;
+		content: '|';
+		padding: 0 .5em
+	}
+
+	html.home_hits .page-nav>ul>li:last-child::after,html.things_latest .page-nav>ul>li:last-child::after {
+		display: none
+	}
+}
+
+html.things_latest #things_nav {
+	display: none
+}
+
+html.categories_index .page-header,html.home_hits .page-header,html.things_latest .page-header {
+	background-color: #fff;
+	border-bottom: none;
+	border-radius: 2px;
+	margin-bottom: 20px;
+	padding: 0 0 0 15px
+}
+
+html.categories_index .page-header>h1,html.home_hits .page-header>h1,html.things_latest .page-header>h1 {
+	line-height: 56px
+}
+
+html.shop #wrapper,html.things_index #wrapper {
+	margin: 0
+}
+
+html.shop #wrapper .container-fluid,html.things_index #wrapper .container-fluid {
+	padding: 0
+}
+
+@media (min-width: 992px) {
+	html.shop #wrapper .container-fluid,html.things_index #wrapper .container-fluid {
+		padding: 0 10%
+	}
+}
+
+@media (min-width: 1200px) {
+	html.shop #wrapper .container-fluid,html.things_index #wrapper .container-fluid {
+		width: 1170px;
+		padding: 0 120px
+	}
+}
+
+html.shop #things_nav,html.things_index #things_nav {
+	margin-bottom: 0
+}
+
+html.shop #things_nav:before,html.shop #things_nav:after,html.things_index #things_nav:before,html.things_index #things_nav:after {
+	content: " ";
+	display: table
+}
+
+html.shop #things_nav:after,html.things_index #things_nav:after {
+	clear: both
+}
+
+html.shop #things_nav h1,html.things_index #things_nav h1 {
+	margin: 1em 0 0 0;
+	font-size: 24px;
+	color: #777
+}
+
+html.shop #things_nav h1 a,html.things_index #things_nav h1 a {
+	color: #777
+}
+
+@media (min-width: 768px) {
+	html.shop #things_nav h1,html.things_index #things_nav h1 {
+		margin-top: 0
+	}
+}
+
+@media (min-width: 992px) {
+	html.shop #things_nav,html.things_index #things_nav {
+		margin-bottom: 20px
+	}
+}
+
+@media (max-width: 991px) {
+	html.shop #things_nav nav,html.things_index #things_nav nav {
+		margin-top: 20px;
+		text-align: center
+	}
+}
+
+html.shop #things_nav nav>ol,html.things_index #things_nav nav>ol {
+	margin-left: 25px
+}
+
+html.shop #things_nav nav>ol>li,html.things_index #things_nav nav>ol>li {
+	color: #777;
+	font-size: 20px;
+	text-decoration: none
+}
+
+html.shop #things_nav nav>ol>li.active,html.things_index #things_nav nav>ol>li.active {
+	color: #999
+}
+
+html.shop #things_nav nav>ol>li>a,html.things_index #things_nav nav>ol>li>a {
+	color: #777
+}
+
+html.shop #things_list:before,html.shop #things_list:after,html.things_index #things_list:before,html.things_index #things_list:after {
+	content: " ";
+	display: table
+}
+
+html.shop #things_list:after,html.things_index #things_list:after {
+	clear: both
+}
+
+html.shop #things_list article.thing,html.things_index #things_list article.thing {
+	margin-bottom: 20px
+}
+
+@media (min-width: 768px) {
+	html.shop #things_list article.thing,html.things_index #things_list article.thing {
+		float: left
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	html.shop #things_list article.thing,html.things_index #things_list article.thing {
+		width: 350px;
+		width: calc((100% - 20px)/2)
+	}
+
+	html.shop #things_list article.thing:nth-child(odd),html.things_index #things_list article.thing:nth-child(odd) {
+		margin-right: 20px
+	}
+}
+
+@media (min-width: 992px) {
+	html.shop #things_list article.thing,html.things_index #things_list article.thing {
+		width: 306px;
+		width: calc((100% - (20px + 1px)*2)/3)
+	}
+
+	html.shop #things_list article.thing:nth-child(3n+1),html.shop #things_list article.thing:nth-child(3n+2),html.things_index #things_list article.thing:nth-child(3n+1),html.things_index #things_list article.thing:nth-child(3n+2) {
+		margin-right: 20px
+	}
+}
+
+html.shop #things_information,html.things_index #things_information {
+	background-color: #fafafa;
+	margin-top: 20px;
+	padding: 1.5em
+}
+
+html.shop #things_information:before,html.shop #things_information:after,html.things_index #things_information:before,html.things_index #things_information:after {
+	content: " ";
+	display: table
+}
+
+html.shop #things_information:after,html.things_index #things_information:after {
+	clear: both
+}
+
+html.shop #things_information>.col-md-3,html.things_index #things_information>.col-md-3 {
+	padding: 0
+}
+
+@media (max-width: 991px) {
+	html.shop #things_information #description,html.things_index #things_information #description {
+		margin-top: 20px
+	}
+}
+
+@media (max-width: 991px) {
+	html.shop #things_information img,html.things_index #things_information img {
+		display: block;
+		margin: 0 auto
+	}
+}
+
+html.shop #things_information .tag_button,html.things_index #things_information .tag_button {
+	border: none;
+	border-radius: 0;
+	box-shadow: 0 0 1px rgba(0,0,0,0.1);
+	color: #777;
+	margin: 0 5px 10px 5px
+}
+
+html.shop #things_information .tag_button:hover,html.things_index #things_information .tag_button:hover {
+	background-color: #049cdb;
+	color: white
+}
+
+html.shop #things_information .tag_button.active,html.things_index #things_information .tag_button.active {
+	background-color: #ebeced;
+	color: #999
+}
+
+@media (max-width: 991px) {
+	html.shop #things_information #tags,html.things_index #things_information #tags {
+		max-height: 80px;
+		margin-top: 20px;
+		overflow: hidden
+	}
+}
+
+html.shop #things_information .more,html.things_index #things_information .more {
+	margin-top: 20px;
+	text-align: center
+}
+
+html.shop #things_information .more a,html.things_index #things_information .more a {
+	color: #999
+}
+
+html.things_index #things_nav {
+	padding: 0 15px
+}
+
+html.things_index #things_nav h1 {
+	font-size: 20px;
+	line-height: 60px;
+	margin: 0
+}
+
+html.things_index #things_nav h1 .subscribe_category {
+	margin-left: 2em;
+	vertical-align: 3px
+}
+
+html.things_index #things_nav h1 li {
+	color: #777;
+	padding: 0 2px
+}
+
+html.things_index #things_nav h1 li+li::before {
+	content: "\e614";
+	font-family: 'KnewOne-Icon'
+}
+
+html.things_index #things_nav h1 li.active {
+	color: #999
+}
+
+@media (min-width: 768px) {
+	html.things_index #things_nav {
+		padding: 0
+	}
+
+	html.things_index #things_nav h1 {
+		font-size: 24px;
+		height: 50px;
+		line-height: 50px;
+		float: left
+	}
+
+	html.things_index #things_nav nav {
+		float: right
+	}
+
+	html.things_index #things_nav nav .nav--line>li>a {
+		font-size: 20px;
+		line-height: 30px
+	}
+}
+
+html.things_index .page-header {
+	margin-bottom: 0
+}
+
+html.things_index .sort_breadcrumb {
+	margin: 0 40px 20px
+}
+
+@media (max-width: 767px) {
+	html.things_index .sort_breadcrumb .nav--line {
+		display: table;
+		width: 100%
+	}
+
+	html.things_index .sort_breadcrumb .nav--line>li {
+		display: table-cell;
+		width: 1%
+	}
+
+	html.things_index .sort_breadcrumb .nav--line>li>a {
+		margin-bottom: 0;
+		text-align: center
+	}
+
+	html.things_index .sort_breadcrumb .nav--line.nav--line>li,html.things_index .sort_breadcrumb .nav--line.nav--tabs>li {
+		float: none
+	}
+
+	html.things_index .sort_breadcrumb .nav--line.nav--line::before,html.things_index .sort_breadcrumb .nav--line.nav--line::after,html.things_index .sort_breadcrumb .nav--line.nav--tabs::before,html.things_index .sort_breadcrumb .nav--line.nav--tabs::after {
+		display: none
+	}
+}
+
+html.things_index .sort_breadcrumb .nav--line>li>a:active,html.things_index .sort_breadcrumb .nav--line>li>a:hover {
+	background-color: transparent
+}
+
+@media (min-width: 768px) {
+	html.things_index .sort_breadcrumb {
+		margin: 0
+	}
+}
+
+html.things_index #things_information {
+	margin-bottom: 20px;
+	margin-top: 0
+}
+
+html.things_index #things_information .col-md-9:only-child {
+	width: 100%
+}
+
+@media (max-width: 767px) {
+	html.things_index #things_information {
+		padding-left: 0;
+		padding-right: 0;
+		padding-top: 0
+	}
+
+	html.things_index #things_information img {
+		width: 100%
+	}
+}
+
+html.things_index nav>ol>li {
+	font-size: 18px;
+	line-height: 2.5;
+	padding: 0 5px
+}
+
+html.things_index nav>ol>li+li {
+	padding: 0 5px
+}
+
+html.things_index nav>ol>li+li:before {
+	content: "";
+	margin-left: -10px
+}
+
+html.things_index.mobile .sorter,html.things_index.tablet .sorter {
+	padding: 10px 15px
+}
+
+html.things_brand.mobile #things_nav {
+	background-color: #fafafa
+}
+
+html.things_brand.mobile #things_information>.col-md-3 {
+	margin-bottom: 20px
+}
+
+html.things_brand.mobile #things_information img {
+	width: 146px;
+	height: 146px
+}
+
+html.things_brand.mobile #things_information h5 {
+	font-size: 16px
+}
+
+html.things_categories #things_information .category-cover {
+	display: none
+}
+
+html.things_categories #things_information .subscribe_button {
+	display: block;
+	margin: 20px 20px 0
+}
+
+html.things_categories #things_information .subscribe_button b {
+	display: none
+}
+
+@media (min-width: 992px) {
+	html.things_categories #things_information .category-cover {
+		display: block
+	}
+
+	html.things_categories #things_information .subscribe_button {
+		margin-left: 0;
+		margin-right: 0
+	}
+}
+
+html.things_categories .related-entries,html.things_brand .related-entries {
+	margin-bottom: 1rem;
+	padding: 5px
+}
+
+html.things_categories .related-entries h5,html.things_brand .related-entries h5 {
+	font-size: 16px
+}
+
+@media (min-width: 992px) {
+	html.things_categories .related-entries h5,html.things_brand .related-entries h5 {
+		margin-top: 0
+	}
+}
+
+html.things_categories .related-entries ul,html.things_brand .related-entries ul {
+	color: #47b2e2;
+	list-style-position: inside
+}
+
+html.things_categories .related-entries ul:before,html.things_categories .related-entries ul:after,html.things_brand .related-entries ul:before,html.things_brand .related-entries ul:after {
+	content: " ";
+	display: table
+}
+
+html.things_categories .related-entries ul:after,html.things_brand .related-entries ul:after {
+	clear: both
+}
+
+html.things_categories .related-entries ul a,html.things_brand .related-entries ul a {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: inherit;
+	display: block;
+	line-height: 28px
+}
+
+@media (min-width: 992px) {
+	html.things_categories .related-entries ul a,html.things_brand .related-entries ul a {
+		line-height: 24px
+	}
+}

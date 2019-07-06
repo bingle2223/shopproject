@@ -1,0 +1,567 @@
+{% extends 'index/base.html' %}
+{% load static %}
+{% block head %}
+<html lang="zh-Hans-CN" prefix="og: http://ogp.me/ns#"
+      class="categories_index signed_in production firefox desktop windows js flexbox canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths csscalc landscape scrollbar"
+      style="">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>产品分类</title>
+    <link href="{% static 'css/application.css' %}" media="screen" rel="stylesheet"/>
+    <link href="{% static 'css/application_sub.css' %}" media="screen" rel="stylesheet"/>
+    <link href="../static/css/categories.css" media="screen" rel="stylesheet"/>
+    <script src="{% static 'js/before_body.js' %}"></script>
+    <!--[if lt IE 9]>
+  <script>
+    var tip = '建议升级您的浏览器（如 Chrome, Firefox）以获得更好的体验！',
+        url = 'http://browsehappy.com';
+
+    document.execCommand('stop');
+    alert(tip);
+    window.location.href = url;
+  </script>
+<![endif]-->
+</head>
+{% endblock %}
+{% block content %}
+<section id="wrapper">
+    <div class="container-fluid">
+        <header class="page-header clearfix">
+            <h1 class="pull-left"><i class="fa fa-tags"></i>产品</h1>
+            <div class="page-header-actions hidden-xs pull-right">
+                <ul class="nav nav--line">
+                    <li><a href="things.html">全部</a></li>
+                    <li class=" active"><a href="/categories">分类</a></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <div class="categories">
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/ge-ren-pei-shi" class="thumbnail-cover"><img
+                                alt="754f04a17f3d35f4773ec0557941e677"
+                                src="../static/images/754f04a17f3d35f4773ec0557941e677.jpeg!square"/><h5>个人配饰</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/ge-ren-pei-shi">个人配饰</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/ge-ren-pei-shi/shou-biao" role="button"
+                               class="btn tag_button">手表</a>
+                            <a href="discover_detail.html?categories/ge-ren-pei-shi/xiang-bao" role="button"
+                               class="btn tag_button">箱包</a>
+                            <a href="discover_detail.html?categories/ge-ren-pei-shi/fu-shi-1" role="button"
+                               class="btn tag_button">服饰</a>
+                            <a href="discover_detail.html?categories/ge-ren-pei-shi/yan-jing" role="button"
+                               class="btn tag_button">眼镜</a>
+                            <a href="discover_detail.html?categories/ge-ren-pei-shi/qi-ta-pei-shi" role="button"
+                               class="btn tag_button">其他配饰</a>
+                            <a href="discover_detail.html?categories/ge-ren-pei-shi/zhi-neng-ke-chuan-dai" role="button"
+                               class="btn tag_button">智能可穿戴</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/lu-xing-yun-dong" class="thumbnail-cover"><img
+                                alt="63e036e96338d391295d1165f8ba9d4a"
+                                src="../static/images/63e036e96338d391295d1165f8ba9d4a.jpeg!square"/><h5>旅行运动</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/lu-xing-yun-dong">旅行运动</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/lu-xing-yun-dong/jiao-tong-gong-ju" role="button"
+                               class="btn tag_button">交通工具</a>
+                            <a href="discover_detail.html?categories/lu-xing-yun-dong/che-zai-yong-pin" role="button"
+                               class="btn tag_button">车载用品</a>
+                            <a href="discover_detail.html?categories/lu-xing-yun-dong/lu-xing-yong-pin" role="button"
+                               class="btn tag_button">旅行用品</a>
+                            <a href="discover_detail.html?categories/lu-xing-yun-dong/hu-wai-zhuang-bei" role="button"
+                               class="btn tag_button">户外装备</a>
+                            <a href="discover_detail.html?categories/lu-xing-yun-dong/hu-wai-yun-dong" role="button"
+                               class="btn tag_button">户外运动</a>
+                            <a href="discover_detail.html?categories/lu-xing-yun-dong/jian-shen-xun-lian" role="button"
+                               class="btn tag_button">健身训练</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/sheng-huo" class="thumbnail-cover"><img
+                                alt="Bcb416f21459e38195c0f6eb73f74593"
+                                src="../static/images/bcb416f21459e38195c0f6eb73f74593.jpeg!square"/><h5>生活</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/sheng-huo">生活</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/sheng-huo/jia-ju" role="button"
+                               class="btn tag_button">家居</a>
+                            <a href="discover_detail.html?categories/sheng-huo/chong-wu" role="button"
+                               class="btn tag_button">宠物</a>
+                            <a href="discover_detail.html?categories/sheng-huo/jia-dian" role="button"
+                               class="btn tag_button">家电</a>
+                            <a href="discover_detail.html?categories/sheng-huo/jia-ju-1" role="button"
+                               class="btn tag_button">家具</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/dian-nao" class="thumbnail-cover"><img
+                                alt="6c261817a9be8ff50691cbbd7994b3d2"
+                                src="../static/images/6c261817a9be8ff50691cbbd7994b3d2.jpeg!square"/><h5>电脑</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/dian-nao">电脑</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/dian-nao/bi-ji-ben-dian-nao" role="button"
+                               class="btn tag_button">笔记本电脑</a>
+                            <a href="discover_detail.html?categories/dian-nao/ping-ban-dian-nao" role="button"
+                               class="btn tag_button">平板电脑</a>
+                            <a href="discover_detail.html?categories/dian-nao/dian-nao-zheng-ji" role="button"
+                               class="btn tag_button">电脑整机</a>
+                            <a href="discover_detail.html?categories/dian-nao/shu-ru-she-bei" role="button"
+                               class="btn tag_button">输入设备</a>
+                            <a href="discover_detail.html?categories/dian-nao/shu-chu-she-bei" role="button"
+                               class="btn tag_button">输出设备</a>
+                            <a href="discover_detail.html?categories/dian-nao/cun-chu-chan-pin" role="button"
+                               class="btn tag_button">存储产品</a>
+                            <a href="discover_detail.html?categories/dian-nao/diypei-jian" role="button"
+                               class="btn tag_button">DIY配件</a>
+                            <a href="discover_detail.html?categories/dian-nao/dian-nao-pei-jian" role="button"
+                               class="btn tag_button">电脑配件</a>
+                            <a href="discover_detail.html?categories/dian-nao/wang-luo-chan-pin" role="button"
+                               class="btn tag_button">网络产品</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/yin-le" class="thumbnail-cover"><img
+                                alt="B47e0764fc9c52064e6b9dac23973a0a"
+                                src="../static/images/b47e0764fc9c52064e6b9dac23973a0a.jpeg!square"/><h5>音乐</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/yin-le">音乐</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/yin-le/chang-pian" role="button"
+                               class="btn tag_button">唱片</a>
+                            <a href="discover_detail.html?categories/yin-le/yin-xiang" role="button"
+                               class="btn tag_button">音箱</a>
+                            <a href="discover_detail.html?categories/yin-le/yin-xiang-1" role="button"
+                               class="btn tag_button">音响</a>
+                            <a href="discover_detail.html?categories/yin-le/sui-shen-ting" role="button"
+                               class="btn tag_button">随身听</a>
+                            <a href="discover_detail.html?categories/yin-le/er-ji" role="button" class="btn tag_button">耳机</a>
+                            <a href="discover_detail.html?categories/yin-le/shi-yin-she-bei" role="button"
+                               class="btn tag_button">拾音设备</a>
+                            <a href="discover_detail.html?categories/yin-le/le-qi" role="button" class="btn tag_button">乐器</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/she-ying" class="thumbnail-cover"><img
+                                alt="0ff6157d92fcee4d7034d4f163129aae"
+                                src="../static/images/0ff6157d92fcee4d7034d4f163129aae.jpeg!square"/><h5>摄影</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/she-ying">摄影</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/she-ying/she-xiang-ji" role="button"
+                               class="btn tag_button">摄像机</a>
+                            <a href="discover_detail.html?categories/she-ying/xiao-pian-xiang-ji" role="button"
+                               class="btn tag_button">胶片相机</a>
+                            <a href="discover_detail.html?categories/she-ying/she-ying-pei-jian" role="button"
+                               class="btn tag_button">摄影配件</a>
+                            <a href="discover_detail.html?categories/she-ying/shu-ma-xiang-ji" role="button"
+                               class="btn tag_button">数码相机</a>
+                            <a href="discover_detail.html?categories/she-ying/te-shu-xiang-ji-1" role="button"
+                               class="btn tag_button">特殊相机</a>
+                            <a href="discover_detail.html?categories/she-ying/ci-cheng-xiang-xiang-ji" role="button"
+                               class="btn tag_button">一次成像相机</a>
+                            <a href="discover_detail.html?categories/she-ying/jing-tou" role="button"
+                               class="btn tag_button">镜头</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/shou-ji-tong-xin" class="thumbnail-cover"><img
+                                alt="F0a264d123c4b625b6d2378105eaa8c0"
+                                src="../static/images/f0a264d123c4b625b6d2378105eaa8c0.png!square"/><h5>手机通信</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/shou-ji-tong-xin">手机通信</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/shou-ji-tong-xin/shou-ji" role="button"
+                               class="btn tag_button">手机</a>
+                            <a href="discover_detail.html?categories/shou-ji-tong-xin/shou-ji-pei-jian" role="button"
+                               class="btn tag_button">手机配件</a>
+                            <a href="discover_detail.html?categories/shou-ji-tong-xin/shou-ji-chong-dian" role="button"
+                               class="btn tag_button">手机充电</a>
+                            <a href="discover_detail.html?categories/shou-ji-tong-xin/shou-ji-pei-shi" role="button"
+                               class="btn tag_button">手机配饰</a>
+                            <a href="discover_detail.html?categories/shou-ji-tong-xin/shou-ji-she-ying" role="button"
+                               class="btn tag_button">手机摄影</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/wen-ju" class="thumbnail-cover"><img
+                                alt="5439e1b88454ea1327ba410097df3dd6"
+                                src="../static/images/5439e1b88454ea1327ba410097df3dd6.jpeg!square"/><h5>文具</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/wen-ju">文具</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/wen-ju/shu-xie-gong-ju" role="button"
+                               class="btn tag_button">书写工具</a>
+                            <a href="discover_detail.html?categories/wen-ju/wen-jian-chu-li" role="button"
+                               class="btn tag_button">文件处理</a>
+                            <a href="discover_detail.html?categories/wen-ju/zhuo-mian-yong-pin" role="button"
+                               class="btn tag_button">桌面用品</a>
+                            <a href="discover_detail.html?categories/wen-ju/jian-cai-tu-gai" role="button"
+                               class="btn tag_button">剪裁涂改</a>
+                            <a href="discover_detail.html?categories/wen-ju/zhi-ben-shu-qian" role="button"
+                               class="btn tag_button">纸本书签</a>
+                            <a href="discover_detail.html?categories/wen-ju/hui-tu-gong-ju" role="button"
+                               class="btn tag_button">绘图工具</a>
+                            <a href="discover_detail.html?categories/wen-ju/chuang-yi-wen-ju" role="button"
+                               class="btn tag_button">创意文具</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/ge-hu" class="thumbnail-cover"><img
+                                alt="2ae8e30ad27590807657f000771a27ad"
+                                src="../static/images/2ae8e30ad27590807657f000771a27ad.jpeg!square"/><h5>个护</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/ge-hu">个护</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/ge-hu/mei-zhuang" role="button"
+                               class="btn tag_button">美妆</a>
+                            <a href="discover_detail.html?categories/ge-hu/xiang-shui" role="button"
+                               class="btn tag_button">香水</a>
+                            <a href="discover_detail.html?categories/ge-hu/er-bi-hu-li" role="button"
+                               class="btn tag_button">耳鼻护理</a>
+                            <a href="discover_detail.html?categories/ge-hu/yan-jing-hu-li" role="button"
+                               class="btn tag_button">眼睛护理</a>
+                            <a href="discover_detail.html?categories/ge-hu/shen-ti-hu-li" role="button"
+                               class="btn tag_button">身体护理</a>
+                            <a href="discover_detail.html?categories/ge-hu/mei-fa" role="button" class="btn tag_button">美发</a>
+                            <a href="discover_detail.html?categories/ge-hu/mei-rong" role="button"
+                               class="btn tag_button">美容</a>
+                            <a href="discover_detail.html?categories/ge-hu/ge-ren-qing-ji" role="button"
+                               class="btn tag_button">个人清洁</a>
+                            <a href="discover_detail.html?categories/ge-hu/nan-xing" role="button"
+                               class="btn tag_button">男性</a>
+                            <a href="discover_detail.html?categories/ge-hu/nu-xing" role="button"
+                               class="btn tag_button">女性</a>
+                            <a href="discover_detail.html?categories/ge-hu/bao-jian" role="button"
+                               class="btn tag_button">保健</a>
+                            <a href="discover_detail.html?categories/ge-hu/kou-qiang-hu-li" role="button"
+                               class="btn tag_button">口腔护理</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/jian-kang" class="thumbnail-cover"><img
+                                alt="F9be877c53394536a290feb8fb14d884"
+                                src="../static/images/f9be877c53394536a290feb8fb14d884.jpeg!square"/><h5>健康</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/jian-kang">健康</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/jian-kang/mu-ying" role="button"
+                               class="btn tag_button">母婴</a>
+                            <a href="discover_detail.html?categories/jian-kang/shen-ti-jian-ce" role="button"
+                               class="btn tag_button">身体监测</a>
+                            <a href="discover_detail.html?categories/jian-kang/huan-jing-jian-ce" role="button"
+                               class="btn tag_button">环境监测</a>
+                            <a href="discover_detail.html?categories/jian-kang/lao-you-guan-ai" role="button"
+                               class="btn tag_button">老幼关爱</a>
+                            <a href="discover_detail.html?categories/jian-kang/yi-liao-yong-pin" role="button"
+                               class="btn tag_button">医疗用品</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/wan-ju" class="thumbnail-cover"><img
+                                alt="7566c1b63fb0785db7257946c7b39c7a"
+                                src="../static/images/7566c1b63fb0785db7257946c7b39c7a.jpeg!square"/><h5>玩具</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/wan-ju">玩具</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/wan-ju/qu-wei" role="button"
+                               class="btn tag_button">趣味</a>
+                            <a href="discover_detail.html?categories/wan-ju/mo-xing-shou-ban" role="button"
+                               class="btn tag_button">模型手办</a>
+                            <a href="discover_detail.html?categories/wan-ju/zhi-neng-wan-ju" role="button"
+                               class="btn tag_button">智能玩具</a>
+                            <a href="discover_detail.html?categories/wan-ju/ji-mu-pin-tu" role="button"
+                               class="btn tag_button">积木拼图</a>
+                            <a href="discover_detail.html?categories/wan-ju/yao-kong-wan-ju" role="button"
+                               class="btn tag_button">遥控玩具</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/you-xi" class="thumbnail-cover"><img
+                                alt="B10a96e66f5222f3008898ef2072eb9e"
+                                src="../static/images/b10a96e66f5222f3008898ef2072eb9e.png!square"/><h5>游戏</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/you-xi">游戏</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/you-xi/you-xi-ji" role="button"
+                               class="btn tag_button">游戏机</a>
+                            <a href="discover_detail.html?categories/you-xi/you-xi-wai-she" role="button"
+                               class="btn tag_button">游戏外设</a>
+                            <a href="discover_detail.html?categories/you-xi/dian-zi-you-xi" role="button"
+                               class="btn tag_button">电子游戏</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail--category">
+                    <div class="thumbnail-aside">
+                        <a href="discover_detail.html?categories/yin-shi" class="thumbnail-cover"><img
+                                alt="C03f672333e269a1266f5534d736a498"
+                                src="../static/images/c03f672333e269a1266f5534d736a498.jpeg!square"/><h5>饮食</h5></a>
+                    </div>
+                    <div class="thumbnail-body">
+                        <h5><a href="discover_detail.html?categories/yin-shi">饮食</a></h5>
+                        <div class="tags">
+                            <a href="discover_detail.html?categories/yin-shi/ka-pei" role="button"
+                               class="btn tag_button">咖啡</a>
+                            <a href="discover_detail.html?categories/yin-shi/liang-you-fu-shi" role="button"
+                               class="btn tag_button">粮油副食</a>
+                            <a href="discover_detail.html?categories/yin-shi/chu-fang-dian-qi" role="button"
+                               class="btn tag_button">厨房电器</a>
+                            <a href="discover_detail.html?categories/yin-shi/yin-jiu" role="button"
+                               class="btn tag_button">饮酒</a>
+                            <a href="discover_detail.html?categories/yin-shi/yin-cha" role="button"
+                               class="btn tag_button">饮茶</a>
+                            <a href="discover_detail.html?categories/yin-shi/chu-fang-yong-pin" role="button"
+                               class="btn tag_button">厨房用品</a>
+                            <a href="discover_detail.html?categories/yin-shi/shui-ju" role="button"
+                               class="btn tag_button">水具</a>
+                            <a href="discover_detail.html?categories/yin-shi/shi-pin-yin-liao" role="button"
+                               class="btn tag_button">食品饮料</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+<a id="go_top" href="#"><i class="fa fa-angle-up fa-2x"></i></a>
+<div class="message-on-top"></div>
+<div id="state"></div>
+<div class="modals">
+    <div id="new-thing-modal" class="modal fade modal--new_thing modal--new_thing-entry">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-plus"></i>分享新产品</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <button data-toggle="modal" data-target="#new-thing-from-url-modal" data-dismiss="modal"
+                            class="btn"><i class="fa fa-globe fa-fw"></i>从网站收集
+                    </button>
+                    <button id="btn-to-new-local-thing-modal" data-target="#new-thing-from-local" data-dismiss="modal"
+                            class="btn"><i class="fa fa-cloud-upload fa-fw"></i>本地上传
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="new-thing-from-url-modal" data-keyboard="false"
+         class="modal fade modal--new_thing modal--new_thing-remote">
+        <form method="get" data-remote="true" accept-charset="UTF-8" action="/things/extract_url" autocomplete="off"
+              id="extract_url_form">
+            <input type="hidden" value="✓" name="utf8"/>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close hidden-md" aria-hidden="true">&times;
+                        </button>
+                        <div class="new-thing-title">
+                            <a href="#" data-target="#new-thing-from-local" data-dismiss="modal" class="btn">本地上传</a>
+                            <h4>通过网页分享新产品</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <input type="url" required="required" placeholder="http://" name="url" id="new-thing-url"
+                               class="form-control dark" autofocus="autofocus"/>
+                        <div class="alert hidden">
+                            很抱歉，这个地址我们不支持，您可以通过
+                            <a href="#" data-target="#new-thing-from-local" data-dismiss="modal">本地上传</a> 来分享此产品。
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn--gray">取消</button>
+                        <button type="submit" class="btn btn--blue">抓取</button>
+                        <div class="using_bm">
+                            <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion" aria-expanded="true"
+                               aria-controls="collapseOne">使用书签分享<i class="fa fa-angle-double-down"></i></a>
+                            <div role="tabpanel" id="collapseOne" class="panel-collapse collapse"
+                                 aria-labelledby="headingOne">
+                                <div class="drop_bm">
+                                    拖拽到书签栏
+                                    <a href="javascript:(function(win,doc,ko){if(win[ko]){win[ko].ui.show();}else{var script=doc.createElement('script');script.id='KO_script';script.setAttribute('charset','utf-8');script.src='https://knewone.com/assets/bookmarklet.js?_c='+Math.floor(+new Date/1e7);doc.body.appendChild(script);}})(window,document,'KO_ROOM');"
+                                       class="disabled"> 分享到 KnewOne</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="new-thing-similar-modal" class="modal modal--new_thing modal--new_thing-similiar fade"></div>
+    <div role="dialog" id="new_private_message_modal" class="modal fade" aria-labelledby="写私信">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" data-remote="true" accept-charset="UTF-8" action="/dialogs" role="form">
+                    <input type="hidden" value="✓" name="utf8"/>
+                    <div class="modal-header">
+                        <button data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">写私信</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="dialog_user_id" name="dialog_user_id"/>
+                        <div class="form-group field-message-receiver">
+         <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input type="text"
+                                                                                                   required="required"
+                                                                                                   class="form-control tt-hint"
+                                                                                                   style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: rgb(255, 255, 255) none repeat scroll 0% 0%;"
+                                                                                                   disabled=""
+                                                                                                   autocomplete="off"
+                                                                                                   spellcheck="false"/><input
+                 type="text" placeholder="用户昵称" required="required" class="form-control tt-input" id="dialog_user_name"
+                 name="dialog_user_name" autocomplete="off" spellcheck="false"
+                 style="position: relative; vertical-align: top; background-color: transparent;" dir="auto"/><pre
+                 aria-hidden="true"
+                 style="position: absolute; visibility: hidden; white-space: nowrap; font-family: Helvetica,Arial,"
+                 microsoft="" yahei",sans-serif;="" font-size:="" 14px;="" font-style:="" normal;="" font-variant:="" font-weight:="" 400;="" word-spacing:="" 0px;="" letter-spacing:="" text-indent:="" text-rendering:="" optimizelegibility;="" text-transform:="" none;"=""></pre>
+             <span class="tt-dropdown-menu"
+                   style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+           <div class="tt-dataset-users"></div></span></span>
+                        </div>
+                        <div id="message-receiver--preset_53bb8b8831302d77db060000"
+                             class="form-group message-receiver--preset is-hidden">
+                            <div class="conversation media">
+                                <div class="media-left pull-left">
+                                    <a href="member_index.html?53bb8b8831302d77db060000" target="_blank"><img width="48"
+                                                                                                              height="48"
+                                                                                                              alt="5185ccad95e0e3aa6243d1b9fcb6dfed"
+                                                                                                              src="../static/images/5185ccad95e0e3aa6243d1b9fcb6dfed.png!small"
+                                                                                                              class="img-circle"/><span>马文</span></a>
+                                </div>
+                                <p class="media-body">我的脑容量相当于一颗行星，他们却让我当客服。so.. 需要我帮忙吗？</p>
+                            </div>
+                        </div>
+                        <div class="form-group field-message-content">
+                            <textarea placeholder="内容" required="required" class="form-control" rows="5"
+                                      id="dialog_content" name="dialog_content"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn--gray">取消</button>
+                        <button type="submit" class="btn btn--blue">发送</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="share_modal" class="modal fade share-modal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close">&times;</button>
+                    <h4 class="modal-title">分享</h4>
+                </div>
+                <div class="modal-body">
+                    <section class="box">
+                        <h5>绑定第三方账号</h5>
+                        <p><a href="member_index.html?auth/weibo?state=%2Fcategories" class="share-button oauth"><i
+                                class="fa fa-weibo fa-4x"></i></a></p>
+                    </section>
+                    <section class="box">
+                        <h5>直接分享</h5>
+                        <p><a href="#socialshare_wechat_modal" data-label="阿斗" data-action="wechat"
+                              data-category="share" data-toggle="modal" class="share-button js-share--wechat"
+                              title="微信朋友圈分享"><i class="fa fa-weixin fa-4x"></i></a><a
+                                href="http://widget.renren.com/dialog/share?link=https://knewone.com/categories"
+                                title="分享到人人网" target="_blank" class="share-button"><i
+                                class="fa fa-renren fa-4x"></i></a></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div tabindex="-1" role="dialog" id="socialshare_wechat_modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">扫描二维码分享到微信</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="qrcode">
+                        <img role="dialog" id="fallback_help_modal" class="modal fade" aria-hidden="true"/>
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span
+                                            class="sr-only">Close</span></button>
+                                    <h4 class="modal-title">和我们聊天</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>抱歉，客服系统现在繁忙。请邮件留言至邮箱&nbsp;<a href="mailto:help@knewone.com" target="_blank">help@knewone.com</a>&nbsp;，或私信账号“KnewOne销售”，我们将尽快给予回复。不便之处，敬请谅解！
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site_maps hidden">
+                    <a href="/maps/things">产品</a>
+                    <a href="/maps/reviews">评测</a>
+                    <a href="/maps/groups">小组</a>
+                    <a href="/maps/topics">帖子</a>
+                    <a href="/maps/categories">分类</a>
+                    <a href="/maps/entries">发现</a>
+                </div>
+                <script src="../static/js/vendor.js"></script>
+                <script src="../static/js/application.js"></script>
+                <!--      <script type="text/javascript">
+                //<![CDATA[
+                $(function() { Making.start(['Categories', 'CategoriesIndex']) });
+                //]]>
+                </script>-->
+                <div id="fancy-modal-container"></div>
+                <div id="add-to-list-modal-container"></div>
+                <div class="atwho-container">
+                    <div id="atwho-ground-dialog_content">
+                        <div class="atwho-view" id="at-view-64">
+                            <ul class="atwho-view-ul"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

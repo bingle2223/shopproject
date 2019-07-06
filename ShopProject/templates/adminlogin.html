@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block footer %}
+    <div class="logHead">
+		<img src="{% static 'img/logLOGO.png' %}" />
+	</div>
+	<!-- 登录页面头部结束 -->
+
+	<!-- 登录body -->
+	<div class="logDiv">
+		<img class="logBanner" src="{% static 'img/logBanner.png' %}" />
+		<div class="logGet">
+            <form action="{% url 'bankground:login' %}" method="post">
+                {% csrf_token %}
+                <!-- 头部提示信息 -->
+			<div class="logD logDtip">
+				<p class="p1">登录</p>
+				<p class="p2">跳蚤人员登录</p>
+			</div>
+			<!-- 输入框 -->
+			<div class="lgD">
+				<img class="img1" src="{% static 'img/logName.png' %}" /><input type="text" name="username"
+					placeholder="输入用户名" />
+			</div>
+			<div class="lgD">
+				<img class="img1" src="{% static 'img/logPwd.png' %}" /><input type="text" name="password"
+					placeholder="输入用户密码" />
+			</div>
+			<div class="lgD logD2">
+				<input class="getYZM" type="text" />
+				<div class="logYZM">
+					<img class="yzm" src="{% static 'img/logYZM.png' %}" />
+				</div>
+			</div>
+			<div class="logC">
+				<button>登 录</button>
+			</div>
+            </form>
+		</div>
+	</div>
+	<!-- 登录body  end -->
+
+	<!-- 登录页面底部 -->
+	<div class="logFoot">
+		<p class="p1">版权所有：北京跳蚤市场科技有限公司</p>
+		<p class="p2">北京跳蚤科技科技有限公司 登记序号：京ICP备11003578号-2</p>
+	</div>
+	<!-- 登录页面底部end -->
+
+{% endblock %}

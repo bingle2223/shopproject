@@ -1,0 +1,588 @@
+{% extends 'index/base.html' %}
+{% load static %}
+{% block head %}
+<html lang="zh-Hans-CN" prefix="og: http://ogp.me/ns#"
+      class="discussions_index signed_out production firefox desktop windows js flexbox canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths csscalc landscape scrollbar"
+      style="margin-right: 0px;">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>产品 - 讨论</title>
+    <link href="{% static 'css/application.css' %}" media="screen" rel="stylesheet"/>
+    <link href="{% static 'css/application_sub.css' %}" media="screen" rel="stylesheet"/>
+    <script src="{% static 'js/before_body.js' %}"></script>
+    <!--[if lt IE 9]>
+  <script>
+    var tip = '建议升级您的浏览器（如 Chrome, Firefox）以获得更好的体验！',
+        url = 'http://browsehappy.com';
+
+    document.execCommand('stop');
+    alert(tip);
+    window.location.href = url;
+  </script>
+<![endif]-->
+    <style type="text/css">#MECHAT-PCBTN {
+        font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", Arial, sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        position: fixed;
+        bottom: -100%;
+        background: #1abc9c;
+        color: #fff;
+        text-align: center;
+        padding: 10px 15px 8px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        cursor: pointer;
+        z-index: 2147483645;
+    }
+
+    #MECHAT-PCBTN span {
+        display: inline-block;
+        height: 24px;
+        padding: 0 0 0 34px;
+        background: url(../static/images/pc_btn_icon.png ") 0 0 no-repeat}#MECHAT-LAYOUT{position:fixed;right:80px;bottom:-100%;width:300px;height:430px;z-index:2147483647; overflow:hidden;background: #fff;border:1px solid #1abc9c;border-top-left-radius:5px;border-top-right-radius:5px;box-shadow:0 0 3px 2px rgba(135,135,135,0.1)}#MECHAT-PCBTN,#MECHAT-LAYOUT{_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)))}</style>
+</head>
+{% endblock %}
+{% block content %}
+<section id="wrapper">
+    <div itemtype="http://schema.org/Product" itemscope="" class="container">
+        <main>
+            <div id="thing_content">
+                <div id="thing_title">
+                    <h1 itemprop="name"><a href="discover_detail.html?less-fu-gu-shou-gong-niu-pi-ben">LESS 复古手工牛皮本</a>
+                    </h1>
+                    <h2 itemprop="description">从裁剪到烫印，完全手工制作</h2>
+                </div>
+                <nav id="thing-top_nav" class="hidden-xs">
+                    <ul class="nav nav--tabs nav--justified">
+                        <li class=""><a href="discover_detail.html?less-fu-gu-shou-gong-niu-pi-ben">产品</a></li>
+                        <li class=""><a
+                                href="discover_detail.html?less-fu-gu-shou-gong-niu-pi-ben/reviews">评测<span></span></a>
+                        </li>
+                        <li class=" active"><a href="discover_detail.html?less-fu-gu-shou-gong-niu-pi-ben/discussions">讨论<span>2</span></a>
+                        </li>
+                        <li class=""><a href="discover_detail.html?less-fu-gu-shou-gong-niu-pi-ben/activities">动态</a>
+                        </li>
+                    </ul>
+                </nav>
+                <section class="things_subpage">
+                    <div class="form_wrapper">
+                        <div class="discussion_form disabled">
+                            <form method="post" data-remote="true" accept-charset="UTF-8"
+                                  action="/things/less-fu-gu-shou-gong-niu-pi-ben/discussions" id="new_discussion"
+                                  class="simple_form editor_compact js-require_login">
+                                <input type="hidden" value="✓" name="utf8"/>
+                                <div class="form-group text required disabled discussion_content editor_content form_content">
+                                    <textarea id="discussion_content" name="discussion[content]" aria-required="true"
+                                              required="required" disabled="disabled" rows="4"
+                                              placeholder="需要您登录之后才可以发起讨论"
+                                              class="text required disabled form-control form-control"></textarea>
+                                </div>
+                                <footer>
+                                    <div class="submit">
+                                        <button data-placement="bottom" data-toggle="tooltip" data-loading-text="提交中"
+                                                data-label="LESS 复古手工牛皮本" data-action="comment" data-category="thing"
+                                                title="按 Command + Enter 或 Control + Enter 键发布回复"
+                                                class="btn btn--transition btn--blue_light disabled" type="submit"
+                                                name="button" disabled="disabled"><i class="fa fa-comments-o"></i>发布
+                                        </button>
+                                    </div>
+                                    <button type="button" data-toggle="emoji"
+                                            data-emoji-textarea="[name='discussion[content]']"
+                                            class="emoji_button pull-right"></button>
+                                </footer>
+                            </form>
+                        </div>
+                    </div>
+                    <header class="discussions_page_header clearfix">
+                        <form method="get" accept-charset="UTF-8"
+                              action="/things/less-fu-gu-shou-gong-niu-pi-ben/discussions" role="form"
+                              class="form-inline">
+                            <input type="hidden" value="✓" name="utf8"/>
+                            <div class="form-group">
+                                <i class="fa fa-sort-amount-desc select_label"></i>
+                                <select class="form-control js_auto_submit" id="sort" name="sort">
+                                    <option value="commented_at">按回复时间排列</option>
+                                    <option value="created_at">按发布时间排列</option>
+                                    <option value="hit">按“赞”数排列</option>
+                                </select>
+                            </div>
+                        </form>
+                    </header>
+                    <div class="discussions list">
+                        <article id="discussion_5693a75b6e24420c39000125"
+                                 class="feed_article discussion feed_article--discussion">
+                            <figure data-profile-popover="5693a73d420fc26b5b000125" class="discussion_author"
+                                    data-original-title="" title="">
+                                <a href="member_index.html?5693a73d420fc26b5b000125"
+                                   data-profile-popover="5693a73d420fc26b5b000125" rel="author" target="_blank"
+                                   data-original-title="" title=""><img src="../static/images/20.png"
+                                                                        alt="e6b08f89@wechat" class="img-circle"/></a>
+                                <figcaption>
+                                    <a href="member_index.html?5693a73d420fc26b5b000125" rel="author" target="_blank"
+                                       data-profile-popover="5693a73d420fc26b5b000125">e6b08f89@wechat</a>
+                                </figcaption>
+                            </figure>
+                            <section>
+                                <p>想要想要想要 期待期待期待</p>
+                            </section>
+                            <footer>
+                                <div class="wrap">
+                                    <ul class="metas">
+                                        <li class="hidden-xs"><a
+                                                href="discover_detail.html?less-fu-gu-shou-gong-niu-pi-ben/discussions/5693a75b6e24420c39000125"
+                                                target="_blank">
+                                            <time data-time-ago="2016-01-11T21:00:11+08:00" class="timeago"
+                                                  title="2016-01-11 21:00:11" datetime="2016-01-11T21:00:11+08:00">2小时前
+                                            </time>
+                                        </a></li>
+                                        <li><a href="#" data-id="discussion_5693a75b6e24420c39000125_comments"
+                                               class="comments_toggle"><i class="fa fa-comments-o"></i></a></li>
+                                        <li><a href="#socialshare_wechat_modal"
+                                               data-label="LESS 复古手工牛皮本 - 想要想要想要 期待期待期待" data-action="wechat"
+                                               data-category="share" data-toggle="modal" class="btn share_btn  js-share"
+                                               title="分享"><i class="fa fa-share-alt"></i></a></li>
+                                        <li><a href="#" data-label="想要想要想要 期待期待期待" data-action="report"
+                                               data-category="discussion" data-message-content="举报讨论：https://knewone.com/things/less-fu-gu-shou-gong-niu-pi-ben/discussions/5693a75b6e24420c39000125
+
+举报理由：" data-message-receiver-name="KnewOne" data-message-receiver-id="511114fa7373c2e3180000b4"
+                                               data-private-message="true" class="hidden-xs hidden-sm"><i
+                                                class="fa fa-flag"></i></a></li>
+                                        <li></li>
+                                    </ul>
+                                    <div class="feed_action">
+                                        <a href="#" class="btn like_button" data-signin-legend="登录后点赞"
+                                           data-toggle="modal" data-target="#login-modal"><i
+                                                class="fa fa-thumbs-up fa-fw"></i><span>0</span></a>
+                                    </div>
+                                </div>
+                                <section class="comments_wrap">
+                                    <aside data-per="25" data-count="0"
+                                           data-url="/posts/5693a75b6e24420c39000125/comments"
+                                           id="discussion_5693a75b6e24420c39000125_comments">
+                                        <div class="comments comments--compact">
+                                            <h4><i class="fa fa-comments-o"></i><span>回复</span></h4>
+                                            <div class="comments-form_wrapper">
+                                                <a href="#login-modal" data-toggle="modal"
+                                                   class="btn btn--blue_light btn-block">发表评论</a>
+                                            </div>
+                                            <ul class="comments_list"></ul>
+                                        </div>
+                                    </aside>
+                                </section>
+                            </footer>
+                        </article>
+                        <article id="discussion_569389636e244277c6000040"
+                                 class="feed_article discussion feed_article--discussion">
+                            <figure data-profile-popover="53d95e3331302d676f690100" class="discussion_author">
+                                <a href="member_index.html?53d95e3331302d676f690100"
+                                   data-profile-popover="53d95e3331302d676f690100" rel="author" target="_blank"><img
+                                        src="../static/images/ccbef3aa1ed24e428442410f769f9049.jpg!small" alt="Freakyle"
+                                        class="img-circle"/></a>
+                                <figcaption>
+                                    <a href="member_index.html?53d95e3331302d676f690100" rel="author" target="_blank"
+                                       data-profile-popover="53d95e3331302d676f690100">Freakyle</a>
+                                </figcaption>
+                            </figure>
+                            <section>
+                                <p>想要 但这也忒厚了 预感买不起</p>
+                            </section>
+                            <footer>
+                                <div class="wrap">
+                                    <ul class="metas">
+                                        <li class="hidden-xs"><a
+                                                href="discover_detail.html?less-fu-gu-shou-gong-niu-pi-ben/discussions/569389636e244277c6000040"
+                                                target="_blank">
+                                            <time data-time-ago="2016-01-11T18:52:19+08:00" class="timeago"
+                                                  title="2016-01-11 18:52:19" datetime="2016-01-11T18:52:19+08:00">4小时前
+                                            </time>
+                                        </a></li>
+                                        <li><a href="#" data-id="discussion_569389636e244277c6000040_comments"
+                                               class="comments_toggle"><i class="fa fa-comments-o"></i></a></li>
+                                        <li><a href="#socialshare_wechat_modal"
+                                               data-label="LESS 复古手工牛皮本 - 想要 但这也忒厚了 预感买不起" data-action="wechat"
+                                               data-category="share" data-toggle="modal" class="btn share_btn  js-share"
+                                               title="分享"><i class="fa fa-share-alt"></i></a></li>
+                                        <li><a href="#" data-label="想要 但这也忒厚了 预感买不起" data-action="report"
+                                               data-category="discussion" data-message-content="举报讨论：https://knewone.com/things/less-fu-gu-shou-gong-niu-pi-ben/discussions/569389636e244277c6000040
+
+举报理由：" data-message-receiver-name="KnewOne" data-message-receiver-id="511114fa7373c2e3180000b4"
+                                               data-private-message="true" class="hidden-xs hidden-sm"><i
+                                                class="fa fa-flag"></i></a></li>
+                                        <li></li>
+                                    </ul>
+                                    <div class="feed_action">
+                                        <a href="#" class="btn like_button" data-signin-legend="登录后点赞"
+                                           data-toggle="modal" data-target="#login-modal"><i
+                                                class="fa fa-thumbs-up fa-fw"></i><span>0</span></a>
+                                    </div>
+                                </div>
+                                <section class="comments_wrap">
+                                    <aside data-per="25" data-count="0"
+                                           data-url="/posts/569389636e244277c6000040/comments"
+                                           id="discussion_569389636e244277c6000040_comments">
+                                        <div class="comments comments--compact">
+                                            <h4><i class="fa fa-comments-o"></i><span>回复</span></h4>
+                                            <div class="comments-form_wrapper">
+                                                <a href="#login-modal" data-toggle="modal"
+                                                   class="btn btn--blue_light btn-block">发表评论</a>
+                                            </div>
+                                            <ul class="comments_list"></ul>
+                                        </div>
+                                    </aside>
+                                </section>
+                            </footer>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <aside>
+            <div id="thing_actions" class="thing_actions visible-md visible-lg">
+                <ul class="actions clearfix">
+                    <li class="fanciers"><a href="#" data-label="LESS 复古手工牛皮本" data-action="fancy" data-category="thing"
+                                            data-signin-legend="登录后，收集喜欢的产品"
+                                            data-link="https://knewone.com/things/less-fu-gu-shou-gong-niu-pi-ben"
+                                            data-target="#login-modal" data-toggle="modal" title="喜欢此产品"
+                                            class="unfancied"><i class="fa fa-heart-o"></i><span class="fanciers_count">8</span>
+                        <small>喜欢</small>
+                    </a></li>
+                    <li class="owners"><a href="#" data-label="LESS 复古手工牛皮本" data-action="own" data-category="thing"
+                                          data-signin-legend="登录后，标注拥有的产品" data-target="#login-modal"
+                                          data-toggle="modal" title="拥有此产品" class="unowned"><i
+                            class="fa fa-circle-o"></i><span class="owners_count">0</span>
+                        <small>拥有</small>
+                    </a></li>
+                    <li><a href="#socialshare_wechat_modal" data-label="LESS 复古手工牛皮本" data-action="wechat"
+                           data-category="share" data-toggle="modal" class="btn share_btn  js-share" title="分享"><i
+                            class="fa fa-share-alt"></i>分享</a></li>
+                    <li class="add_to_list"><a href="#login-modal" data-signin-legend="登录后，把产品加入列表" data-toggle="modal"
+                                               class="add_to_list" title="加入列表"><i class="fa fa-list-ko"></i>加入列表</a>
+                    </li>
+                </ul>
+                <div class="others clearfix">
+                    <div class="related clearfix"></div>
+                </div>
+            </div>
+            <div id="thing_impressions"></div>
+        </aside>
+    </div>
+</section>
+<a id="go_top" href="#" style="right: 5%;"><i class="fa fa-angle-up fa-2x"></i></a>
+<div class="message-on-top"></div>
+<div class="modals">
+    <div id="login-modal" class="modal fade">
+        <div class="modal-dialog_wrapper">
+            <div class="modal-dialog modal-dialog--front modal-dialog--signin">
+                <div class="modal-content">
+                    <button type="button" data-dismiss="modal" class="close"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <div class="modal-body">
+                        <form method="post" data-remote="true" accept-charset="UTF-8"
+                              action="/users/sign_in?redirect_from=%2Fthings%2Fless-fu-gu-shou-gong-niu-pi-ben%2Fdiscussions"
+                              class="simple_form new_user" id="signin_form" novalidate="true">
+                            <input type="hidden" value="✓" name="utf8"/>
+                            <legend>登录</legend>
+                            <div class="form-main">
+                                <div class="form-group col-sm-6">
+                                    <label class="sr-only">邮件地址</label>
+                                    <input type="email" id="user_email" name="user[email]" data-message-error="邮箱格式错误"
+                                           class="form-control" placeholder="邮件地址" required="required"
+                                           data-event="validate"/>
+                                    <span class="button--clear fa fa-times"></span>
+                                    <ul class="help-block"></ul>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label class="sr-only">密码</label>
+                                    <input type="password" id="user_password" name="user[password]" class="form-control"
+                                           placeholder="密码" required="required" data-event="validate"/>
+                                    <span class="button--clear fa fa-times"></span>
+                                    <ul class="help-block"></ul>
+                                </div>
+                                <input type="hidden" id="redirect_from" name="redirect_from"/>
+                            </div>
+                            <div class="form-group addon clearfix">
+                                <div id="remember_me" class="checkbox pull-left">
+                                    <label><input type="hidden" value="0" name="user[remember_me]"/><input
+                                            type="checkbox" id="user_remember_me" name="user[remember_me]"
+                                            checked="checked" value="1"/>记住我</label>
+                                </div>
+                                <a href="#find_password_modal" data-dismiss="modal" data-toggle="modal"
+                                   class="pull-right"><i class="fa fa-question-circle"></i>忘记密码？</a>
+                            </div>
+                            <div id="sign_in_alert_field" class="form-group form-results hidden">
+                                用户名或密码错误，请重新输入
+                            </div>
+                            <div class="form-group form-actions">
+                                <input type="submit" data-label="email" data-action="login" data-category="user"
+                                       class="btn btn--blue_light" value="登录" name="commit"/>
+                            </div>
+                        </form>
+                        <section class="auth">
+                            <h6>使用社交账号登录</h6>
+                            <p>
+                                <a href="member_index.html?auth/wechat_web?state=%2Fthings%2Fless-fu-gu-shou-gong-niu-pi-ben%2Fdiscussions"
+                                   data-label="wechat" data-action="login" data-category="user" title="用微信登录"
+                                   class="btn btn--icon btn--blue_light"><i class="fa fa-weixin"></i></a><a
+                                    href="member_index.html?auth/weibo?state=%2Fthings%2Fless-fu-gu-shou-gong-niu-pi-ben%2Fdiscussions"
+                                    data-label="weibo" data-action="login" data-category="user" title="用微博登录"
+                                    class="btn btn--icon btn--blue_light"><i class="fa fa-weibo"></i></a><a
+                                    href="member_index.html?auth/qq_connect?state=%2Fthings%2Fless-fu-gu-shou-gong-niu-pi-ben%2Fdiscussions"
+                                    data-label="qq" data-action="login" data-category="user" title="用 QQ 登录"
+                                    class="btn btn--icon btn--blue_light"><i class="fa fa-qq"></i></a><a
+                                    href="member_index.html?auth/douban?state=%2Fthings%2Fless-fu-gu-shou-gong-niu-pi-ben%2Fdiscussions"
+                                    data-label="douban" data-action="login" data-category="user" title="用豆瓣登录"
+                                    class="btn btn--icon btn--blue_light"><i class="fa fa-douban-ko"></i></a><a
+                                    href="member_index.html?auth/bong?state=%2Fthings%2Fless-fu-gu-shou-gong-niu-pi-ben%2Fdiscussions"
+                                    data-label="bong" data-action="login" data-category="user" title="用 bong 登录"
+                                    class="btn btn--icon btn--blue_light"><i class="fa fa-bong-ko"></i></a></p>
+                        </section>
+                        <footer class="section-footer">
+                            <a href="#" class="modal-flipper">注册<em class="logo">KnewOne</em><i
+                                    class="fa fa-angle-right"></i></a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-dialog modal-dialog--back modal-dialog--signup">
+                <div class="modal-content">
+                    <button type="button" data-dismiss="modal" class="close"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <div class="modal-body">
+                        <form method="post" data-remote="true" accept-charset="UTF-8" action="/users"
+                              class="simple_form new_user" id="signup_form" novalidate="true">
+                            <input type="hidden" value="✓" name="utf8"/>
+                            <legend>注册</legend>
+                            <div class="form-main">
+                                <div class="form-group col-sm-6">
+                                    <label for="user_name" class="sr-only">昵称</label>
+                                    <input type="text" id="user_name" name="user[name]" value="" size="16"
+                                           data-message-error="昵称必须少于 16 个字符" maxlength="16" required="required"
+                                           class="form-control" placeholder="昵称（少于 16 个字符）" data-event="validate"/>
+                                    <span class="button--clear fa fa-times"></span>
+                                    <ul class="help-block"></ul>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="user_email" class="sr-only">邮件地址</label>
+                                    <input type="email" id="user_email" name="user[email]" data-message-error="邮箱格式错误"
+                                           required="required" class="form-control" placeholder="邮件地址"
+                                           data-event="validate"/>
+                                    <span class="button--clear fa fa-times"></span>
+                                    <ul class="help-block"></ul>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-sm-6">
+                                    <label for="user_password" class="sr-only">密码</label>
+                                    <input type="password" id="user_password" name="user[password]"
+                                           data-message-error="密码至少 6 个字符" minlength="6" required="required"
+                                           class="form-control" placeholder="密码（至少 6 个字符）" data-event="validate"/>
+                                    <span class="button--clear fa fa-times"></span>
+                                    <ul class="help-block"></ul>
+                                </div>
+                                <div class="form-group col-sm-6 signup_form-captcha">
+                                    <label for="_rucaptcha" class="sr-only">验证码</label>
+                                    <div class="input-group">
+                                        <input required="" placeholder="验证码" name="_rucaptcha" data-parent=".form-group"
+                                               class="form-control" data-event="validate"/>
+                                        <div class="input-group-addon">
+                                            <a href="#" rel="nofollow"
+                                               onclick="$('#rucaptcha_image-7343').attr('src', '/captcha?t=' + new Date().getTime()); return false"
+                                               title="换一张"><img data-original="/captcha"
+                                                                class="btn btn--icon btn--blue_light" alt="验证码"
+                                                                id="rucaptcha_image-7343" style="visibility: visible;"
+                                                                src="../static/images/bong?state=%2Fthings%2Fless-fu-gu-shou-gong-niu-pi-ben%2Fdiscussions"
+                                                                data-label="bong" data-action="login"
+                                                                data-category="user" title="用 bong 登录"/><i
+                                                    class="fa fa-bong-ko"></i></a>
+                                            <p></p>
+                                            <footer class="section-footer">
+                                                <a href="#" class="modal-flipper"><i class="fa fa-angle-left"></i>登录<em
+                                                        class="logo">KnewOne</em></a>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="find_password_modal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span
+                                        class="sr-only">Close</span></button>
+                                <div class="modal-body">
+                                    <input type="hidden" value="✓" name="utf8"/>
+                                    <legend>重置密码</legend>
+                                    <div class="form-main">
+                                        <div class="form-group col-sm-6">
+                                            <label class="sr-only">邮件地址</label>
+                                            <input type="email" data-message-error="邮箱格式错误" placeholder="邮件地址"
+                                                   required="required" class="form-control" value="" id="user_email"
+                                                   name="user[email]" data-event="validate"/>
+                                            <span class="button--clear fa fa-times"></span>
+                                            <ul class="help-block"></ul>
+                                        </div>
+                                        <div class="form-group form-actions col-sm-6">
+                                            <input type="submit" class="btn btn--blue_light" value="发送密码找回邮件"
+                                                   name="commit"/>
+                                        </div>
+                                        <div class="form-group form-results col-sm-12 hidden"></div>
+                                    </div>
+                                    <footer class="section-footer">
+                                        <a href="#login-modal" data-dismiss="modal" data-toggle="modal"
+                                           class="modal-flipper"><i class="fa fa-angle-left"></i>登录<em class="logo">KnewOne</em></a>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div tabindex="-1" role="dialog" id="socialshare_wechat_modal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span
+                                            class="sr-only">Close</span></button>
+                                    <h4 class="modal-title">扫描二维码分享到微信</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="qrcode">
+                                        <img role="dialog" id="fallback_help_modal" class="modal fade"
+                                             aria-hidden="true"/>
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" data-dismiss="modal" class="close"><span
+                                                            aria-hidden="true">&times;</span><span
+                                                            class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title">和我们聊天</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>抱歉，客服系统现在繁忙。请邮件留言至邮箱&nbsp;<a href="mailto:help@knewone.com"
+                                                                                    target="_blank">help@knewone.com</a>&nbsp;，或私信账号“KnewOne销售”，我们将尽快给予回复。不便之处，敬请谅解！
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div tabindex="-1" role="dialog" id="socialshare_modal" class="modal fade">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" data-dismiss="modal" class="close"><span
+                                                            aria-hidden="true">&times;</span><span
+                                                            class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title">分享到社交网络</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="socialshare socialshare--large socialshare--grid_2">
+                                                        <div class="socialshare-providers">
+                                                            <a href="#socialshare_wechat_modal"
+                                                               data-label="LESS 复古手工牛皮本" data-action="wechat"
+                                                               data-category="share" data-dismiss="modal"
+                                                               data-toggle="modal" title="分享到微信"
+                                                               class="socialshare-provider wechat"><i
+                                                                    class="fa fa-weixin"></i></a>
+                                                            <a href="#" data-label="LESS 复古手工牛皮本" data-action="weibo"
+                                                               data-category="share" title="分享到新浪微博"
+                                                               class="socialshare-provider weibo"><i
+                                                                    class="fa fa-weibo"></i></a>
+                                                            <a href="#" data-label="LESS 复古手工牛皮本" data-action="douban"
+                                                               data-category="share" title="分享到豆瓣"
+                                                               class="socialshare-provider douban"><i
+                                                                    class="fa fa-douban-ko"></i></a>
+                                                            <a href="#" data-label="LESS 复古手工牛皮本" data-action="renren"
+                                                               data-category="share" target="_blank" title="分享到人人网"
+                                                               class="socialshare-provider renren"><i
+                                                                    class="fa fa-renren"></i></a>
+                                                            <a href="javascript:(function(a,b,c,d){a[c]?a[c].ui.show():(d=b.createElement('script'),d.id='huaban_script',d.setAttribute('charset','utf-8'),d.src='https://huaban.com/js/widgets.min.js?'+Math.floor(+new Date/1e7),b.body.appendChild(d))})(window,document,'HUABAN_GLOBAL');"
+                                                               data-label="LESS 复古手工牛皮本" data-action="huaban"
+                                                               data-category="share" title="分享到花瓣"
+                                                               class="socialshare-provider huaban"><i
+                                                                    class="fa fa-huaban-ko"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div tabindex="-1" role="dialog" id="socialshare_wechat_modal" class="modal fade">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" data-dismiss="modal" class="close"><span
+                                                            aria-hidden="true">&times;</span><span
+                                                            class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title">扫描二维码分享到微信</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="qrcode"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div tabindex="-1" role="dialog" id="bong_point_modal" class="modal fade"
+                                         aria-labelledby="" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" data-dismiss="modal" class="close"><span
+                                                                aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                                        </button>
+                                                        <h4 class="modal-title">bong 活跃点</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        活跃点是在佩戴&nbsp;
+                                                        <a href="http://bong.cn/" target="_blank">bong</a>&nbsp;的时候，通过运动产生的一种激励点数，更多信息可参考
+                                                        <a href="https://bongservice.daikeapp.com/kb/articles/229"
+                                                           target="_blank">「活跃点规则」</a>。在 KnewOne 商城一个活跃点可以抵扣 1
+                                                        元人民币，使用活跃点购买商品后，在取消订单或退货时，活跃点会在 2 个工作日内返还到你的&nbsp;
+                                                        <a href="http://bong.cn/" target="_blank">bong</a>&nbsp;账户。
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="site_maps hidden">
+                                    <a href="/maps/things">产品</a>
+                                    <a href="/maps/reviews">评测</a>
+                                    <a href="/maps/groups">小组</a>
+                                    <a href="/maps/topics">帖子</a>
+                                    <a href="/maps/categories">分类</a>
+                                    <a href="/maps/entries">发现</a>
+                                </div>
+                                <script src="../static/js/vendor.js"></script>
+                                <script src="../static/js/application.js"></script>
+                                <!--          <script>Making.InitThing();</script>
+                                          <script type="text/javascript">
+                                //<![CDATA[
+                                $(function() { Making.start(['Discussions', 'DiscussionsIndex']) });
+                                //]]>
+                                </script>-->
+                                <div id="fancy-modal-container"></div>
+                                <div id="add-to-list-modal-container"></div>
+                                <div class="atwho-container">
+                                    <div id="atwho-ground-discussion_content">
+                                        <div class="atwho-view" id="at-view-64">
+                                            <ul class="atwho-view-ul"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div id="MECHAT-PCBTN"
+                                         style="background: rgb(6, 122, 180) none repeat scroll 0% 0%; display: none;">
+                                        <span style="color: rgb(255, 255, 255); background-position: 0px -27px;"
+                                              class="MECHAT-BTNLEAVE">目前客服不在线，请留言并留下您的邮箱</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

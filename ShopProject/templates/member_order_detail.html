@@ -1,0 +1,548 @@
+{% extends 'index/base.html' %}
+{% load static %}
+{% block head %}
+<html lang="zh-Hans-CN" prefix="og: http://ogp.me/ns#"
+      class="orders_show settings signed_in production firefox desktop windows js flexbox canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths csscalc landscape scrollbar"
+      style="">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>订单详情 - KnewOne</title>
+    <link href="{% static 'css/application.css' %}" media="screen" rel="stylesheet"/>
+    <link href="{% static 'css/application_sub.css' %}" media="screen" rel="stylesheet"/>
+    <link href="{% static 'css/orders.css' %}" media="screen" rel="stylesheet"/>
+    <link href="{% static 'css/settings.css' %}" media="screen" rel="stylesheet"/>
+    <script src="{% static 'js/before_body.js' %}"></script>
+    <style type="text/css">#MECHAT-PCBTN {
+        font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", Arial, sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        position: fixed;
+        bottom: -100%;
+        background: #1abc9c;
+        color: #fff;
+        text-align: center;
+        padding: 10px 15px 8px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        cursor: pointer;
+        z-index: 2147483645;
+    }
+
+    #MECHAT-PCBTN span {
+        display: inline-block;
+        height: 24px;
+        padding: 0 0 0 34px;
+        background: url(../static/images/pc_btn_icon.png ") 0 0 no-repeat}#MECHAT-LAYOUT{position:fixed;right:80px;bottom:-100%;width:300px;height:430px;z-index:2147483647; overflow:hidden;background: #fff;border:1px solid #1abc9c;border-top-left-radius:5px;border-top-right-radius:5px;box-shadow:0 0 3px 2px rgba(135,135,135,0.1)}#MECHAT-PCBTN,#MECHAT-LAYOUT{_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)))}</style>
+</head>
+{% endblock %}
+{% block content %}
+<section id="wrapper">
+    <main role="main">
+        <section class="orders_wrapper">
+            <div class="order-pending-tips">
+                请您在
+                <time>24小时之内</time>
+                支付，否则订单将自动取消。
+            </div>
+            <header class="order-header">
+                <h2>订单信息<span class="order-no">订单编号:4405196794</span></h2>
+                <div class="order-header-info-wrapper">
+                    <div class="order-header-info">
+                        <i class="fa fa-clock-o"></i>2016-01-11 23:16:04
+                    </div>
+                    <div class="order-header-info">
+                        <i class="fa fa-map-marker"></i>河北省秦皇岛市海港区江苏南京, 黄金林, 13851435593
+                    </div>
+                    <div class="order-state">
+                        <span class="">等待付款</span>
+                    </div>
+                </div>
+            </header>
+            <div class="order-sub_order-wrapper">
+                <div class="order_show-sub_order-header clearfix">
+                    <div class="order_show-sub_order-merchant">
+                        以下商品由
+                        <a href="/merchants/548a5f9931302d4df7590000">KnewOne</a>发货
+                    </div>
+                    <div class="order-sub_order-delivery_method"></div>
+                </div>
+                <div class="order-sub_order-group">
+                    <ul class="order-sub_order-list">
+                        <li class="order-sub_order-item">
+                            <div class="order-sub_order-thing">
+                                <div class="order-sub_order-thing_cover">
+                                    <a href="discover_detail.html?meskins-chuang-yi-bao-nuan-zhuo-dian"><img
+                                            src="../static/images/4adddcc9be541662645f616d5eef113a.jpg!small"
+                                            alt="Meskins 创意保暖桌垫"/></a>
+                                </div>
+                                <div class="order-sub_order-thing_info">
+                                    <a href="discover_detail.html?meskins-chuang-yi-bao-nuan-zhuo-dian"
+                                       class="order-sub_order-thing_title">Meskins 创意保暖桌垫</a>
+                                    <div class="order-sub_order-thing_kind">
+                                        白领张小盒
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-sub_order-item_unit_price">
+                                <i class="fa fa-yen"></i>65.0
+                            </div>
+                            <div class="order-sub_order-item_quantity">
+                                <span>4</span>
+                            </div>
+                            <div class="order-sub_order-item_price">
+                                <i class="fa fa-yen"></i>260.0
+                            </div>
+                        </li>
+                        <li class="order-sub_order-item">
+                            <div class="order-sub_order-thing">
+                                <div class="order-sub_order-thing_cover">
+                                    <a href="discover_detail.html?meskins-chuang-yi-bao-nuan-zhuo-dian"><img
+                                            src="../static/images/4adddcc9be541662645f616d5eef113a.jpg!small"
+                                            alt="Meskins 创意保暖桌垫"/></a>
+                                </div>
+                                <div class="order-sub_order-thing_info">
+                                    <a href="discover_detail.html?meskins-chuang-yi-bao-nuan-zhuo-dian"
+                                       class="order-sub_order-thing_title">Meskins 创意保暖桌垫</a>
+                                    <div class="order-sub_order-thing_kind">
+                                        梦想张小盒
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-sub_order-item_unit_price">
+                                <i class="fa fa-yen"></i>65.0
+                            </div>
+                            <div class="order-sub_order-item_quantity">
+                                <span>1</span>
+                            </div>
+                            <div class="order-sub_order-item_price">
+                                <i class="fa fa-yen"></i>65.0
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix">
+                        <div class="order-sub_order-merchant">
+                            以上商品由
+                            <a href="/merchants/548a5f9931302d4df7590000">KnewOne</a>提供
+                        </div>
+                        <div class="order-sub_order-delivery">
+                            <div class="base-delivery">
+                                <label>运费</label>
+                                <div class="price">
+                                    <i class="fa fa-yen"></i>0.0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-sub_order-wrapper">
+                <div class="order_show-sub_order-header clearfix">
+                    <div class="order_show-sub_order-merchant">
+                        以下商品由
+                        <a href="/merchants/55dac83222edb636610002ae">共启</a>发货
+                    </div>
+                    <div class="order-sub_order-delivery_method"></div>
+                </div>
+                <div class="order-sub_order-group">
+                    <ul class="order-sub_order-list">
+                        <li class="order-sub_order-item">
+                            <div class="order-sub_order-thing">
+                                <div class="order-sub_order-thing_cover">
+                                    <a href="discover_detail.html?wpc-unnurella-r-bu-hui-shi-de-fang-shai-qing-yu-san"><img
+                                            src="../static/images/947747c9bf64a488c0c13eb0c0428c93.jpg!small"
+                                            alt="WPC unnurella&reg; 不会湿的防晒晴雨伞"/></a>
+                                </div>
+                                <div class="order-sub_order-thing_info">
+                                    <a href="discover_detail.html?wpc-unnurella-r-bu-hui-shi-de-fang-shai-qing-yu-san"
+                                       class="order-sub_order-thing_title">WPC unnurella&reg; 不会湿的防晒晴雨伞</a>
+                                    <div class="order-sub_order-thing_kind">
+                                        58cm折叠伞-红色
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-sub_order-item_unit_price">
+                                <i class="fa fa-yen"></i>459.0
+                            </div>
+                            <div class="order-sub_order-item_quantity">
+                                <span>1</span>
+                            </div>
+                            <div class="order-sub_order-item_price">
+                                <i class="fa fa-yen"></i>459.0
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix">
+                        <div class="order-sub_order-merchant">
+                            以上商品由
+                            <a href="/merchants/55dac83222edb636610002ae">共启</a>提供
+                        </div>
+                        <div class="order-sub_order-delivery">
+                            <div class="base-delivery">
+                                <label>运费</label>
+                                <div class="price">
+                                    <i class="fa fa-yen"></i>0.0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-footer clearfix">
+                <div class="order-sum">
+                    <div class="order-sum-item">
+                        <div class="order-sum-item_label">
+                            总计
+                        </div>
+                        <div class="order-sum-item_value order-receivable">
+                            <i class="fa fa-yen"></i>784.0
+                        </div>
+                    </div>
+                </div>
+                <div class="order-actions">
+                    <a href="#cancel_order_modal" data-toggle="modal" class="btn btn--gray order-cancel_btn">取消订单</a>
+                    <div class="btn-group">
+                        <button type="button" data-toggle="dropdown"
+                                class="btn btn--orange dropdown-toggle order-payment_btn"><i
+                                class="fa fa-credit-card"></i>立即支付<span class="caret"></span></button>
+                        <ul role="menu" class="dropdown-menu">
+                            <li><a href="member_order_detail.html?5693c73483a423083c000256/tenpay_wechat"
+                                   class="js-redirect_prompt"><i class="fa fa-fw fa-weixin"></i>微信</a></li>
+                            <li><a href="member_order_detail.html?5693c73483a423083c000256/alipay"
+                                   class="js-redirect_prompt"><i class="fa fa-fw fa-alipay-ko"></i>支付宝</a></li>
+                            <li><a href="#btc_pay" data-toggle="modal"><i class="fa fa-fw fa-btc"></i>BTC</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <aside>
+        <nav role="navigation" id="settings_nav" class="nav--sidebar">
+            <div class="nav-group">
+                <h4><a href="#nav_account" data-parent="#settings_nav" data-toggle="collapse">账户</a></h4>
+                <ul id="nav_account" class="collapse in">
+                    <li class=""><a href="/settings/profile"><i class="fa fa-fw fa-user"></i>个人信息</a></li>
+                    <li class=""><a href="/settings/account"><i class="fa fa-fw fa-cogs"></i>账户信息</a></li>
+                    <li class=""><a href="/settings/notification_settings"><i class="fa fa-fw fa-inbox"></i>通知设置</a>
+                    </li>
+                    <li class=""><a href="/settings/articles"><i class="fa fa-fw fa-pencil-square"></i>我的文章</a></li>
+                    <li class=""><a href="/settings/drafts"><i class="fa fa-fw fa-pencil-square-o"></i>我的草稿</a></li>
+                </ul>
+            </div>
+            <div class="nav-group">
+                <h4><a href="#nav_purchase" data-parent="#settings_nav" data-toggle="collapse">购买</a></h4>
+                <ul id="nav_purchase" class="collapse in">
+                    <li class=" active"><a href="member_order.html"><i class="fa fa-fw fa-credit-card"></i>我的订单<span
+                            class="badge"></span></a></li>
+                    <li class=""><a href="/adoptions"><i class="fa fa-fw fa-file-text"></i>领养记录</a></li>
+                    <li class=""><a href="/settings/coins"><i class="fa fa-fw fa-money"></i>我的KO币</a></li>
+                    <li class=""><a href="/settings/addresses"><i class="fa fa-fw fa-truck"></i>收货地址</a></li>
+                    <li class=""><a href="/settings/coupons"><i class="fa fa-fw fa-ticket"></i>优惠券</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+</section>
+<a id="go_top" href="#"><i class="fa fa-angle-up fa-2x"></i></a>
+<div class="message-on-top"></div>
+<div id="state"></div>
+<div class="modals">
+    <div id="new-thing-modal" class="modal fade modal--new_thing modal--new_thing-entry">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-plus"></i>分享新产品</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <button data-toggle="modal" data-target="#new-thing-from-url-modal" data-dismiss="modal"
+                            class="btn"><i class="fa fa-globe fa-fw"></i>从网站收集
+                    </button>
+                    <button id="btn-to-new-local-thing-modal" data-target="#new-thing-from-local" data-dismiss="modal"
+                            class="btn"><i class="fa fa-cloud-upload fa-fw"></i>本地上传
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="new-thing-from-url-modal" data-keyboard="false"
+         class="modal fade modal--new_thing modal--new_thing-remote">
+        <form method="get" data-remote="true" accept-charset="UTF-8" action="/things/extract_url" autocomplete="off"
+              id="extract_url_form">
+            <input type="hidden" value="✓" name="utf8"/>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close hidden-md" aria-hidden="true">&times;
+                        </button>
+                        <div class="new-thing-title">
+                            <a href="#" data-target="#new-thing-from-local" data-dismiss="modal" class="btn">本地上传</a>
+                            <h4>通过网页分享新产品</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <input type="url" required="required" placeholder="http://" name="url" id="new-thing-url"
+                               class="form-control dark" autofocus="autofocus"/>
+                        <div class="alert hidden">
+                            很抱歉，这个地址我们不支持，您可以通过
+                            <a href="#" data-target="#new-thing-from-local" data-dismiss="modal">本地上传</a> 来分享此产品。
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn--gray">取消</button>
+                        <button type="submit" class="btn btn--blue">抓取</button>
+                        <div class="using_bm">
+                            <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion" aria-expanded="true"
+                               aria-controls="collapseOne">使用书签分享<i class="fa fa-angle-double-down"></i></a>
+                            <div role="tabpanel" id="collapseOne" class="panel-collapse collapse"
+                                 aria-labelledby="headingOne">
+                                <div class="drop_bm">
+                                    拖拽到书签栏
+                                    <a href="javascript:(function(win,doc,ko){if(win[ko]){win[ko].ui.show();}else{var script=doc.createElement('script');script.id='KO_script';script.setAttribute('charset','utf-8');script.src='https://knewone.com/assets/bookmarklet.js?_c='+Math.floor(+new Date/1e7);doc.body.appendChild(script);}})(window,document,'KO_ROOM');"
+                                       class="disabled"> 分享到 KnewOne</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="new-thing-similar-modal" class="modal modal--new_thing modal--new_thing-similiar fade"></div>
+    <div role="dialog" id="new_private_message_modal" class="modal fade" aria-labelledby="写私信">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" data-remote="true" accept-charset="UTF-8" action="/dialogs" role="form">
+                    <input type="hidden" value="✓" name="utf8"/>
+                    <div class="modal-header">
+                        <button data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">写私信</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="dialog_user_id" name="dialog_user_id"/>
+                        <div class="form-group field-message-receiver">
+         <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input type="text"
+                                                                                                   required="required"
+                                                                                                   class="form-control tt-hint"
+                                                                                                   style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: rgb(255, 255, 255) none repeat scroll 0% 0%;"
+                                                                                                   disabled=""
+                                                                                                   autocomplete="off"
+                                                                                                   spellcheck="false"/><input
+                 type="text" placeholder="用户昵称" required="required" class="form-control tt-input" id="dialog_user_name"
+                 name="dialog_user_name" autocomplete="off" spellcheck="false"
+                 style="position: relative; vertical-align: top; background-color: transparent;" dir="auto"/><pre
+                 aria-hidden="true"
+                 style="position: absolute; visibility: hidden; white-space: nowrap; font-family: Helvetica,Arial,"
+                 microsoft="" yahei",sans-serif;="" font-size:="" 14px;="" font-style:="" normal;="" font-variant:="" font-weight:="" 400;="" word-spacing:="" 0px;="" letter-spacing:="" text-indent:="" text-rendering:="" optimizelegibility;="" text-transform:="" none;"=""></pre>
+             <span class="tt-dropdown-menu"
+                   style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+           <div class="tt-dataset-users"></div></span></span>
+                        </div>
+                        <div id="message-receiver--preset_53bb8b8831302d77db060000"
+                             class="form-group message-receiver--preset is-hidden">
+                            <div class="conversation media">
+                                <div class="media-left pull-left">
+                                    <a href="member_index.html?53bb8b8831302d77db060000" target="_blank"><img width="48"
+                                                                                                              height="48"
+                                                                                                              alt="5185ccad95e0e3aa6243d1b9fcb6dfed"
+                                                                                                              src="../static/images/5185ccad95e0e3aa6243d1b9fcb6dfed.png!small"
+                                                                                                              class="img-circle"/><span>马文</span></a>
+                                </div>
+                                <p class="media-body">我的脑容量相当于一颗行星，他们却让我当客服。so.. 需要我帮忙吗？</p>
+                            </div>
+                        </div>
+                        <div class="form-group field-message-content">
+                            <textarea placeholder="内容" required="required" class="form-control" rows="5"
+                                      id="dialog_content" name="dialog_content"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn--gray">取消</button>
+                        <button type="submit" class="btn btn--blue">发送</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="share_modal" class="modal fade share-modal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close">&times;</button>
+                    <h4 class="modal-title">分享</h4>
+                </div>
+                <div class="modal-body">
+                    <section class="box">
+                        <h5>绑定第三方账号</h5>
+                        <p><a href="member_index.html?auth/weibo?state=%2Forders%2F5693c73483a423083c000256"
+                              class="share-button oauth"><i class="fa fa-weibo fa-4x"></i></a></p>
+                    </section>
+                    <section class="box">
+                        <h5>直接分享</h5>
+                        <p><a href="#socialshare_wechat_modal" data-label="Meskins 创意保暖桌垫" data-action="wechat"
+                              data-category="share" data-toggle="modal" class="share-button js-share--wechat"
+                              title="微信朋友圈分享"><i class="fa fa-weixin fa-4x"></i></a><a
+                                href="http://widget.renren.com/dialog/share?link=https://knewone.com/orders/5693c73483a423083c000256"
+                                title="分享到人人网" target="_blank" class="share-button"><i
+                                class="fa fa-renren fa-4x"></i></a></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div tabindex="-1" role="dialog" id="socialshare_wechat_modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">扫描二维码分享到微信</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="qrcode">
+                        <img role="dialog" id="fallback_help_modal" class="modal fade" aria-hidden="true"/>
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span
+                                            class="sr-only">Close</span></button>
+                                    <h4 class="modal-title">和我们聊天</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>抱歉，客服系统现在繁忙。请邮件留言至邮箱&nbsp;<a href="mailto:help@knewone.com" target="_blank">help@knewone.com</a>&nbsp;，或私信账号“KnewOne销售”，我们将尽快给予回复。不便之处，敬请谅解！
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form method="post" accept-charset="UTF-8" action="/orders/5693c73483a423083c000256/cancel"
+                          role="dialog" tabindex="-1" id="cancel_order_modal" class="modal fade">
+                        <input type="hidden" value="✓" name="utf8"/>
+                        <input type="hidden" value="patch" name="_method"/>
+                        <input type="hidden"
+                               value="DPVTwdyS1wxujq1UVS/ywnpViKeVSDZXwDR9PKnmpabuYlnFvmUec+Id+mhHqSNHOcl8ykT7Y1GIUDG8Xr4mCg=="
+                               name="authenticity_token"/>
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <header class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span
+                                            class="sr-only">Close</span></button>
+                                    <h4 class="modal-title">取消订单</h4>
+                                </header>
+                                <div class="modal-body">
+                                    <div class="radio">
+                                        <label for="order_package_cancel_type_not_now"><input type="radio"
+                                                                                              id="order_package_cancel_type_not_now"
+                                                                                              name="order_package[cancel_type]"
+                                                                                              value="not_now"/>现在不想购买</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="order_package_cancel_type_wrong_order"><input type="radio"
+                                                                                                  id="order_package_cancel_type_wrong_order"
+                                                                                                  name="order_package[cancel_type]"
+                                                                                                  value="wrong_order"/>信息填写错误，重新下单</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="order_package_cancel_type_wrong_commodity"><input type="radio"
+                                                                                                      id="order_package_cancel_type_wrong_commodity"
+                                                                                                      name="order_package[cancel_type]"
+                                                                                                      value="wrong_commodity"/>买错商品</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="order_package_cancel_type_payment_issue"><input type="radio"
+                                                                                                    id="order_package_cancel_type_payment_issue"
+                                                                                                    name="order_package[cancel_type]"
+                                                                                                    value="payment_issue"/>付款遇到问题</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="order_package_cancel_type_expensive"><input type="radio"
+                                                                                                id="order_package_cancel_type_expensive"
+                                                                                                name="order_package[cancel_type]"
+                                                                                                value="expensive"/>发现更低价格</label>
+                                    </div>
+                                    <div class="radio input-group--vertical">
+                                        <label for="order_package_cancel_type_others"><input type="radio"
+                                                                                             id="order_package_cancel_type_others"
+                                                                                             name="order_package[cancel_type]"
+                                                                                             value="others"
+                                                                                             data-linkage="#order_package_cancel_reason"/>其他原因</label>
+                                        <input type="text" id="order_package_cancel_reason"
+                                               name="order_package[cancel_reason]" required="required"
+                                               disabled="disabled" class="form-control"/>
+                                    </div>
+                                </div>
+                                <footer class="modal-footer">
+                                    <button data-dismiss="modal" class="btn btn--gray" type="submit" name="button">取消
+                                    </button>
+                                    <input type="submit" class="btn btn--red" value="确定" name="commit"/>
+                                </footer>
+                            </div>
+                        </div>
+                    </form>
+                    <div tabindex="-1" role="dialog" id="btc_pay" class="modal fade" aria-labelledby="btc_pay_title"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <header class="modal-header">
+                                    <button data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                                    <h4 id="btc_pay_title" class="modal-title">BTC支付</h4>
+                                </header>
+                                <main class="modal-body">
+                                    <p class="text-center">我们接受BTC方式支付，具体方式<a href="#customer_services">请您与我们的客服联系</a>。
+                                    </p>
+                                </main>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="redirect_prompt_modal" class="modal">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-body text-center"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site_maps hidden">
+                    <a href="/maps/things">产品</a>
+                    <a href="/maps/reviews">评测</a>
+                    <a href="/maps/groups">小组</a>
+                    <a href="/maps/topics">帖子</a>
+                    <a href="/maps/categories">分类</a>
+                    <a href="/maps/entries">发现</a>
+                </div>
+                <script src="../static/js/vendor.js"></script>
+                <script src="../static/js/application.js"></script>
+                <!--      <script>Making.OrderPage.InitShow("");</script>
+                      <script type="text/javascript">
+                //<![CDATA[
+                $(function() { Making.start(['Orders', 'OrdersShow']) });
+                //]]>
+                </script>-->
+                <div id="fancy-modal-container"></div>
+                <div id="add-to-list-modal-container"></div>
+                <div class="atwho-container">
+                    <div id="atwho-ground-dialog_content">
+                        <div class="atwho-view" id="at-view-64">
+                            <ul class="atwho-view-ul"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div id="MECHAT-LAYOUT"
+                         style="display: none; border-width: 1px 1px medium; border-style: solid solid none; border-color: rgb(6, 122, 180) rgb(6, 122, 180) -moz-use-text-color; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none;">
+                        <iframe frameborder="no" scrolling="no" style="width:100%;height:100%;border:0;"
+                                src="https://chat.meiqia.com/widget/desktop/index.html?unitid=4075&amp;cookie=006600145252443280165547&amp;cid=0&amp;color=blue"></iframe>
+                    </div>
+                    <div id="MECHAT-PCBTN"
+                         style="background: rgb(6, 122, 180) none repeat scroll 0% 0%; display: none;">
+                        <span style="color: rgb(255, 255, 255); background-position: 0px -27px;"
+                              class="MECHAT-BTNLEAVE">目前客服不在线，请留言并留下您的邮箱</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

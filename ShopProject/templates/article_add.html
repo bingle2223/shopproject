@@ -1,0 +1,436 @@
+{% extends 'index/base.html' %}
+{% load static %}
+{% block head %}
+    <html lang="zh-Hans-CN" prefix="og: http://ogp.me/ns#"
+          class="articles_new settings signed_in production firefox desktop windows js flexbox canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths csscalc landscape scrollbar"
+          style="">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>新建文章</title>
+        <link href="{% static 'css/application.css' %}" media="screen" rel="stylesheet"/>
+        <link href="{%  static 'css/application_sub.css '%} "media="screen" rel="stylesheet"/>
+        <link href="{% static 'css/settings.css' %}" media="screen" rel="stylesheet"/>
+        <link href="{% static 'css/landing.css' %}" media="screen" rel="stylesheet"/>
+        <script src="{% static 'js/before_body.js' %}"></script>
+        <!--[if lt IE 9]>
+  <script>
+    var tip = '建议升级您的浏览器（如 Chrome, Firefox）以获得更好的体验！',
+        url = 'http://browsehappy.com';
+
+    document.execCommand('stop');
+    alert(tip);
+    window.location.href = url;
+  </script>
+<![endif]-->
+    </head>
+{% endblock %}
+{% block content %}
+    <section id="wrapper">
+        <main role="main">
+            <div class="spinner--fullscreen">
+                <em>正在加载</em>
+            </div>
+            <form method="post" accept-charset="UTF-8" action="/settings/articles" id="form-article" class="editor"
+                  style="display: block;">
+                <input type="hidden" value="✓" name="utf8"/>
+                <input type="hidden"
+                       value="5MfeEj33AyUbKgwubyJ8lhqP+KHLwjm1F2x4wHEzdsQGUNQWXwDKWpe5WxJ9pK0TWRMMzBpxbLNfCDRAhmv1aA=="
+                       name="authenticity_token"/>
+                <div class="editor-menu">
+                    <output></output>
+                    <div class="pull-right">
+                        <button type="button" data-toggle="modal" data-target="#editor-help" class="editor-help-toggle">
+                            <i class="fa fa-question"></i>帮助
+                        </button>
+                        <button type="button" class="editor-drop is-hidden">舍弃</button>
+                        <button type="button" class="editor-save">保存</button>
+                        <button type="submit" class="editor-submit">提交</button>
+                    </div>
+                </div>
+                <article data-article-id="5693c4e883a423084000025c" class="editor-content article">
+                    <header>
+                        <input type="text" id="article_title" name="article[title]" placeholder="标题" maxlength="100"
+                               autofocus="autofocus" autocomplete="off" required="required" class="title"/>
+                    </header>
+                    <div contenteditable="true" id="form-article-body" class="body medium-editor-placeholder"
+                         data-placeholder="正文" data-medium-element="true">
+                        <p><br/></p>
+                    </div>
+                    <div class="minsert">
+                        <button type="button" class="minsert-toggle"><i class="fa fa-plus-circle"></i></button>
+                        <ul class="minsert-actions">
+                            <li>
+                                <button type="button" data-action="insert-image" class="minsert-action"><i
+                                        class="fa fa-picture-o"></i></button>
+                            </li>
+                            <li>
+                                <button type="button" data-action="insert-video" class="minsert-action"><i
+                                        class="fa fa-video-camera"></i></button>
+                            </li>
+                            <li>
+                                <button type="button" data-action="insert-embed" class="minsert-action"><i
+                                        class="fa fa-code"></i></button>
+                            </li>
+                            <li>
+                                <button type="button" data-action="insert-rule" class="minsert-action"><i
+                                        class="fa fa-minus"></i></button>
+                            </li>
+                        </ul>
+                        <div class="minsert-input"></div>
+                    </div>
+                    <div class="editor-ctxmenu is-hidden">
+                        <button type="button" data-action="enter"><i class="fa fa-level-down"></i></button>
+                    </div>
+                    <input type="hidden" id="article_content" name="article[content]" value=""/>
+                    <input type="hidden" id="origin" name="origin"/>
+                </article>
+                <input type="hidden" name="draft[key]"
+                       value="54a94b2e31302d3665d10100+draft+%2Farticles%2Fnew+#form-article"/>
+            </form>
+            <input type="file" data-edit="insertImage" data-target="#pictureBtn"
+                   data-domain="https://making-photos.b0.upaiyun.com" data-url="https://v0.api.upyun.com/making-photos"
+                   data-signature="9ceb64d113a92561938ef21eda99440f"
+                   data-policy="eyJidWNrZXQiOiJtYWtpbmctcGhvdG9zIiwiZXhwaXJhdGlvbiI6MTQ1MjUzNTU3Niwic2F2ZS1rZXkiOiIvcmV2aWV3X3Bob3Rvcy97ZmlsZW1kNX17LnN1ZmZpeH0iLCJhbGxvdy1maWxlLXR5cGUiOiJqcGcsanBlZyxnaWYscG5nIiwiY29udGVudC1sZW5ndGgtcmFuZ2UiOiIwLCA0MTk0MzA0IiwieC1nbWtlcmwtcm90YXRlIjoiYXV0byJ9"
+                   accept="image/*" multiple="multiple" id="form-article-image_field" name="file"/>
+            <div id="editor-help" class="modal fade editor-help">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <header class="modal-header">
+                            <button type="button" data-dismiss="modal" class="close"><span
+                                    aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h3 class="modal-title">编辑器使用帮助</h3>
+                        </header>
+                        <div class="modal-body">
+                            <ul role="tablist" class="nav nav-pills">
+                                <li class="active"><a role="tab" href="#insert-media" data-toggle="tab">插入素材</a></li>
+                                <li><a role="tab" href="#typography" data-toggle="tab">内容格式</a></li>
+                                <li><a rale="tab" href="#copy-cut-paste" data-toggle="tab">剪切粘贴</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="insert-media" class="tab-pane active">
+                                    <div class="row well">
+                                        <div class="col-md-6">
+                                            <h4>添加图片</h4>
+                                            <ol class="list-styled">
+                                                <li>移动光标到空行</li>
+                                                <li>点击&nbsp;<i class="fa fa-plus-circle"></i></li>
+                                                <li>点击&nbsp;<i class="fa fa-picture-o"></i></li>
+                                                <li>选择图片开始上传</li>
+                                            </ol>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h4>删除图片</h4>
+                                            <ol class="list-styled">
+                                                <li>点击图片，使图片处于选中状态（黑色边框）</li>
+                                                <li>点击键盘上的删除键删除图片</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                    <em class="spinner-static">加载中</em>
+                                    <img data-src="images/editor-2-065ec81d1c9126d7d5ea351b5e55a3e82eec3291b11fb363af4478b71fa1c603.gif"/>
+                                </div>
+                                <div id="typography" class="tab-pane">
+                                    <div class="well">
+                                        <ol class="list-styled">
+                                            <li>选中需要处理的文本</li>
+                                            <li>在工具条出现后点击相应的格式化按钮</li>
+                                        </ol>
+                                    </div>
+                                    <em class="spinner-static">加载中</em>
+                                    <img data-src="images/editor-1-3cd9572989caf242ac39d1c12050b222584d16a604292cd90ec67919a0b87133.gif"/>
+                                </div>
+                                <div id="copy-cut-paste" class="tab-pane">
+                                    <div class="well">
+                                        <ol class="list-styled">
+                                            <li>点击图片，使图片处于选中状态（黑色边框）</li>
+                                            <li>复制／剪切图片（右键在菜单中点击“复制”／“剪切”；或者使用快捷键）</li>
+                                            <li>在待粘贴的地方回车空一行</li>
+                                            <li>粘贴图片（右键在菜单中点击“粘贴”；或者使用快捷键）</li>
+                                        </ol>
+                                    </div>
+                                    <em class="spinner-static">加载中</em>
+                                    <img data-src="images/editor-3-6fde24660b4e8b39ee178fca2bc43436b83d4a003ac8a93ae2f60470b5ccb886.gif"/>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="modal-footer">
+                            <button type="button" data-dismiss="modal" class="btn btn-primary">关闭</button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <section tabindex="-1" role="dialog" id="thing--embed_form" class="modal fade" aria-labelledby=""
+                     aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <header class="modal-header">
+                                <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span
+                                        class="sr-only">Close</span></button>
+                                <h4 class="modal-title">更换产品图片</h4>
+                            </header>
+                            <div class="modal-body">
+                                <div class="fieldset--photo">
+                                    <figure></figure>
+                                    <footer>
+                                        <button type="button" data-loading-text="上传中..." class="btn btn-primary">
+                                            上传产品图片
+                                        </button>
+                                        <input type="file" data-edit="insertImage" data-target="#pictureBtn"
+                                               data-domain="https://making-photos.b0.upaiyun.com"
+                                               data-url="https://v0.api.upyun.com/making-photos"
+                                               data-signature="9ceb64d113a92561938ef21eda99440f"
+                                               data-policy="eyJidWNrZXQiOiJtYWtpbmctcGhvdG9zIiwiZXhwaXJhdGlvbiI6MTQ1MjUzNTU3Niwic2F2ZS1rZXkiOiIvcmV2aWV3X3Bob3Rvcy97ZmlsZW1kNX17LnN1ZmZpeH0iLCJhbGxvdy1maWxlLXR5cGUiOiJqcGcsanBlZyxnaWYscG5nIiwiY29udGVudC1sZW5ndGgtcmFuZ2UiOiIwLCA0MTk0MzA0IiwieC1nbWtlcmwtcm90YXRlIjoiYXV0byJ9"
+                                               accept="image/*" multiple="multiple" id="file" name="file"/>
+                                    </footer>
+                                </div>
+                            </div>
+                            <footer class="modal-footer">
+                                <button type="button" disabled="true" data-loading-text="正在提交..."
+                                        class="btn btn-success disabled js-submit">提交
+                                </button>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <aside>
+            <nav role="navigation" id="settings_nav" class="nav--sidebar">
+                <div class="nav-group">
+                    <h4><a href="#nav_account" data-parent="#settings_nav" data-toggle="collapse">账户</a></h4>
+                    <ul id="nav_account" class="collapse in">
+                        <li class=""><a href="/settings/profile"><i class="fa fa-fw fa-user"></i>个人信息</a></li>
+                        <li class=""><a href="/settings/account"><i class="fa fa-fw fa-cogs"></i>账户信息</a></li>
+                        <li class=""><a href="/settings/notification_settings"><i class="fa fa-fw fa-inbox"></i>通知设置</a>
+                        </li>
+                        <li class=""><a href="/settings/articles"><i class="fa fa-fw fa-pencil-square"></i>我的文章</a></li>
+                        <li class=""><a href="/settings/drafts"><i class="fa fa-fw fa-pencil-square-o"></i>我的草稿</a></li>
+                    </ul>
+                </div>
+                <div class="nav-group">
+                    <h4><a href="#nav_purchase" data-parent="#settings_nav" data-toggle="collapse">购买</a></h4>
+                    <ul id="nav_purchase" class="collapse in">
+                        <li class=""><a href="member_order.html"><i class="fa fa-fw fa-credit-card"></i>我的订单<span
+                                class="badge"></span></a></li>
+                        <li class=""><a href="/adoptions"><i class="fa fa-fw fa-file-text"></i>领养记录</a></li>
+                        <li class=""><a href="/settings/coins"><i class="fa fa-fw fa-money"></i>我的KO币</a></li>
+                        <li class=""><a href="/settings/addresses"><i class="fa fa-fw fa-truck"></i>收货地址</a></li>
+                        <li class=""><a href="/settings/coupons"><i class="fa fa-fw fa-ticket"></i>优惠券</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+    </section>
+    <a id="go_top" href="#"><i class="fa fa-angle-up fa-2x"></i></a>
+    <div class="message-on-top"></div>
+    <div id="state"></div>
+    <div class="modals">
+        <div id="new-thing-modal" class="modal fade modal--new_thing modal--new_thing-entry">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"><i class="fa fa-plus"></i>分享新产品</h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <button data-toggle="modal" data-target="#new-thing-from-url-modal" data-dismiss="modal"
+                                class="btn"><i class="fa fa-globe fa-fw"></i>从网站收集
+                        </button>
+                        <button id="btn-to-new-local-thing-modal" data-target="#new-thing-from-local"
+                                data-dismiss="modal" class="btn"><i class="fa fa-cloud-upload fa-fw"></i>本地上传
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="new-thing-from-url-modal" data-keyboard="false"
+             class="modal fade modal--new_thing modal--new_thing-remote">
+            <form method="get" data-remote="true" accept-charset="UTF-8" action="/things/extract_url" autocomplete="off"
+                  id="extract_url_form">
+                <input type="hidden" value="✓" name="utf8"/>
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" class="close hidden-md" aria-hidden="true">
+                                &times;
+                            </button>
+                            <div class="new-thing-title">
+                                <a href="#" data-target="#new-thing-from-local" data-dismiss="modal"
+                                   class="btn">本地上传</a>
+                                <h4>通过网页分享新产品</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <input type="url" required="required" placeholder="http://" name="url" id="new-thing-url"
+                                   class="form-control dark" autofocus="autofocus"/>
+                            <div class="alert hidden">
+                                很抱歉，这个地址我们不支持，您可以通过
+                                <a href="#" data-target="#new-thing-from-local" data-dismiss="modal">本地上传</a> 来分享此产品。
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-dismiss="modal" class="btn btn--gray">取消</button>
+                            <button type="submit" class="btn btn--blue">抓取</button>
+                            <div class="using_bm">
+                                <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion"
+                                   aria-expanded="true" aria-controls="collapseOne">使用书签分享<i
+                                        class="fa fa-angle-double-down"></i></a>
+                                <div role="tabpanel" id="collapseOne" class="panel-collapse collapse"
+                                     aria-labelledby="headingOne">
+                                    <div class="drop_bm">
+                                        拖拽到书签栏
+                                        <a href="javascript:(function(win,doc,ko){if(win[ko]){win[ko].ui.show();}else{var script=doc.createElement('script');script.id='KO_script';script.setAttribute('charset','utf-8');script.src='https://knewone.com/assets/bookmarklet.js?_c='+Math.floor(+new Date/1e7);doc.body.appendChild(script);}})(window,document,'KO_ROOM');"
+                                           class="disabled"> 分享到 KnewOne</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="new-thing-similar-modal" class="modal modal--new_thing modal--new_thing-similiar fade"></div>
+        <div role="dialog" id="new_private_message_modal" class="modal fade" aria-labelledby="写私信">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="post" data-remote="true" accept-charset="UTF-8" action="/dialogs" role="form">
+                        <input type="hidden" value="✓" name="utf8"/>
+                        <div class="modal-header">
+                            <button data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">写私信</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" id="dialog_user_id" name="dialog_user_id"/>
+                            <div class="form-group field-message-receiver">
+         <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input type="text"
+                                                                                                   required="required"
+                                                                                                   class="form-control tt-hint"
+                                                                                                   style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: rgb(255, 255, 255) none repeat scroll 0% 0%;"
+                                                                                                   disabled=""
+                                                                                                   autocomplete="off"
+                                                                                                   spellcheck="false"/><input
+                 type="text" placeholder="用户昵称" required="required" class="form-control tt-input" id="dialog_user_name"
+                 name="dialog_user_name" autocomplete="off" spellcheck="false"
+                 style="position: relative; vertical-align: top; background-color: transparent;" dir="auto"/><pre
+                 aria-hidden="true"
+                 style="position: absolute; visibility: hidden; white-space: nowrap; font-family: Helvetica,Arial,"
+                 microsoft="" yahei",sans-serif;="" font-size:="" 14px;="" font-style:="" normal;="" font-variant:="" font-weight:="" 400;="" word-spacing:="" 0px;="" letter-spacing:="" text-indent:="" text-rendering:="" optimizelegibility;="" text-transform:="" none;"=""></pre>
+             <span class="tt-dropdown-menu"
+                   style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+           <div class="tt-dataset-users"></div></span></span>
+                            </div>
+                            <div id="message-receiver--preset_53bb8b8831302d77db060000"
+                                 class="form-group message-receiver--preset is-hidden">
+                                <div class="conversation media">
+                                    <div class="media-left pull-left">
+                                        <a href="member_index.html?53bb8b8831302d77db060000" target="_blank"><img
+                                                width="48" height="48" alt="5185ccad95e0e3aa6243d1b9fcb6dfed"
+                                                src="../static/images/5185ccad95e0e3aa6243d1b9fcb6dfed.png!small"
+                                                class="img-circle"/><span>马文</span></a>
+                                    </div>
+                                    <p class="media-body">我的脑容量相当于一颗行星，他们却让我当客服。so.. 需要我帮忙吗？</p>
+                                </div>
+                            </div>
+                            <div class="form-group field-message-content">
+                                <textarea placeholder="内容" required="required" class="form-control" rows="5"
+                                          id="dialog_content" name="dialog_content"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button data-dismiss="modal" class="btn btn--gray">取消</button>
+                            <button type="submit" class="btn btn--blue">发送</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="share_modal" class="modal fade share-modal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close">&times;</button>
+                        <h4 class="modal-title">分享</h4>
+                    </div>
+                    <div class="modal-body">
+                        <section class="box">
+                            <h5>绑定第三方账号</h5>
+                            <p><a href="member_index.html?auth/weibo?state=%2Farticles%2Fnew"
+                                  class="share-button oauth"><i class="fa fa-weibo fa-4x"></i></a></p>
+                        </section>
+                        <section class="box">
+                            <h5>直接分享</h5>
+                            <p><a href="#socialshare_wechat_modal" data-label="阿斗" data-action="wechat"
+                                  data-category="share" data-toggle="modal" class="share-button js-share--wechat"
+                                  title="微信朋友圈分享"><i class="fa fa-weixin fa-4x"></i></a><a
+                                    href="http://widget.renren.com/dialog/share?link=https://knewone.com/articles/new"
+                                    title="分享到人人网" target="_blank" class="share-button"><i
+                                    class="fa fa-renren fa-4x"></i></a></p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div tabindex="-1" role="dialog" id="socialshare_wechat_modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span
+                                class="sr-only">Close</span></button>
+                        <h4 class="modal-title">扫描二维码分享到微信</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="qrcode">
+                            <img role="dialog" id="fallback_help_modal" class="modal fade" aria-hidden="true"/>
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" data-dismiss="modal" class="close"><span
+                                                aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                        </button>
+                                        <h4 class="modal-title">和我们聊天</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>抱歉，客服系统现在繁忙。请邮件留言至邮箱&nbsp;<a href="mailto:help@knewone.com" target="_blank">help@knewone.com</a>&nbsp;，或私信账号“KnewOne销售”，我们将尽快给予回复。不便之处，敬请谅解！
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site_maps hidden">
+                        <a href="/maps/things">产品</a>
+                        <a href="/maps/reviews">评测</a>
+                        <a href="/maps/groups">小组</a>
+                        <a href="/maps/topics">帖子</a>
+                        <a href="/maps/categories">分类</a>
+                        <a href="/maps/entries">发现</a>
+                    </div>
+                    <script src="/static/js/vendor.js"></script>
+                    <script src="/static/js/application.js"></script>
+                    <script>new Making.Views.FullscreenEditor({
+                        el: '#form-article',
+                        model: new Making.Models.Editor(),
+                        type: 'article',
+                        buttons: ['header1', 'header2', 'anchor', 'bold', 'italic', 'strikethrough', 'orderedlist', 'unorderedlist', 'quote'],
+                        imageField: '#form-article-image_field',
+                        excludeField: '[name="utf8"], [name="authenticity_token"]',
+                        draftType: 'server',
+                        placeholder: '正文',
+                        imageSize: 'huge'
+                    }).render();
+                    Making.embedThing('#form-article');
+                    if ($('#author_autocomplete').length) {
+                        Making.UserFuzzy('#author_autocomplete', '[name="article[author_id]"]');
+                    }</script>
+                    <!--      <script type="text/javascript">
+                    //<![CDATA[
+                    $(function() { Making.start(['Articles', 'ArticlesNew']) });
+                    //]]>
+                    </script>-->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

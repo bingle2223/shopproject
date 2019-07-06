@@ -1,0 +1,453 @@
+{% extends 'index/base.html' %}
+{% load static %}
+{% block head %}
+<html lang="zh-Hans-CN" prefix="og: http://ogp.me/ns#"
+      class="users_owns signed_in production firefox desktop windows js flexbox canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths csscalc landscape scrollbar"
+      style="">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>个人中心 - 拥有</title>
+    <link href="{% static 'css/application.css' %}" media="screen" rel="stylesheet"/>
+    <link href="{% static 'css/application_sub.css' %}" media="screen" rel="stylesheet"/>
+    <link href="{% static 'css/users.css' %}" media="screen" rel="stylesheet"/>
+    <script src="{% static 'js/before_body.js' %}"></script>
+    <!--[if lt IE 9]>
+  <script>
+    var tip = '建议升级您的浏览器（如 Chrome, Firefox）以获得更好的体验！',
+        url = 'http://browsehappy.com';
+
+    document.execCommand('stop');
+    alert(tip);
+    window.location.href = url;
+  </script>
+<![endif]-->
+</head>
+<body>
+<!--— End Google Tag Manager —-->
+{% endblock %}
+{% block content %}
+
+<section id="wrapper">
+    <header itemtype="http://schema.org/Person" itemscope="" class="vcard">
+        <figure class="vcard-canopy">
+            <img src="../static/images/0e8d53847adc2b1e78740c55e553eefa.jpg!background" alt="canopy"/>
+            <div class="vcard-canopy-mask"></div>
+        </figure>
+        <div class="vcard-main">
+            <a href="member_index.html?54a94b2e31302d3665d10100" class="vcard-avatar"><img width="60" height="60"
+                                                                                           src="../static/images/13.png"
+                                                                                           alt="阿斗"
+                                                                                           itemprop="image"/></a>
+            <div class="vcard-setting-avatar">
+                <input type="file" title="上传新头像" accept="image/*" id="user_avatar" name="user[avatar]"/>
+            </div>
+            <div title="阿斗" itemprop="name" class="vcard-name">
+                阿斗
+            </div>
+            <div class="vcard-level" data-original-title="" title="">
+                <div class="level">
+                    <div class="level-number">
+                        lv. 1
+                    </div>
+                    <div class="level-progress">
+                        <div style="width: 70.66666666666667%" class="level-progress_bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div itemprop="gender" class="vcard-gender"></div>
+        </div>
+        <div class="vcard-setting-canopy">
+            <button type="button" id="select_canopy_btn" data-toggle="modal" data-target="#user_canopy_picker_modal"
+                    class="btn">选择背景
+            </button>
+            <div id="upload_canopy_btn" class="btn">
+                <span>上传新背景</span>
+                <input type="file" data-domain="https://making-photos.b0.upaiyun.com"
+                       data-url="https://v0.api.upyun.com/making-photos"
+                       data-signature="f75f4ddfef093ea65a9a5a8e9afe8e81"
+                       data-policy="eyJidWNrZXQiOiJtYWtpbmctcGhvdG9zIiwiZXhwaXJhdGlvbiI6MTQ1MjUzNzUxMywic2F2ZS1rZXkiOiIvcGhvdG9zL3tmaWxlbWQ1fXsuc3VmZml4fSIsImFsbG93LWZpbGUtdHlwZSI6ImpwZyxqcGVnLGdpZixwbmciLCJjb250ZW50LWxlbmd0aC1yYW5nZSI6IjAsIDQxOTQzMDQiLCJ4LWdta2VybC1yb3RhdGUiOiJhdXRvIn0="
+                       accept="image/*" id="user_canopy_field" name="file"/>
+            </div>
+        </div>
+        <div class="vcard-setting">
+            <button type="button" id="edit_profile_btn" class="btn">编辑个人信息</button>
+            <button type="button" id="cancel_edit_profile_btn" class="btn">取消</button>
+            <button type="button" id="save_profile_btn" class="btn">保存个人信息</button>
+        </div>
+        <div class="vcard-friendship">
+            <div itemprop="follows" class="vcard-follows">
+                <a href="member_index.html?54a94b2e31302d3665d10100/followings"
+                   class="vcard-followings">关注<em>4</em></a>
+                <a href="member_index.html?54a94b2e31302d3665d10100/followers" class="vcard-followers">关注者<em>0</em></a>
+            </div>
+        </div>
+    </header>
+    <nav class="page-nav--tiny visible-xs-block">
+        <ul>
+            <li><a href="member_index.html?54a94b2e31302d3665d10100"><i class="fa fa-home"></i></a></li>
+            <li class=" active"><a href="member_index.html?54a94b2e31302d3665d10100/fancies"><i class="fa fa-cube"></i></a>
+            </li>
+            <li><a href="member_index.html?54a94b2e31302d3665d10100/favorites"><i class="fa fa-star"></i></a></li>
+            <li><a href="member_index.html?54a94b2e31302d3665d10100/lists"><i class="fa fa-list-ko"></i></a></li>
+            <li><a href="member_index.html?54a94b2e31302d3665d10100/articles"><i class="fa fa-pencil"></i></a></li>
+        </ul>
+    </nav>
+    <nav class="page-nav hidden-xs">
+        <ul>
+            <li class="nav-activities"><a href="member_index.html?54a94b2e31302d3665d10100"><i class="fa fa-bars"></i>动态</a>
+            </li>
+            <li class="nav-fancies"><a href="member_index.html?54a94b2e31302d3665d10100/fancies"><i
+                    class="fa fa-heart"></i>喜欢
+                <small>6</small>
+            </a></li>
+            <li class="nav-desires"><a href="member_index.html?54a94b2e31302d3665d10100/desires"><i
+                    class="fa fa-desire"></i>想要
+                <small>0</small>
+            </a></li>
+            <li class="nav-favorites"><a href="member_index.html?54a94b2e31302d3665d10100/favorites"><i
+                    class="fa fa-star"></i>收藏
+                <small>1</small>
+            </a></li>
+            <li class="nav-owns active"><a href="member_index.html?54a94b2e31302d3665d10100/owns"><i
+                    class="fa fa-check-circle-o"></i>拥有
+                <small>1</small>
+            </a></li>
+            <li class="nav-things"><a href="member_index.html?54a94b2e31302d3665d10100/things"><i
+                    class="fa fa-magic"></i>分享
+                <small>3</small>
+            </a></li>
+            <li class="nav-lists"><a href="member_index.html?54a94b2e31302d3665d10100/lists"><i
+                    class="fa fa-list-ko"></i>列表
+                <small>1</small>
+            </a></li>
+            <li class="nav-articles"><a href="member_index.html?54a94b2e31302d3665d10100/articles"><i
+                    class="fa fa-pencil"></i>文章
+                <small>2</small>
+            </a></li>
+            <li class="nav-discussions"><a href="member_index.html?54a94b2e31302d3665d10100/discussions"><i
+                    class="fa fa-comments"></i>讨论
+                <small>1</small>
+            </a></li>
+            <li class="nav-topics"><a href="member_index.html?54a94b2e31302d3665d10100/topics"><i
+                    class="fa fa-leaf"></i>话题
+                <small>0</small>
+            </a></li>
+        </ul>
+    </nav>
+    <nav class="page-subnav visible-xs-block">
+        <ul class="nav nav--line nav--justified">
+            <li><a href="member_index.html?54a94b2e31302d3665d10100/fancies">喜欢
+                <small>6</small>
+            </a></li>
+            <li><a href="member_index.html?54a94b2e31302d3665d10100/desires">想要
+                <small>0</small>
+            </a></li>
+            <li class=" active"><a href="member_index.html?54a94b2e31302d3665d10100/owns">拥有
+                <small>1</small>
+            </a></li>
+            <li><a href="member_index.html?54a94b2e31302d3665d10100/things">分享
+                <small>3</small>
+            </a></li>
+        </ul>
+    </nav>
+    <div class="page-content">
+        <ul class="block_list">
+            <li class="thing">
+                <header>
+                    <div class="thing-cover">
+                        <a href="discover_detail.html?3333-a-sa-sa-shi" target="_blank"><img
+                                src="../static/images/50ba35cf6a7b80df8cf51299546edfd0.gif!thing.fixed"
+                                alt="3333 啊飒飒是"/></a>
+                    </div>
+                    <a href="discover_detail.html?3333-a-sa-sa-shi" title="3333 啊飒飒是" class="thing-title"
+                       target="_blank"><h4>3333 啊飒飒是</h4></a>
+                    <a href="#" data-type="edit" data-from="user" data-fancy="56872226fed5a005170007ef"><i
+                            class="fa fa-pencil-square-o fa-alone"></i></a>
+                </header>
+                <footer>
+                    <ul class="thing-counts">
+                        <li><a href="discover_detail.html?3333-a-sa-sa-shi" target="_blank"><i
+                                class="fa fa-heart-o"></i>1</a></li>
+                        <li><a href="discover_detail.html?3333-a-sa-sa-shi" target="_blank"><i
+                                class="fa fa-check-circle-o"></i>1</a></li>
+                    </ul>
+                    <section class="thing_impression">
+                        <div class="score">
+                            <div class="rate">
+                                <span class="star"></span>
+                                <span class="star"></span>
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                                <span class="star active"></span>
+                            </div>
+                        </div>
+                    </section>
+                </footer>
+            </li>
+        </ul>
+    </div>
+</section>
+<a id="go_top" href="#" style="display: inline;"><i class="fa fa-angle-up fa-2x"></i></a>
+<div class="message-on-top"></div>
+<div id="state"></div>
+<div class="modals">
+    <div id="new-thing-modal" class="modal fade modal--new_thing modal--new_thing-entry">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-plus"></i>分享新产品</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <button data-toggle="modal" data-target="#new-thing-from-url-modal" data-dismiss="modal"
+                            class="btn"><i class="fa fa-globe fa-fw"></i>从网站收集
+                    </button>
+                    <button id="btn-to-new-local-thing-modal" data-target="#new-thing-from-local" data-dismiss="modal"
+                            class="btn"><i class="fa fa-cloud-upload fa-fw"></i>本地上传
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="new-thing-from-url-modal" data-keyboard="false"
+         class="modal fade modal--new_thing modal--new_thing-remote">
+        <form method="get" data-remote="true" accept-charset="UTF-8" action="/things/extract_url" autocomplete="off"
+              id="extract_url_form">
+            <input type="hidden" value="✓" name="utf8"/>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close hidden-md" aria-hidden="true">&times;
+                        </button>
+                        <div class="new-thing-title">
+                            <a href="#" data-target="#new-thing-from-local" data-dismiss="modal" class="btn">本地上传</a>
+                            <h4>通过网页分享新产品</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <input type="url" required="required" placeholder="http://" name="url" id="new-thing-url"
+                               class="form-control dark" autofocus="autofocus"/>
+                        <div class="alert hidden">
+                            很抱歉，这个地址我们不支持，您可以通过
+                            <a href="#" data-target="#new-thing-from-local" data-dismiss="modal">本地上传</a> 来分享此产品。
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn--gray">取消</button>
+                        <button type="submit" class="btn btn--blue">抓取</button>
+                        <div class="using_bm">
+                            <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion" aria-expanded="true"
+                               aria-controls="collapseOne">使用书签分享<i class="fa fa-angle-double-down"></i></a>
+                            <div role="tabpanel" id="collapseOne" class="panel-collapse collapse"
+                                 aria-labelledby="headingOne">
+                                <div class="drop_bm">
+                                    拖拽到书签栏
+                                    <a href="javascript:(function(win,doc,ko){if(win[ko]){win[ko].ui.show();}else{var script=doc.createElement('script');script.id='KO_script';script.setAttribute('charset','utf-8');script.src='https://knewone.com/assets/bookmarklet.js?_c='+Math.floor(+new Date/1e7);doc.body.appendChild(script);}})(window,document,'KO_ROOM');"
+                                       class="disabled"> 分享到 KnewOne</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="new-thing-similar-modal" class="modal modal--new_thing modal--new_thing-similiar fade"></div>
+    <div role="dialog" id="new_private_message_modal" class="modal fade" aria-labelledby="写私信">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" data-remote="true" accept-charset="UTF-8" action="/dialogs" role="form">
+                    <input type="hidden" value="✓" name="utf8"/>
+                    <div class="modal-header">
+                        <button data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">写私信</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" value="54a94b2e31302d3665d10100" id="dialog_user_id"
+                               name="dialog_user_id"/>
+                        <div class="form-group field-message-receiver">
+         <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input type="text"
+                                                                                                   required="required"
+                                                                                                   class="form-control tt-hint"
+                                                                                                   value="阿斗"
+                                                                                                   style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: rgb(255, 255, 255) none repeat scroll 0% 0%;"
+                                                                                                   disabled=""
+                                                                                                   autocomplete="off"
+                                                                                                   spellcheck="false"/><input
+                 type="text" placeholder="用户昵称" required="required" class="form-control tt-input" value="阿斗"
+                 id="dialog_user_name" name="dialog_user_name" autocomplete="off" spellcheck="false"
+                 style="position: relative; vertical-align: top; background-color: transparent;" dir="auto"/><pre
+                 aria-hidden="true"
+                 style="position: absolute; visibility: hidden; white-space: nowrap; font-family: Helvetica,Arial,"
+                 microsoft="" yahei",sans-serif;="" font-size:="" 14px;="" font-style:="" normal;="" font-variant:="" font-weight:="" 400;="" word-spacing:="" 0px;="" letter-spacing:="" text-indent:="" text-rendering:="" optimizelegibility;="" text-transform:="" none;"=""></pre>
+             <span class="tt-dropdown-menu"
+                   style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+           <div class="tt-dataset-users"></div></span></span>&nbsp;&nbsp;&nbsp;
+                            <a href="/dialogs/5693c914420fc26b5b000292">查看以前的记录</a>
+                        </div>
+                        <div id="message-receiver--preset_53bb8b8831302d77db060000"
+                             class="form-group message-receiver--preset is-hidden">
+                            <div class="conversation media">
+                                <div class="media-left pull-left">
+                                    <a href="member_index.html?53bb8b8831302d77db060000" target="_blank"><img width="48"
+                                                                                                              height="48"
+                                                                                                              alt="5185ccad95e0e3aa6243d1b9fcb6dfed"
+                                                                                                              src="../static/images/5185ccad95e0e3aa6243d1b9fcb6dfed.png!small"
+                                                                                                              class="img-circle"/><span>马文</span></a>
+                                </div>
+                                <p class="media-body">我的脑容量相当于一颗行星，他们却让我当客服。so.. 需要我帮忙吗？</p>
+                            </div>
+                        </div>
+                        <div class="form-group field-message-content">
+                            <textarea placeholder="内容" required="required" class="form-control" rows="5"
+                                      id="dialog_content" name="dialog_content"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn--gray">取消</button>
+                        <button type="submit" class="btn btn--blue">发送</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="share_modal" class="modal fade share-modal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close">&times;</button>
+                    <h4 class="modal-title">分享</h4>
+                </div>
+                <div class="modal-body">
+                    <section class="box">
+                        <h5>绑定第三方账号</h5>
+                        <p><a href="member_index.html?auth/weibo?state=%2Fusers%2F54a94b2e31302d3665d10100%2Fowns"
+                              class="share-button oauth"><i class="fa fa-weibo fa-4x"></i></a></p>
+                    </section>
+                    <section class="box">
+                        <h5>直接分享</h5>
+                        <p><a href="#socialshare_wechat_modal" data-label="阿斗" data-action="wechat"
+                              data-category="share" data-toggle="modal" class="share-button js-share--wechat"
+                              title="微信朋友圈分享"><i class="fa fa-weixin fa-4x"></i></a><a
+                                href="http://widget.renren.com/dialog/share?link=https://knewone.com/users/54a94b2e31302d3665d10100/owns"
+                                title="分享到人人网" target="_blank" class="share-button"><i
+                                class="fa fa-renren fa-4x"></i></a></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div tabindex="-1" role="dialog" id="socialshare_wechat_modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">扫描二维码分享到微信</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="qrcode">
+                        <img role="dialog" id="fallback_help_modal" class="modal fade" aria-hidden="true"/>
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span
+                                            class="sr-only">Close</span></button>
+                                    <h4 class="modal-title">和我们聊天</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>抱歉，客服系统现在繁忙。请邮件留言至邮箱&nbsp;<a href="mailto:help@knewone.com" target="_blank">help@knewone.com</a>&nbsp;，或私信账号“KnewOne销售”，我们将尽快给予回复。不便之处，敬请谅解！
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="user_canopy_picker_modal" class="modal image_picker fade" aira-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <a href="#" data-dismiss="modal" class="close">&times;</a>
+                                </div>
+                                <div class="modal-body">
+                                    <a href="#"
+                                       data-url="https://making-photos.b0.upaiyun.com/photos/0e8d53847adc2b1e78740c55e553eefa.jpg"
+                                       class="image_picker-item is-active"><i
+                                            class="image_picker-checkbox fa fa-check"></i><img
+                                            alt="0e8d53847adc2b1e78740c55e553eefa.jpg!thing.fixed"
+                                            src="../static/images/0e8d53847adc2b1e78740c55e553eefa.jpg!thing.fixed.small"/></a>
+                                    <a href="#"
+                                       data-url="https://making-photos.b0.upaiyun.com/photos/71a9c6b6b64def98c19f0c19f399cfba.jpg"
+                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
+                                            alt="71a9c6b6b64def98c19f0c19f399cfba.jpg!thing.fixed"
+                                            src="../static/images/71a9c6b6b64def98c19f0c19f399cfba.jpg!thing.fixed.small"/></a>
+                                    <a href="#"
+                                       data-url="https://making-photos.b0.upaiyun.com/photos/dd2699adc803ccf0420f442b29674d79.jpg"
+                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
+                                            alt="Dd2699adc803ccf0420f442b29674d79.jpg!thing.fixed"
+                                            src="../static/images/dd2699adc803ccf0420f442b29674d79.jpg!thing.fixed.small"/></a>
+                                    <a href="#"
+                                       data-url="https://making-photos.b0.upaiyun.com/photos/38613cb2a18c3d3d7604b5f94efaa281.jpg"
+                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
+                                            alt="38613cb2a18c3d3d7604b5f94efaa281.jpg!thing.fixed"
+                                            src="../static/images/38613cb2a18c3d3d7604b5f94efaa281.jpg!thing.fixed.small"/></a>
+                                    <a href="#"
+                                       data-url="https://making-photos.b0.upaiyun.com/photos/a3feeac5922c1ca976e32463360ccc6b.jpg"
+                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
+                                            alt="A3feeac5922c1ca976e32463360ccc6b.jpg!thing.fixed"
+                                            src="../static/images/a3feeac5922c1ca976e32463360ccc6b.jpg!thing.fixed.small"/></a>
+                                    <a href="#"
+                                       data-url="https://making-photos.b0.upaiyun.com/photos/ea4d728679d3d14db4ae2c988e5c307a.jpg"
+                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
+                                            alt="Ea4d728679d3d14db4ae2c988e5c307a.jpg!thing.fixed"
+                                            src="../static/images/ea4d728679d3d14db4ae2c988e5c307a.jpg!thing.fixed.small"/></a>
+                                    <a href="#"
+                                       data-url="https://making-photos.b0.upaiyun.com/photos/1c5228b8da2d5b38ea355a6a7bb58dc0.jpg"
+                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
+                                            alt="1c5228b8da2d5b38ea355a6a7bb58dc0.jpg!thing.fixed"
+                                            src="../static/images/1c5228b8da2d5b38ea355a6a7bb58dc0.jpg!thing.fixed.small"/></a>
+                                    <a href="#"
+                                       data-url="https://making-photos.b0.upaiyun.com/photos/417630b019e3c3a180b510d1c7ad5bb4.jpg"
+                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
+                                            alt="417630b019e3c3a180b510d1c7ad5bb4.jpg!thing.fixed"
+                                            src="../static/images/417630b019e3c3a180b510d1c7ad5bb4.jpg!thing.fixed.small"/></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site_maps hidden">
+                    <a href="/maps/things">产品</a>
+                    <a href="/maps/reviews">评测</a>
+                    <a href="/maps/groups">小组</a>
+                    <a href="/maps/topics">帖子</a>
+                    <a href="/maps/categories">分类</a>
+                    <a href="/maps/entries">发现</a>
+                </div>
+                <script src="../static/js/vendor.js"></script>
+                <script src="../static/js/application.js"></script>
+                <script>$('.vcard-level').popover({
+                    title: '等级：1',
+                    content: '<p>当前经验值：106</p><p>升级进度：70.7%</p><p>分享产品被推荐即获 120 个KO币</p><p><p>写文章被推荐即获 1100 个KO币</p>',
+                    html: true,
+                    trigger: 'hover'
+                })</script>
+                <!--      <script type="text/javascript">
+                //<![CDATA[
+                $(function() { Making.start(['Users', 'UsersOwns']) });
+                //]]>
+                </script>-->
+                <div id="fancy-modal-container"></div>
+                <div id="add-to-list-modal-container"></div>
+                <div class="atwho-container">
+                    <div id="atwho-ground-dialog_content">
+                        <div class="atwho-view" id="at-view-64">
+                            <ul class="atwho-view-ul"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

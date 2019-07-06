@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{{ title }}</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/css.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/public.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/page.css' %}" />
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/public.js' %}"></script>
+
+    {% block ext_css %}
+
+    {% endblock %}
+
+    {% block ext_js %}
+
+    {% endblock %}
+</head>
+
+<body>
+	<!-- 头部 -->
+	{% block header %}
+
+	{% endblock %}
+
+	<!-- 左边栏 -->
+    {% block left %}
+
+    {% endblock %}
+
+    <!-- 右边显示区 -->
+    {% block right %}
+
+    {% endblock %}
+
+    <!-- 底部 -->
+    {% block footer %}
+
+    {% endblock %}
+
+        <!-- 动态js -->
+    {% block js %}
+
+    {% endblock %}
+
+</body>
+</html>

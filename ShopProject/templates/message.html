@@ -1,0 +1,123 @@
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" /> 
+  <meta content="320" name="MobileOptimized" /> 
+  <meta content="on" http-equiv="cleartype" /> 
+  <title>留言</title> 
+  <style>
+    .status-success,
+    .status-error {
+        background-image: url(../static/images/sendstate.png");
+    }
+    .icon {
+        background-image: url(../static/images/icon_pc.png");
+    }
+    .emoji-face {
+        background-image: url(../static/images/emoji.png");
+    }
+    .mini-emoji-face  {
+        background-image: url(../static/images/emoji.png");
+    }
+    </style> 
+  <link href="../static/css/style.min.css?v=2.8.6" type="text/css" rel="stylesheet" />
+  <!--[if lte IE 8]>
+    <style type="text/css">
+        .mini-emoji-face{width: 24px;height: 24px;vertical-align: middle;background-size: 100px 250px;}
+    </style>
+    <![endif]--> 
+  <!--[if IE 8]>
+    <style type="text/css">.img-sm{max-width:none;width:150px;}</style>
+    <![endif]--> 
+ </head> 
+ <body> 
+  <div class="initial h" id="mechat"> 
+   <div class="header h60" id="header" style="background: rgb(6, 122, 180) none repeat scroll 0% 0%;"> 
+    <div class="fr h w90 tr"> 
+     <a title="开/关 声音" id="J_vocie" class="oper_btn" href="javascript:void(0);"> <span class="icon icon-voice"></span> </a> 
+     <a title="最大化窗口" id="J_max" class="oper_btn" href="javascript:void(0);" style="display: none;"> <span class="icon icon-max"></span> </a> 
+     <a title="最小化窗口" id="J_min" class="oper_btn" href="javascript:void(0);" style="display: none;"> <span class="icon icon-min"></span> </a> 
+    </div> 
+    <div class="operator"> 
+     <img id="oper-head" alt="" class="head-md fl" src="../static/images/head.png" />
+     <div class="ml50 white ie-title"> 
+      <p class="h20"> <span id="oper-name" class="oper-name"> <span class="white">请稍等</span> <span title="联系方式" class="icon icon-contact"></span> <span class="arrow-tc" style="display: none;"></span> <span class="contact" style="display: none;"></span> </span> </p> 
+      <p id="oper-company" class="f12 h20 lh20">正在连接...</p> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="notice_bar"></div> 
+   <!--  /#notice_bar  --> 
+   <div id="online-loading" style="display: none;"> 
+    <img alt="加载中..." src="../static/images/sending.gif" />
+   </div> 
+   <!-- /#online-loading --> 
+   <div class="wrap h280 flow" id="wrap"> 
+    <ul> 
+    </ul> 
+   </div> 
+   <div class="footer h80" id="footer"> 
+    <div id="face-con" class="face-con"> 
+     <ul class="clearfix"> 
+     </ul> 
+    </div> 
+    <div class="footer-con"> 
+     <div class="text-layout"> 
+      <textarea id="MC_input" class="text grey">请输入...</textarea> 
+     </div> 
+     <div class="ft-btns clearfix"> 
+      <a id="face-btn" class="pa" title="表情" href="javascript:void(0);"> <span class="icon icon-face"></span> </a> 
+      <a id="MC_imgUp" title="上传图片" class="ml25 pa" href="javascript:void(0);"> <span title="上传图片" class="icon icon-img"></span> 
+       <form title="上传图片" target="mechat_imgup_iframe" enctype="multipart/form-data" method="POST" action="https://up.qbox.me"> 
+        <input type="file" class="img-file" accept="image/*" name="file" /> 
+        <input type="hidden" class="file_key" value="" name="key" /> 
+        <input type="hidden" class="file_token" value="" name="token" /> 
+       </form> </a> 
+      <input type="button" id="MC_submit" value="发送" class="btn send-btn" style="background: rgb(6, 122, 180) none repeat scroll 0% 0%; color: rgb(255, 255, 255);" /> 
+     </div> 
+    </div> 
+    <div id="leaveTips" style="display: block;"> 
+     <div class="tips-shadow" style="display: block;"></div> 
+     <div class="tips-title" style="display: block;">
+      客服已离线，点此 
+      <a onclick="window.mechatLeave();" href="javascript:void(0);">给我们留言</a>
+     </div> 
+    </div> 
+    <!-- /#leaveTips  --> 
+   </div> 
+   <div id="MC_sound"></div> 
+   <div id="paste_img"></div> 
+  </div> 
+  <div id="mechat-message-box" style="display: block;"> 
+   <div id="mechat-chat-header" style="background: rgb(6, 122, 180) none repeat scroll 0% 0%;"> 
+    <div id="mechat-msg-title"> 
+     <span class="mechat-icon mechat-icon-email">给我们留言</span> 
+    </div> 
+    <a title="最小化窗口" class="oper_btn oper_minbtn" href="javascript:void(0);" style="display: none;"> <span class="icon icon-min"></span> </a> 
+   </div> 
+   <div id="mechat-msgbox-body"> 
+    <div> 
+     <pre id="mechat-lvmsg-txt">您好，客服在线时间为周一至周六10:00〜18:30，如有问题请先留言并留下您的邮箱，我们会在次日第一时间给予您回复。
+如有不便，敬请谅解！了解更多活动信息请关注微信公众号：KnewOne。^o^</pre> 
+     <textarea id="mechat-message-content" class="mechat-input-txt">请输入留言</textarea> 
+     <input type="text" id="mechat-message-phone" class="mechat-input-txt" value="联系电话" style="display: none;" /> 
+     <input type="text" id="mechat-message-email" class="mechat-input-txt" value="邮箱" /> 
+     <a id="mechat-message-submit" href="javascript:void(0);" style="background: rgb(6, 122, 180) none repeat scroll 0% 0%;">留&nbsp;言</a> 
+    </div> 
+    <!-- 留言成功 start --> 
+    <div id="mechat-msgsuccess"> 
+     <div class="success-img"> 
+      <img alt="留言成功" src="../static/images/email.png" />
+     </div> 
+     <h2>留言成功</h2> 
+     <p> 我们会在1个工作日内联系你。 </p> 
+     <div class="succes-btns"> 
+      <a id="success-btn" href="javascript:void(0);" style="background: rgb(6, 122, 180) none repeat scroll 0% 0%;">好的</a> 
+      <p><a id="success-again" href="javascript:void(0);">再次留言</a></p> 
+     </div> 
+    </div> 
+    <!-- 留言成功  end  --> 
+   </div> 
+  </div> 
+  </body>
+</html>
