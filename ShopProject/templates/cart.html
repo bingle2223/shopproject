@@ -34,7 +34,7 @@
                                         <figure>
                                             <div class="cart-item-thing_cover">
                                                 <a href="{% url 'app:gooddetail' good.id %}"><img
-                                                        alt="Meskins 创意保暖桌垫"
+                                                        alt="Meskins {{ good.g_name }}"
                                                         src="{{ good.g_image }}"/></a>
                                             </div>
                                         </figure>
@@ -45,61 +45,41 @@
                                         {% endif %}
                                     {% endfor %}
                                     <div class="cart-item-detail">
-                                        <div class="cart-item-unit_price cell">
+                                        <div class="cart-item-unit_price cell"">
                                             <i class="fa fa-yen"></i> {{ cart.cartnum }}
                                     </div>
                                     <div class="cart-item-quantity cell">
-                                        <a class="c-numberinput-minus mobile-clickable false" href="javascript:void(0);"> <i
-                                                class="fa fa-minus-circle" id="sub"></i> </a>
+                                        <a class="c-numberinput-minus mobile-clickable false" href="javascript:void(0);" > <i
+                                                class="fa fa-minus-circle" onclick="sub(this);"></i> </a>
                                         <input type="text" autocomplete="off" value="{{ cart.good_count }}" class="c-numberinput"
                                                name="quantity"/>
                                         <a class="c-numberin7put-plus mobile-clickable false" href="javascript:void(0);"> <i
-                                                class="fa fa-plus-circle" id="add"></i> </a>
+                                                class="fa fa-plus-circle" onclick="add(this);"></i> </a>
                                     </div>
                                     <div class="cart-item-total_price cell">
-                                        <i class="fa fa-yen"></i>
+                                        <i class="fa fa-yen"></i>{% widthratio cart.cartnum 1 cart.good_count %}
                                     </div>
                                         <script>
-                                            window.onload = function () {
-                                               var goodmoney=  parseInt(document.cgetElementsByClassName("cart-item-total_price cell").innerText)
-                                               var money=  parseInt(document.cgetElementsByClassName("cart-item-unit_price cell").innerText)
-                                               var count=  parseInt(document.cgetElementsByClassName("c-numberinput").value)
-                                               gmoney = money*count
-                                               document.cgetElementsByClassName("cart-item-total_price cell").innerText = gmoney
+                                            function sub(btn) {
+                                                var jia = btn.previousElementSibling;
+                                                var count = btn.parentNode.parentNode.nextElementSibling;
+                                                var danjia = btn.parentNode.parentNode.getElementsByTagName("td")[1].innerHTML;
                                             }
-{#                                            $('#add').click(function () {#}
-{#                                               var money=  parseInt(document.getElementById('money').innerText)#}
-{#                                               var count=  parseInt(document.getElementById('count').value)#}
-{#                                                count = count + 1#}
-{#                                               gmoney = money*count#}
-{#                                                document.getElementById('count').value = count#}
-{#                                               document.getElementById('goodmoney').innerText = gmoney#}
-{#                                            })#}
-{#                                            $('#sub').click(function () {#}
-{#                                               var money=  parseInt(document.getElementById('money').innerText)#}
-{#                                               var count=  parseInt(document.getElementById('count').value)#}
-{#                                                count = count - 1#}
-{#                                                if(count>0){document.getElementById('count').value = count}else{document.getElementById('count').value = 0}#}
-{#                                                gmoney = money*count#}
-{#                                                if(gmoney>0){document.getElementById('goodmoney').innerText = gmoney}else{document.getElementById('goodmoney').innerText = 0}#}
-{#                                                document.getElementById('goodmoney').innerText = gmoney#}
-{#                                            })#}
                                         </script>
                                     <div class="cart-item--remove cell">
                                         <a title="删除" href="javascript:void(0);" class="mobile-clickable"><i
                                                 class="fa fa-trash"></i></a>
                                     </div>
-                                    </div>
                                 </li>
                             </ul>
-                    {% endfor %}
-                    <div class="cart-list-merchant">
-                        以上商品由
-                        <span class="cart-list-merchant_name"> <a target="_blank"
-                                                                  href="/merchants/548a5f9931302d4df7590000">KnewOne</a> </span>
-                        提供
-                    </div>
+                {% endfor %}
+                <div class="cart-list-merchant">
+                    以上商品由
+                    <span class="cart-list-merchant_name"> <a target="_blank"
+                                                              href="/merchants/548a5f9931302d4df7590000">KnewOne</a> </span>
+                    提供
                 </div>
+            </div>
 
         <div class="cart-footer">
             <small class="cart-delivery_tip"></small>
@@ -109,7 +89,7 @@
                     <small>(不含运费)</small>
                 </div>
                 <div class="cart-total_price" id="goodsmoney">
-                    <i class="fa fa-yen"></i> 784.0
+                    <i class="fa fa-yen"></i> {{ allmoney }}
                 </div>
 {#                <script>#}
 {#                    window.onload = function () {#}

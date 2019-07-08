@@ -15,6 +15,7 @@
     <script src="{% static 'js/vendor.js' %}"></script>
     <script src="{% static 'js/application.js' %}"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.timeago.js' %}"></script>
 
     <!--[if lt IE 9]>
   <script>
@@ -344,15 +345,13 @@
                     </div>
                         {% if replys %}
                         {% for reply in replys %}
-                            {% for user in users %}
-                                {% if reply.g_userid == user.id %}
                                 <div data-url="/things/vh-zhi-huang-tong-yuan-zi-bi/reviews" class="reviews list stream_content">
                                     <article itemtype="http://schema.org/Review" itemscope="" itemprop="review"
                                              id="review_566eb5ec98c90a14c300015e" class="feed_article review feed_article--review">
                                         <header>
                                             <h5 itemprop="name"><a
                                                     href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/566eb5ec98c90a14c300015e"
-                                                    target="_blank">{{ user.u_username }}</a></h5>
+                                                    target="_blank">{{ reply.user.u_username }}</a></h5>
 {#                                            <div class="score">#}
 {#                                                <div class="rate">#}
 {#                                                    {% for i in reply.g_star|mytag:numrange %}#}
@@ -364,11 +363,11 @@
                                         <figure data-profile-popover="52ba7a9631302d2453040000" class="review_author">
                                             <a href="member_index.html?52ba7a9631302d2453040000"
                                                data-profile-popover="52ba7a9631302d2453040000" rel="author" target="_blank"><img
-                                                    src="{{ user.u_icon }}" alt="{{ user.u_username }}"
+                                                    src="{{ reply.user.u_icon }}" alt="{{ reply.user.u_username }}"
                                                     class="img-circle"/></a>
                                             <figcaption itemprop="author">
                                                 <a href="member_index.html?52ba7a9631302d2453040000" rel="author" target="_blank"
-                                                   data-profile-popover="52ba7a9631302d2453040000">{{ user.u_username }}</a>
+                                                   data-profile-popover="52ba7a9631302d2453040000">{{ reply.user.u_username }}</a>
 
                                             </figcaption>
                                         </figure>
@@ -383,15 +382,18 @@
                                                         <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/566eb5ec98c90a14c300015e"
                                                            target="_blank">
                                                             {% for key,value in timedict.items %}
-                                                                {% if key == reply.g_userid %}
-                                                                <time data-time-ago="{{ value.0 }}T{{ value.1 }}" class="timeago"
-                                                                      title="{{ value.0 }} {{ value.1 }}" datetime="{{ value.0 }}T{{ value.2 }}">
-                                                                </time>
+                                                                {% if key == reply.id %}
+                                                                <div class="time">
+                                                                    <time data-time-ago="{{ value.0 }}T{{ value.2 }}" class="timeago"
+                                                                          title="{{ value.0 }} {{ value.1 }}" datetime="{{ value.0 }}T{{ value.2 }}">
+                                                                    </time>
+                                                                </div>
                                                                 {% endif %}
                                                             {% endfor %}
-                                                        </a></li>
+                                                        </a>
+                                                    </li>
                                                     {% for key,value in alikedict.items %}
-                                                        {% if key == reply.id %}
+                                                        {% if key == reply.user.id %}
                                                         <li>
                                                             <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/566eb5ec98c90a14c300015e"
                                                                target="_blank"><i class="fa fa-comments-o"></i><span
@@ -402,13 +404,13 @@
                                                 </ul>
                                                 <div class="feed_action">
                                                     <a href="#" class="btn like_button" data-signin-legend="登录后点赞"
-                                                       data-toggle="modal" data-target=""><i
-                                                            class="fa fa-thumbs-up fa-fw" id="zan"></i><span id="good">{{ reply.g_replygalike }}</span></a>
+                                                       data-toggle="modal" data-target="">
+                                                        <i class="fa fa-thumbs-up fa-fw" ></i><span>{{ reply.g_replygalike }}</span></a>
                                                     <script>
-                                                        $('#zan').click(function () {
-                                                            var num = parseInt(document.getElementById('good').innerText)
+                                                        $('.fa').click(function () {
+                                                            var num = parseInt($(this).parent().prev().children('span').text())
                                                             num = num + 1
-                                                            document.getElementById('good').innerText = num
+                                                            $(this).parent().prev().children('span').innerText = num
                                                         })
                                                     </script>
                                                 </div>
@@ -416,8 +418,6 @@
                                         </footer>
                                     </article>
                                 </div>
-                                {% endif %}
-                            {% endfor %}
                         {% endfor %}
                         {% endif %}
                 </div>
@@ -564,26 +564,26 @@
                     <div class="merchant"></div>
                 </div>
                 <ul class="actions clearfix">
-                    <li class="fanciers"><a href="#" data-label="VH 致 黄铜原子笔" data-action="fancy" data-category="thing"
+                    <li class="fanciers"><a href="" data-label="VH 致 黄铜原子笔" data-action="fancy" data-category="thing"
                                             data-signin-legend="登录后，收集喜欢的产品"
                                             data-link="https://knewone.com/things/vh-zhi-huang-tong-yuan-zi-bi"
-                                            data-target="#login-modal" data-toggle="modal" title="喜欢此产品"
+                                            data-target="" data-toggle="modal" title="喜欢此产品"
                                             class="unfancied"><i class="fa fa-heart-o"></i><span class="fanciers_count">42</span>
                         <small>喜欢</small>
                     </a></li>
-                    <li class="owners"><a href="#" data-label="VH 致 黄铜原子笔" data-action="own" data-category="thing"
+                    <li class="owners"><a href="" data-label="VH 致 黄铜原子笔" data-action="own" data-category="thing"
                                           data-signin-legend="登录后，标注拥有的产品" data-target="#login-modal"
-                                          data-toggle="modal" title="拥有此产品" class="unowned"><i
+                                          data-toggle="" title="拥有此产品" class="unowned"><i
                             class="fa fa-circle-o"></i><span class="owners_count">2</span>
                         <small>拥有</small>
                     </a></li>
-                    <li><a href="#socialshare_modal" data-label="VH 致 黄铜原子笔" data-action="weibo" data-category="share"
+                    <li><a href="" data-label="VH 致 黄铜原子笔" data-action="weibo" data-category="share"
                            data-preview-pic="images/74ee754f95411d69839fdb84ec228108.jpg!small"
                            data-pic="https://making-photos.b0.upaiyun.com/photos/74ee754f95411d69839fdb84ec228108.jpg!huge"
                            data-url="https://knewone.com/things/vh-zhi-huang-tong-yuan-zi-bi"
                            data-content="推荐 @长毛的宣宣 在 @KnewOne 发布的产品 领养中 | VH 致 黄铜原子笔 " data-toggle="modal"
                            class="btn share_btn " title="分享"><i class="fa fa-share-alt"></i>分享</a></li>
-                    <li class="add_to_list"><a href="#login-modal" data-signin-legend="登录后，把产品加入列表" data-toggle="modal"
+                    <li class="add_to_list"><a href="" data-signin-legend="登录后，把产品加入列表" data-toggle="modal"
                                                class="add_to_list" title="加入列表"><i class="fa fa-list-ko"></i>加入列表</a>
                     </li>
                 </ul>
@@ -606,7 +606,7 @@
                         </div>
                         <a href="#" data-method="post" rel="nofollow" data-remote="true" title="喜欢"
                            data-label="2016年第1周热门产品" data-action="fancy" data-category="thinglist"
-                           data-signin-legend="登录后，收集喜欢的列表" data-target="#login-modal" data-toggle="modal"
+                           data-signin-legend="登录后，收集喜欢的列表" data-target="" data-toggle="modal"
                            class="fancy-button " id="fancy-list-button-56928e105cee7359d1000bcb"><i
                                 class="fa fa-heart-o"></i><span class="fanciers_count">1</span></a>
                     </figcaption>
