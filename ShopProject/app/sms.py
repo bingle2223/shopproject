@@ -29,4 +29,4 @@ def send_sms(phone,templateParam,**kwargs):
 
 if __name__ == "__main__":
 
-    send_sms('17719836274',{'code':'234567'},**SMSCONFIG)
+    send_sms('18330219310',{'code':'234567'},**SMSCONFIG)

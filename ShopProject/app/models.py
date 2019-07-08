@@ -266,7 +266,8 @@ class Reply(models.Model):
     g_comment = models.CharField(db_column='G_comment', max_length=1000)  # Field name made lowercase.
     g_comgalike = models.IntegerField(db_column='G_comgalike')  # Field name made lowercase.
     g_type = models.IntegerField(db_column='G_type')  # Field name made lowercase.
-
+    def __str__(self):
+        return self.g_reply
     class Meta:
         managed = False
         db_table = 'reply'

@@ -5,6 +5,8 @@ from random import randint
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
+
 from ShopProject.settings import SMSCONFIG
 from app.models import AppUser, AppGoodstype, AppGoods, Reply
 # Create your views here.
@@ -18,7 +20,6 @@ def index(request):
     for res in goodstypes:
         goods = list(AppGoods.objects.filter(typeid=res.id)[0:5])
         gooddict[res.id] = goods
-    print(gooddict)
     users = list(AppUser.objects.all())
     goods = AppGoods.objects.filter(g_hot=1)[2:7]
     replys = list(Reply.objects.all())
@@ -36,7 +37,6 @@ def reg(request):
                 return render(request, 'register.html', context={'user': res,'codeer':'验证码错误'})
             else:
                 request.session.flush()
-                print('222222222222')
                 phone = request.POST.get('phone')
                 email = request.POST.get('email')
                 username = request.POST.get('user_name')
@@ -65,11 +65,14 @@ def login(request):
             res = AppUser.objects.filter(u_username=username).all()
             request.session['username'] = res[0].u_username
             request.session['type'] = res[0].u_type
+            request.session['id'] = res[0].id
+            request.session['image'] = res[0].u_icon
             return redirect(reverse('app:index'))
         return render(request, 'login.html', context={'user': res})
     return render(request, 'login.html', context={'user': res})
 
 #退出
+@csrf_exempt
 def logout(request):
     request.session.flush()
     return redirect(reverse('app:index'))
@@ -122,3 +125,4 @@ def changemail(request):
         error = ''
         email = email
         return render(request, 'member_account.html', context={'email': email,'error':error})
+

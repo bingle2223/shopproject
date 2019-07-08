@@ -312,48 +312,53 @@
                         {% endfor %}
                     </div>
                     <div id="category_ge-hu" class="explore_content_item fade">
+                        {% for good in dict.3 %}
                         <section class="product_2">
                             <figure class="product">
-                                <a href="discover_detail.html?dr-dot-scholl-shuang-jian-si-rou-dian-dong-xiu-zu-ji"
-                                   target="_blank" class="product_thumb"><img
-                                        src="/static/images/b346a2a2b7b5bbd51726f423dd47f730.jpg!thing.fixed"
-                                        alt="Dr.Scholl 爽健丝柔电动修足机"/></a>
+                                <a href="{% url 'app:gooddetail' good.id %}" target="_blank"
+                                   class="product_thumb"><img
+                                        src="{{ good.g_image }}"
+                                        alt="小米手环 光感版"/></a>
                                 <figcaption>
                                     <div>
-                                        <a href="discover_detail.html?dr-dot-scholl-shuang-jian-si-rou-dian-dong-xiu-zu-ji"
-                                           target="_blank">
+                                        <a href="{% url 'app:gooddetail' good.id %}" target="_blank">
                                             <hgroup>
-                                                <h4><span>Dr.Scholl 爽健丝柔电动修足机</span></h4>
+                                                <h4><span>{{ good.g_name }}</span></h4>
                                             </hgroup>
                                         </a>
                                         <div class="product_detail">
-                                            <span class="price"><span class="sale_price">&yen;249</span></span>
-                                            <span><i class="fa fa-heart-o"></i><span
-                                                    class="fanciers_count">50</span></span>
-                                            <span><i class="fa fa-check-circle-o"></i><span
-                                                    class="owners_count">11</span></span>
-                                            <span><i class="fa fa-pencil"></i>27</span>
+                                            <span class="price"><span class="sale_price">&yen;{{ good.g_price }}</span></span>
                                         </div>
                                     </div>
                                 </figcaption>
                             </figure>
-                            <section class="reviews">
+                             <section class="reviews">
                                 <article class="review review_1">
                                     <div>
-                                        <a href="member_index.html?537d709831302d3d7a720400" target="_blank"
-                                           class="review_author"><img
-                                                src="/static/images/0417faae984574ee80ce7eccd014914a.jpg!small"
-                                                alt="滕美丽&#55357;&#56371;"/><span class="name">滕美丽&#55357;&#56371;</span></a>
+                                    {% if not good.g_credits %}
+                                        <span class="name">非积分商品</span></a>
+                                        {% else %}
+                                        <span class="name">需{{ good.g_credits }}积分兑换</span></a>
+                                        {% endif %}
                                         <section class="review_wrap">
                                             <header class="review_header">
                                                 <hgroup class="review_title">
+                                                    {% if good.g_hot %}
                                                     <h4>
-                                                        <a href="discover_detail.html?dr-dot-scholl-shuang-jian-si-rou-dian-dong-xiu-zu-ji/reviews/5644b29f6e38d6363d0003e0"
-                                                           target="_blank">您好！您的包裹到了请签收！</a></h4>
-                                                    <h5>Dr.Scholl 爽健丝柔电动修足机</h5>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">热品</a>
+                                                    </h4>
+                                                    {% else %}
+                                                    <h4>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">非热品</a>
+                                                    </h4>
+                                                    {% endif %}
+                                                    <h5>{{ good.g_name }}</h5>
                                                     <div class="score">
                                                         <div class="rate">
-                                                            <span class="star"></span>
+
+                                                            <span class="star active"></span>
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
@@ -361,59 +366,66 @@
                                                         </div>
                                                     </div>
                                                 </hgroup>
-                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>2</em>
+                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>{{ good.g_number }}</em>
                                             </header>
                                             <section class="review_body">
                                                 <p>
-                                                    如题，看图。一直闹的沸沸扬扬的杜蕾斯包装门事件，我给你们看图！（送到前公司后我都没脸拿包裹，还被曝光朋友圈了，简直了！！！）=======================================================...</p>
+                                                   {{ good.g_description }}</p>
                                             </section>
                                         </section>
                                     </div>
                                 </article>
                             </section>
                         </section>
+                        {% endfor %}
                     </div>
                     <div id="category_dian-nao" class="explore_content_item fade">
+                        {% for good in dict.4 %}
                         <section class="product_2">
                             <figure class="product">
-                                <a href="discover_detail.html?360-an-quan-lu-you-5g-ban" target="_blank"
+                                <a href="{% url 'app:gooddetail' good.id %}" target="_blank"
                                    class="product_thumb"><img
-                                        src="/static/images/ac594700200caf36a6230bdb4ac036a7.jpg!thing.fixed"
-                                        alt="360 安全路由 5G 版"/></a>
+                                        src="{{ good.g_image }}"
+                                        alt="小米手环 光感版"/></a>
                                 <figcaption>
                                     <div>
-                                        <a href="discover_detail.html?360-an-quan-lu-you-5g-ban" target="_blank">
+                                        <a href="{% url 'app:gooddetail' good.id %}" target="_blank">
                                             <hgroup>
-                                                <h4><span>360 安全路由 5G 版</span></h4>
+                                                <h4><span>{{ good.g_name }}</span></h4>
                                             </hgroup>
                                         </a>
                                         <div class="product_detail">
-                                            <span class="price"><span class="sale_price">&yen;139</span></span>
-                                            <span><i class="fa fa-heart-o"></i><span
-                                                    class="fanciers_count">6</span></span>
-                                            <span><i class="fa fa-check-circle-o"></i><span
-                                                    class="owners_count">0</span></span>
-                                            <span><i class="fa fa-pencil"></i>3</span>
+                                            <span class="price"><span class="sale_price">&yen;{{ good.g_price }}</span></span>
                                         </div>
                                     </div>
                                 </figcaption>
                             </figure>
-                            <section class="reviews">
+                             <section class="reviews">
                                 <article class="review review_1">
                                     <div>
-                                        <a href="member_index.html?567107f47e3db92c55000a6e" target="_blank"
-                                           class="review_author"><img
-                                                src="/static/images/a05596e9384fb59373000626a36b9269.jpg!small"
-                                                alt="shijia0573"/><span class="name">shijia0573</span></a>
+                                    {% if not good.g_credits %}
+                                        <span class="name">非积分商品</span></a>
+                                        {% else %}
+                                        <span class="name">需{{ good.g_credits }}积分兑换</span></a>
+                                        {% endif %}
                                         <section class="review_wrap">
                                             <header class="review_header">
                                                 <hgroup class="review_title">
+                                                    {% if good.g_hot %}
                                                     <h4>
-                                                        <a href="discover_detail.html?360-an-quan-lu-you-5g-ban/reviews/568e127fd6f99a25db000031"
-                                                           target="_blank">【360 安全路由 5G】速度与安全从路由器开始</a></h4>
-                                                    <h5>360 安全路由 5G 版</h5>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">热品</a>
+                                                    </h4>
+                                                    {% else %}
+                                                    <h4>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">非热品</a>
+                                                    </h4>
+                                                    {% endif %}
+                                                    <h5>{{ good.g_name }}</h5>
                                                     <div class="score">
                                                         <div class="rate">
+
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
@@ -422,60 +434,67 @@
                                                         </div>
                                                     </div>
                                                 </hgroup>
-                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>2</em>
+                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>{{ good.g_number }}</em>
                                             </header>
                                             <section class="review_body">
                                                 <p>
-                                                    一、『序言篇』随着笔记本电脑、智能手机、智能电视盒等Wi-Fi设备的普及，家庭中的路由器逐渐成为了居家互联网+的核心中枢，硬结合，给用户带来更为安全、便捷、高效的网络环境和优质、舒心、体贴的体验环境,360安全路由5g色系也是用的经典...</p>
+                                                   {{ good.g_description }}</p>
                                             </section>
                                         </section>
                                     </div>
                                 </article>
                             </section>
                         </section>
+                        {% endfor %}
                     </div>
                     <div id="category_lu-xing-yun-dong" class="explore_content_item fade">
+                        {% for good in dict.5 %}
                         <section class="product_2">
                             <figure class="product">
-                                <a href="discover_detail.html?imblu-chou-sheng-dai-tao-zhuang" target="_blank"
+                                <a href="{% url 'app:gooddetail' good.id %}" target="_blank"
                                    class="product_thumb"><img
-                                        src="/static/images/d9336aaa3fadb524435bfc17ed58e69a.jpg!thing.fixed"
-                                        alt="imblu 抽绳袋套装"/></a>
+                                        src="{{ good.g_image }}"
+                                        alt="小米手环 光感版"/></a>
                                 <figcaption>
                                     <div>
-                                        <a href="discover_detail.html?imblu-chou-sheng-dai-tao-zhuang" target="_blank">
+                                        <a href="{% url 'app:gooddetail' good.id %}" target="_blank">
                                             <hgroup>
-                                                <h4><span>imblu 抽绳袋套装</span></h4>
+                                                <h4><span>{{ good.g_name }}</span></h4>
                                             </hgroup>
                                         </a>
                                         <div class="product_detail">
-                                            <span class="price"><span class="sale_price">&yen;99</span></span>
-                                            <span><i class="fa fa-heart-o"></i><span
-                                                    class="fanciers_count">78</span></span>
-                                            <span><i class="fa fa-check-circle-o"></i><span
-                                                    class="owners_count">12</span></span>
-                                            <span><i class="fa fa-pencil"></i>7</span>
+                                            <span class="price"><span class="sale_price">&yen;{{ good.g_price }}</span></span>
                                         </div>
                                     </div>
                                 </figcaption>
                             </figure>
-                            <section class="reviews">
+                             <section class="reviews">
                                 <article class="review review_1">
                                     <div>
-                                        <a href="member_index.html?563997ce52255a7df000053a" target="_blank"
-                                           class="review_author"><img
-                                                src="/static/images/9c1abccd702004ea3388651100c5fe2b.jpg!small"
-                                                alt="dan2016"/><span class="name">dan2016</span></a>
+                                    {% if not good.g_credits %}
+                                        <span class="name">非积分商品</span></a>
+                                        {% else %}
+                                        <span class="name">需{{ good.g_credits }}积分兑换</span></a>
+                                        {% endif %}
                                         <section class="review_wrap">
                                             <header class="review_header">
                                                 <hgroup class="review_title">
+                                                    {% if good.g_hot %}
                                                     <h4>
-                                                        <a href="discover_detail.html?imblu-chou-sheng-dai-tao-zhuang/reviews/567e709c9637177ce90006da"
-                                                           target="_blank">美貌的外表，实用的设计</a></h4>
-                                                    <h5>imblu 抽绳袋套装</h5>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">热品</a>
+                                                    </h4>
+                                                    {% else %}
+                                                    <h4>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">非热品</a>
+                                                    </h4>
+                                                    {% endif %}
+                                                    <h5>{{ good.g_name }}</h5>
                                                     <div class="score">
                                                         <div class="rate">
-                                                            <span class="star"></span>
+
+                                                            <span class="star active"></span>
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
@@ -483,60 +502,66 @@
                                                         </div>
                                                     </div>
                                                 </hgroup>
-                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>2</em>
+                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>{{ good.g_number }}</em>
                                             </header>
                                             <section class="review_body">
-                                                <p>昨天收到imblu三件套，今天有空评测下ㄟ(▔▽▔ㄟ)
-                                                    (╯▔▽▔)╯开箱图如下，包装很好，纸盒外部套了一层knewone自家的胶袋，内部产品包裹了气泡膜，随带的还有一封knewone的信封，内附一枚小书签，knewone小贴纸，一张...</p>
+                                                <p>
+                                                   {{ good.g_description }}</p>
                                             </section>
                                         </section>
                                     </div>
                                 </article>
                             </section>
                         </section>
+                        {% endfor %}
                     </div>
                     <div id="category_yin-le" class="explore_content_item fade">
+                        {% for good in dict.6 %}
                         <section class="product_2">
                             <figure class="product">
-                                <a href="discover_detail.html?mogco-ie-m3-mo-yue-ru-er-shi-er-ji" target="_blank"
+                                <a href="{% url 'app:gooddetail' good.id %}" target="_blank"
                                    class="product_thumb"><img
-                                        src="/static/images/b8fd952383adba399702a73a5c55025c.jpg!thing.fixed"
-                                        alt="MOGCO IE-M3 摩悦 入耳式耳机"/></a>
+                                        src="{{ good.g_image }}"
+                                        alt="小米手环 光感版"/></a>
                                 <figcaption>
                                     <div>
-                                        <a href="discover_detail.html?mogco-ie-m3-mo-yue-ru-er-shi-er-ji"
-                                           target="_blank">
+                                        <a href="{% url 'app:gooddetail' good.id %}" target="_blank">
                                             <hgroup>
-                                                <h4><span>MOGCO IE-M3 摩悦 入耳式耳机</span></h4>
+                                                <h4><span>{{ good.g_name }}</span></h4>
                                             </hgroup>
                                         </a>
                                         <div class="product_detail">
-                                            <span class="price"><span class="sale_price">&yen;120</span></span>
-                                            <span><i class="fa fa-heart-o"></i><span
-                                                    class="fanciers_count">17</span></span>
-                                            <span><i class="fa fa-check-circle-o"></i><span
-                                                    class="owners_count">4</span></span>
-                                            <span><i class="fa fa-pencil"></i>3</span>
+                                            <span class="price"><span class="sale_price">&yen;{{ good.g_price }}</span></span>
                                         </div>
                                     </div>
                                 </figcaption>
                             </figure>
-                            <section class="reviews">
+                             <section class="reviews">
                                 <article class="review review_1">
                                     <div>
-                                        <a href="member_index.html?55439c5131302d7bd4fe0a00" target="_blank"
-                                           class="review_author"><img
-                                                src="/static/images/dfd9ca98b8a7ae37e5691f5b7fe44e6a.png!small"
-                                                alt="八百屋"/><span class="name">八百屋</span></a>
+                                    {% if not good.g_credits %}
+                                        <span class="name">非积分商品</span></a>
+                                        {% else %}
+                                        <span class="name">需{{ good.g_credits }}积分兑换</span></a>
+                                        {% endif %}
                                         <section class="review_wrap">
                                             <header class="review_header">
                                                 <hgroup class="review_title">
+                                                    {% if good.g_hot %}
                                                     <h4>
-                                                        <a href="discover_detail.html?mogco-ie-m3-mo-yue-ru-er-shi-er-ji/reviews/568fc1a583a4231ea300003d"
-                                                           target="_blank">红黑经典配色 MOGCO IE-M3 耳机初评</a></h4>
-                                                    <h5>MOGCO IE-M3 摩悦 入耳式耳机</h5>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">热品</a>
+                                                    </h4>
+                                                    {% else %}
+                                                    <h4>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">非热品</a>
+                                                    </h4>
+                                                    {% endif %}
+                                                    <h5>{{ good.g_name }}</h5>
                                                     <div class="score">
                                                         <div class="rate">
+
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
@@ -545,60 +570,66 @@
                                                         </div>
                                                     </div>
                                                 </hgroup>
-                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>6</em>
+                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>{{ good.g_number }}</em>
                                             </header>
                                             <section class="review_body">
                                                 <p>
-                                                    并非耳机发烧友，评测相当外行，见谅。标题原本想写骚红的，后来想想作为一个大龄【伪】少女，要矜持，遂作罢，笑。本以为要下周一才能收到的耳机，在今天快下班的时候，一阵急促的敲门声，快递大哥匆匆忙忙送来了MOGCO
-                                                    IE-M3。拿到之后三下...</p>
+                                                   {{ good.g_description }}</p>
                                             </section>
                                         </section>
                                     </div>
                                 </article>
                             </section>
                         </section>
+                        {% endfor %}
                     </div>
                     <div id="category_wen-ju" class="explore_content_item fade">
+                        {% for good in dict.7 %}
                         <section class="product_2">
                             <figure class="product">
-                                <a href="discover_detail.html?knewone-lu-xing-bi-ji-ben" target="_blank"
+                                <a href="{% url 'app:gooddetail' good.id %}" target="_blank"
                                    class="product_thumb"><img
-                                        src="../static/images/c6332ea9b56b676435bda7f4af955934.jpg!thing.fixed"
-                                        alt="KnewOne 旅行笔记本"/></a>
+                                        src="{{ good.g_image }}"
+                                        alt="小米手环 光感版"/></a>
                                 <figcaption>
                                     <div>
-                                        <a href="discover_detail.html?knewone-lu-xing-bi-ji-ben" target="_blank">
+                                        <a href="{% url 'app:gooddetail' good.id %}" target="_blank">
                                             <hgroup>
-                                                <h4><span>KnewOne 旅行笔记本</span></h4>
+                                                <h4><span>{{ good.g_name }}</span></h4>
                                             </hgroup>
                                         </a>
                                         <div class="product_detail">
-                                            <span class="price"><span class="sale_price">&yen;129</span></span>
-                                            <span><i class="fa fa-heart-o"></i><span
-                                                    class="fanciers_count">198</span></span>
-                                            <span><i class="fa fa-check-circle-o"></i><span
-                                                    class="owners_count">75</span></span>
-                                            <span><i class="fa fa-pencil"></i>5</span>
+                                            <span class="price"><span class="sale_price">&yen;{{ good.g_price }}</span></span>
                                         </div>
                                     </div>
                                 </figcaption>
                             </figure>
-                            <section class="reviews">
+                             <section class="reviews">
                                 <article class="review review_1">
                                     <div>
-                                        <a href="member_index.html?53d95e3331302d676f690100" target="_blank"
-                                           class="review_author"><img
-                                                src="../static/images/ccbef3aa1ed24e428442410f769f9049.jpg!small"
-                                                alt="Freakyle"/><span class="name">Freakyle</span></a>
+                                    {% if not good.g_credits %}
+                                        <span class="name">非积分商品</span></a>
+                                        {% else %}
+                                        <span class="name">需{{ good.g_credits }}积分兑换</span></a>
+                                        {% endif %}
                                         <section class="review_wrap">
                                             <header class="review_header">
                                                 <hgroup class="review_title">
+                                                    {% if good.g_hot %}
                                                     <h4>
-                                                        <a href="discover_detail.html?knewone-lu-xing-bi-ji-ben/reviews/5604c68c99fad6453500000a"
-                                                           target="_blank">道理我都懂 可是为什么是北极熊 T . T</a></h4>
-                                                    <h5>KnewOne 旅行笔记本</h5>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">热品</a>
+                                                    </h4>
+                                                    {% else %}
+                                                    <h4>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">非热品</a>
+                                                    </h4>
+                                                    {% endif %}
+                                                    <h5>{{ good.g_name }}</h5>
                                                     <div class="score">
                                                         <div class="rate">
+
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
@@ -607,59 +638,66 @@
                                                         </div>
                                                     </div>
                                                 </hgroup>
-                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>10</em>
+                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>{{ good.g_number }}</em>
                                             </header>
                                             <section class="review_body">
-                                                <p>（上学在一个偏僻的八线城市 顺丰竟然2天就邮到了）（周三以为是10点开始抢 然后逃了半节课回寝等着..结果..是12点开始..）反正是
-                                                    买到了&amp;到了其实更想要那个
-                                                    小飞机（还是小海豚？小虎鲸？）但当时太着急了..就..忘了..其实北极...</p>
+                                                <p>
+                                                   {{ good.g_description }}</p>
                                             </section>
                                         </section>
                                     </div>
                                 </article>
                             </section>
                         </section>
+                        {% endfor %}
                     </div>
                     <div id="category_wan-ju" class="explore_content_item fade">
+                        {% for good in dict.8 %}
                         <section class="product_2">
                             <figure class="product">
-                                <a href="discover_detail.html?pu-tao-tan-suo-hao" target="_blank" class="product_thumb"><img
-                                        src="../static/images/50ec065a7ffd61128244c4a5606dc79a.jpg!thing.fixed"
-                                        alt="葡萄探索号"/></a>
+                                <a href="{% url 'app:gooddetail' good.id %}" target="_blank"
+                                   class="product_thumb"><img
+                                        src="{{ good.g_image }}"
+                                        alt="小米手环 光感版"/></a>
                                 <figcaption>
                                     <div>
-                                        <a href="discover_detail.html?pu-tao-tan-suo-hao" target="_blank">
+                                        <a href="{% url 'app:gooddetail' good.id %}" target="_blank">
                                             <hgroup>
-                                                <h4><span>葡萄探索号</span></h4>
+                                                <h4><span>{{ good.g_name }}</span></h4>
                                             </hgroup>
                                         </a>
                                         <div class="product_detail">
-                                            <span class="price"><span class="sale_price">&yen;499</span></span>
-                                            <span><i class="fa fa-heart-o"></i><span
-                                                    class="fanciers_count">189</span></span>
-                                            <span><i class="fa fa-check-circle-o"></i><span
-                                                    class="owners_count">3</span></span>
-                                            <span><i class="fa fa-pencil"></i>6</span>
+                                            <span class="price"><span class="sale_price">&yen;{{ good.g_price }}</span></span>
                                         </div>
                                     </div>
                                 </figcaption>
                             </figure>
-                            <section class="reviews">
+                             <section class="reviews">
                                 <article class="review review_1">
                                     <div>
-                                        <a href="member_index.html?541fd2b031302d1153500000" target="_blank"
-                                           class="review_author"><img
-                                                src="../static/images/1064c370c40ac52ef45efe40c678085d.jpg!small"
-                                                alt="冯苗子"/><span class="name">冯苗子</span></a>
+                                    {% if not good.g_credits %}
+                                        <span class="name">非积分商品</span></a>
+                                        {% else %}
+                                        <span class="name">需{{ good.g_credits }}积分兑换</span></a>
+                                        {% endif %}
                                         <section class="review_wrap">
                                             <header class="review_header">
                                                 <hgroup class="review_title">
+                                                    {% if good.g_hot %}
                                                     <h4>
-                                                        <a href="discover_detail.html?pu-tao-tan-suo-hao/reviews/568546cafed5a0051b0000e3"
-                                                           target="_blank">翻滚吧，葡萄！</a></h4>
-                                                    <h5>葡萄探索号</h5>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">热品</a>
+                                                    </h4>
+                                                    {% else %}
+                                                    <h4>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">非热品</a>
+                                                    </h4>
+                                                    {% endif %}
+                                                    <h5>{{ good.g_name }}</h5>
                                                     <div class="score">
                                                         <div class="rate">
+
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
                                                             <span class="star active"></span>
@@ -668,125 +706,154 @@
                                                         </div>
                                                     </div>
                                                 </hgroup>
-                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>4</em>
+                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>{{ good.g_number }}</em>
                                             </header>
                                             <section class="review_body">
                                                 <p>
-                                                    正愁着不知道元旦该送什么东西给家里的小公举的时候，KnewOne告诉我说领养成功了！看着邮件，嘴里念叨着葡萄探索号这几个字，心想：真棒！攒了一年的运气这时候灵验了！当初申请领养的时候看了东西的介绍，感觉妹妹一定很喜欢。这下可好（此处省...</p>
+                                                   {{ good.g_description }}</p>
                                             </section>
                                         </section>
                                     </div>
                                 </article>
                             </section>
                         </section>
+                        {% endfor %}
                     </div>
                     <div id="category_shou-ji-tong-xin" class="explore_content_item fade">
+                        {% for good in dict.9 %}
                         <section class="product_2">
                             <figure class="product">
-                                <a href="discover_detail.html?shuang-xiang-hao" target="_blank"
+                                <a href="{% url 'app:gooddetail' good.id %}" target="_blank"
                                    class="product_thumb"><img
-                                        src="../static/images/130d745d4f34062b9d45b4eeab05ff46.jpg!thing.fixed"
-                                        alt="双享号"/></a>
+                                        src="{{ good.g_image }}"
+                                        alt="小米手环 光感版"/></a>
                                 <figcaption>
                                     <div>
-                                        <a href="discover_detail.html?shuang-xiang-hao" target="_blank">
+                                        <a href="{% url 'app:gooddetail' good.id %}" target="_blank">
                                             <hgroup>
-                                                <h4><span>双享号</span></h4>
+                                                <h4><span>{{ good.g_name }}</span></h4>
                                             </hgroup>
                                         </a>
                                         <div class="product_detail">
-                                            <span class="price"><span class="sale_price">&yen;68</span></span>
-                                            <span><i class="fa fa-heart-o"></i><span
-                                                    class="fanciers_count">99</span></span>
-                                            <span><i class="fa fa-check-circle-o"></i><span
-                                                    class="owners_count">17</span></span>
-                                            <span><i class="fa fa-pencil"></i>13</span>
+                                            <span class="price"><span class="sale_price">&yen;{{ good.g_price }}</span></span>
                                         </div>
                                     </div>
                                 </figcaption>
                             </figure>
-                        </section>
-                    </div>
-                    <div id="category_she-ying" class="explore_content_item fade">
-                        <section class="product_2">
-                            <figure class="product">
-                                <a href="discover_detail.html?hp-lc200w-mi-ni-wu-xian-she-xiang-ji" target="_blank"
-                                   class="product_thumb"><img
-                                        src="../static/images/d40011f4d682b0317ccc3c656f7f40cb.jpg!thing.fixed"
-                                        alt="HP lc200w 迷你无线摄像机"/></a>
-                                <figcaption>
-                                    <div>
-                                        <a href="discover_detail.html?hp-lc200w-mi-ni-wu-xian-she-xiang-ji"
-                                           target="_blank">
-                                            <hgroup>
-                                                <h4><span>HP lc200w 迷你无线摄像机</span></h4>
-                                            </hgroup>
-                                        </a>
-                                        <div class="product_detail">
-                                            <span class="price"><span class="sale_price">&yen;798</span></span>
-                                            <span><i class="fa fa-heart-o"></i><span
-                                                    class="fanciers_count">266</span></span>
-                                            <span><i class="fa fa-check-circle-o"></i><span
-                                                    class="owners_count">2</span></span>
-                                            <span><i class="fa fa-pencil"></i>2</span>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </section>
-                    </div>
-                    <div id="category_jian-kang" class="explore_content_item fade">
-                        <section class="product_2">
-                            <figure class="product">
-                                <a href="discover_detail.html?zhi-neng-shui-mo-fang-tong-zhuang-shui-an-quan-wei-shi"
-                                   target="_blank" class="product_thumb"><img
-                                        src="../static/images/f9d57c6b1231121cbd052e09d2ae1b66.jpg!thing.fixed"
-                                        alt="智能水魔方 桶装水安全卫士"/></a>
-                                <figcaption>
-                                    <div>
-                                        <a href="discover_detail.html?zhi-neng-shui-mo-fang-tong-zhuang-shui-an-quan-wei-shi"
-                                           target="_blank">
-                                            <hgroup>
-                                                <h4><span>智能水魔方 桶装水安全卫士</span></h4>
-                                            </hgroup>
-                                        </a>
-                                        <div class="product_detail">
-                                            <span class="price"><span class="sale_price">&yen;138</span></span>
-                                            <span><i class="fa fa-heart-o"></i><span
-                                                    class="fanciers_count">7</span></span>
-                                            <span><i class="fa fa-check-circle-o"></i><span
-                                                    class="owners_count">2</span></span>
-                                            <span><i class="fa fa-pencil"></i>7</span>
-                                        </div>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                            <section class="reviews">
+                             <section class="reviews">
                                 <article class="review review_1">
                                     <div>
-                                        <a href="member_index.html?55fbbca01fc28c25fa00098e" target="_blank"
-                                           class="review_author"><img src="../static/images/17.png"
-                                                                      alt="一条很帅的fish"/><span
-                                                class="name">一条很帅的fish</span></a>
+                                    {% if not good.g_credits %}
+                                        <span class="name">非积分商品</span></a>
+                                        {% else %}
+                                        <span class="name">需{{ good.g_credits }}积分兑换</span></a>
+                                        {% endif %}
                                         <section class="review_wrap">
                                             <header class="review_header">
                                                 <hgroup class="review_title">
+                                                    {% if good.g_hot %}
                                                     <h4>
-                                                        <a href="discover_detail.html?zhi-neng-shui-mo-fang-tong-zhuang-shui-an-quan-wei-shi/reviews/563abd3652255a7f770001cc"
-                                                           target="_blank">惊呆了，智能水魔方为桶装水引入正能量</a></h4>
-                                                    <h5>智能水魔方 桶装水安全卫士</h5>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">热品</a>
+                                                    </h4>
+                                                    {% else %}
+                                                    <h4>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">非热品</a>
+                                                    </h4>
+                                                    {% endif %}
+                                                    <h5>{{ good.g_name }}</h5>
+                                                    <div class="score">
+                                                        <div class="rate">
+
+                                                            <span class="star active"></span>
+                                                            <span class="star active"></span>
+                                                            <span class="star active"></span>
+                                                            <span class="star active"></span>
+                                                            <span class="star active"></span>
+                                                        </div>
+                                                    </div>
                                                 </hgroup>
-                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>1</em>
+                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>{{ good.g_number }}</em>
                                             </header>
                                             <section class="review_body">
                                                 <p>
-                                                    新鲜干净的桶装水，一旦遭受二次污染，我们的健康如何保障？这显然违背了桶装水的初衷。目前，易安诺SMF-108智能水魔方已经全线发货，产品稳定易用，着力解决桶装水饮用过程中的二次污染。据了解，智能水魔方融合了三项创新科技，集智能...</p>
+                                                   {{ good.g_description }}</p>
                                             </section>
                                         </section>
                                     </div>
                                 </article>
                             </section>
                         </section>
+                        {% endfor %}
+                    </div>
+                    <div id="category_jian-kang" class="explore_content_item fade">
+                        {% for good in dict.10 %}
+                        <section class="product_2">
+                            <figure class="product">
+                                <a href="{% url 'app:gooddetail' good.id %}" target="_blank"
+                                   class="product_thumb"><img
+                                        src="{{ good.g_image }}"
+                                        alt="小米手环 光感版"/></a>
+                                <figcaption>
+                                    <div>
+                                        <a href="{% url 'app:gooddetail' good.id %}" target="_blank">
+                                            <hgroup>
+                                                <h4><span>{{ good.g_name }}</span></h4>
+                                            </hgroup>
+                                        </a>
+                                        <div class="product_detail">
+                                            <span class="price"><span class="sale_price">&yen;{{ good.g_price }}</span></span>
+                                        </div>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                             <section class="reviews">
+                                <article class="review review_1">
+                                    <div>
+                                    {% if not good.g_credits %}
+                                        <span class="name">非积分商品</span></a>
+                                        {% else %}
+                                        <span class="name">需{{ good.g_credits }}积分兑换</span></a>
+                                        {% endif %}
+                                        <section class="review_wrap">
+                                            <header class="review_header">
+                                                <hgroup class="review_title">
+                                                    {% if good.g_hot %}
+                                                    <h4>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">热品</a>
+                                                    </h4>
+                                                    {% else %}
+                                                    <h4>
+                                                        <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/568a70cd9b5d643a1900004d"
+                                                           target="_blank">非热品</a>
+                                                    </h4>
+                                                    {% endif %}
+                                                    <h5>{{ good.g_name }}</h5>
+                                                    <div class="score">
+                                                        <div class="rate">
+
+                                                            <span class="star active"></span>
+                                                            <span class="star active"></span>
+                                                            <span class="star active"></span>
+                                                            <span class="star active"></span>
+                                                            <span class="star active"></span>
+                                                        </div>
+                                                    </div>
+                                                </hgroup>
+                                                <em class="like"><i class="fa fa-thumbs-o-up"></i>{{ good.g_number }}</em>
+                                            </header>
+                                            <section class="review_body">
+                                                <p>
+                                                   {{ good.g_description }}</p>
+                                            </section>
+                                        </section>
+                                    </div>
+                                </article>
+                            </section>
+                        </section>
+                        {% endfor %}
                     </div>
                     <div id="category_you-xi" class="explore_content_item fade">
                         <section class="product_2">
