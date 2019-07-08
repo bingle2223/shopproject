@@ -1,0 +1,104 @@
+{% extends 'admins/basemain.html' %}
+
+{% load static %}
+
+{% block ext_js %}
+    <script>
+        $(function () {
+
+            $('#getcode').click(function (e) {
+                var ev = e || window.event
+                ev.preventDefault()
+                ev.stopPropagation()
+                var phone = $('#phone').val().trim()
+                console.log(phone)
+
+                $.get('/admin/getmsgcode/', {'phone': phone}, function (data) {
+                    console.log(data)
+                        if (data['status'] === 201) {
+                            console.log(data['message'])
+                            $('#codeinfo').html(data['message']).css('color', 'blue')
+                        }
+                    }
+                )
+
+            })
+        })
+
+    </script>
+{% endblock %}
+
+{% block right %}
+    <div id="pageAll">
+        <div class="pageTop">
+            <div class="page">
+
+                <img src="{% static 'img/coin02.png' %}"/><span><a href="{% url 'bankground:main' %}">首页</a>&nbsp;-&nbsp;<a
+                    href="{% url 'bankground:user' %}">网站管理</a>&nbsp;-</span>&nbsp;管理员管理
+            </div>
+        </div>
+        <div class="page ">
+            <div class="baTopNo">
+                <span>添加管理员</span>
+            </div>
+            <!-- 会员注册页面样式 -->
+
+            <div class="baBody">
+                <form action="{% url 'bankground:useradd' %}" method="post">
+                    {% csrf_token %}
+                    <div class="bbD">
+                        管理员账号：<input type="text" class="input3" name="username" placeholder="请输入管理员账号"/>{{ form.username.errors }}
+                    </div>
+
+                    <div class="bbD">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：
+
+                 {% for radio in form.sex %}
+                {{ radio.label_tag }}
+                {{ radio.tag }}
+                {{ radio.choice_label }}
+            {% endfor %}
+                        {{ form.sex.errors }}
+                    </div>
+
+                    <div class="bbD">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password"
+                                                                                              name="password"
+                                                                                              class="input3"
+                                                                                              placeholder="请输入密码"/>{{ form.password.errors }}
+                    </div>
+                    <div class="bbD">
+                        &nbsp;&nbsp;&nbsp;确认密码：<input type="password" name="chkpassword" class="input3"
+                                                      placeholder="请确认密码"/>{{ form.chkpassword.errors }}
+                    </div>
+
+                    <div class="bbD">
+                        管理员电话：<input type="text" id='phone' class="input3" name="phone" placeholder="请输入手机号"/>{{ form.phone.errors }}
+                    </div>
+
+                    <div class="bbD">
+                        管理员邮箱：<input type="email" name="email" class="input3" placeholder="请输入邮箱"/>
+                   {{ form.email.errors }}
+                    </div>
+                    <div class="bbD">
+                        短信验证码:
+                        <input type="text" class='input3' name="msgcode" id="msg_code" placeholder="请输入验证码">
+                        <a id="getcode" class="get_msg_code" href="#">获取验证码</a>
+                        <span id="codeinfo"></span>
+                        {{ msg }}
+                    </div>
+
+                    <div class="bbD">
+                        <p class="bbDP">
+                            <button class="btn_ok btn_yes" href="#">提交</button>
+                            <a class="btn_ok btn_no" href="#">取消</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- 会员注册页面样式end -->
+    </div>
+
+{% endblock %}

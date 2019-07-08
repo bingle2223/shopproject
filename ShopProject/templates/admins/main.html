@@ -1,0 +1,18 @@
+{% extends 'admins/basemain.html' %}
+{% load static %}
+{% block ext_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/css.css' %}" />
+{% endblock %}
+{% block right %}
+
+	<div id="pageAll">
+		<div class="page">
+			<!-- main页面样式 -->
+			<div class="indexL" style=" text-align:center;" >
+				<img class="indexBn" src="{% static 'img/indexBanner.png' %}" /><br>
+				更多模板：<a href="https://shop303982252.taobao.com/" target="_blank">点击访问</a>
+			</div>
+			<!-- main页面样式end -->
+		</div>
+	</div>
+{% endblock %}

@@ -26,7 +26,3 @@ def send_sms(phone,templateParam,**kwargs):
     response = client.do_action_with_exception(request)
     # python2:  print(response)
     print(str(response, encoding = 'utf-8'))
-
-if __name__ == "__main__":
-
-    send_sms('17719836274',{'code':'234567'},**SMSCONFIG)

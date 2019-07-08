@@ -1,0 +1,39 @@
+{% extends 'admins/basemain.html' %}
+
+{% load static %}
+
+{% block right %}
+	<div id="pageAll">
+		<div class="pageTop">
+			<div class="page">
+				<img src="{% static 'img/coin02.png' %}" /><span><a href="{% url 'bankground:main'%}">首页</a>&nbsp;-&nbsp;<a
+					href="{% url 'bankground:vip' %}">公共管理</a>&nbsp;-</span>&nbsp;会员注册
+			</div>
+		</div>
+		<div class="page ">
+			<!-- 会员注册页面样式 -->
+			<div class="banneradd bor">
+				<div class="baTopNo">
+					<span>会员注册</span>
+				</div>
+				<div class="baBody">
+					<div class="bbD">
+						用户名：<input type="text" class="input3" name="username"/>
+					</div>
+					<div class="bbD">
+						&nbsp;&nbsp;&nbsp;密码：<input type="password" class="input3" name="password"/>
+					</div>
+					<div class="bbD">
+						<p class="bbDP">
+							<a class="btn_ok btn_yes" href="#">提交</a> <a
+								class="btn_ok btn_no" href="#">取消</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- 会员注册页面样式end -->
+		</div>
+	</div>
+{% endblock %}
+
