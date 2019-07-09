@@ -8,6 +8,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>文章</title>
+
     <link href="{% static 'css/application.css' %}" media="screen" rel="stylesheet"/>
     <link href="{% static 'css/application_sub.css' %}" media="screen" rel="stylesheet"/>
     <link href="{% static 'css/posts.css' %}" media="screen" rel="stylesheet"/>
@@ -27,71 +28,116 @@
 {% block content %}
 <section id="wrapper">
     <header class="page-header">
-        <h1><a href="../article" class="logo"><em>KnewOne</em>文章</a></h1>
+        <h1><a href="{% url 'App:article' %}" class="logo"><em>KnewOne</em>文章</a></h1>
         <div id="write_article">
-            <a href="../article_add" target="_blank" class="btn btn--large btn--orange"><i
+            <a href="{% url 'App:showarticleadd' %}" target="_blank" class="btn btn--large btn--orange"><i
                     class="fa fa-pencil-square-o"></i>我要写</a>
         </div>
     </header>
-    <div class="row">
-        <div class="col-md-9">
-            <nav class="entries_nav">
-                <a href="../article" class="active">首页</a>
-                <a href="/posts/reviews">评测</a>
-                <a href="/posts/specials">专题</a>
-                <a href="/posts/talks">访谈</a>
-            </nav>
-        </div>
-    </div>
+{#    <div class="row">#}
+{#        <div class="col-md-9">#}
+{#            <nav class="entries_nav">#}
+{#                <a href="{% url 'App:article' %}" class="active">首页</a>#}
+{#                <a href="{% url 'App:post_reviews' %}">评测</a>#}
+{#                <a href="{% url 'App:post_specials' %}">专题</a>#}
+{#                <a href="{% url 'App:post_talks' %}">访谈</a>#}
+{#            </nav>#}
+{#        </div>#}
+{#    </div>#}
     <div class="row">
         <div class="col-md-9">
             <ul class="block_list">
-                <li>
-                    <section class="thumbnail--article">
-                        <div class="thumbnail-cover">
-                            <a href="activity_detail.html?56935ac2420fc27f7c000089" target="_blank"><img
-                                    src="/static/images/c17d416f75718514e64d0cc496974eb0.jpg!middle" alt=""/></a>
-                        </div>
-                        <div class="thumbnail-body">
-                            <h2 class="thumbnail-title"><a href="activity_detail.html?56935ac2420fc27f7c000089"
-                                                           target="_blank">【编辑推荐】《霍比特人》系列盖毯，这才是买家秀好吗</a></h2>
-                            <ul class="metas">
-                                <li class="avatar"><a href="member_index.html?564abbf46e38d637380001f3"
-                                                      data-profile-popover="564abbf46e38d637380001f3" rel="author"
-                                                      target="_blank"><img
-                                        src="/static/images/611da2175f7fdc5fd40c4d015e70ea45.jpg!small" alt="想飞的佐罗"/></a>
-                                </li>
-                                <li class="name"><a href="member_index.html?564abbf46e38d637380001f3" rel="author"
-                                                    target="_blank" data-profile-popover="564abbf46e38d637380001f3">想飞的佐罗</a>
-                                </li>
-                                <li class="time">
-                                    <time data-time-ago="2016-01-11T15:33:00+08:00" class="timeago"
-                                          title="2016-01-11 15:33:00" datetime="2016-01-11T15:33:00+08:00">8小时前
+
+                    <li>
+                        <section class="thumbnail--article">
+                            <div class="thumbnail-cover">
+                                <a href="{%  url 'App:activity' %}" target="_blank"><img
+                                        src="{{ g_image }}" alt=""/></a>
+                            </div>
+                            <div class="thumbnail-body">
+                                <h2 class="thumbnail-title"><a href="{%  url 'App:activity' %}"
+                                                               target="_blank">{{ a_title }}</a></h2>
+                                <ul class="metas">
+
+                                    <li class="avatar">
+                                        <a href="{% url 'App:member_index' u_username %}"
+                                                          data-profile-popover="564abbf46e38d637380001f3" rel="author"
+                                                          target="_blank"><img
+                                            src="{{ u_icon }}" /></a>
+                                    </li>
+
+                                    <li class="name">
+                                        <a href="{% url 'App:member_index' u_username %}" rel="author"
+                                                        target="_blank"
+                                                        data-profile-popover="564abbf46e38d637380001f3">{{ u_username}}</a>
+                                    </li>
+                                    <li class="time">
+                                    <time data-time-ago="{{ front }}T{{ behind }}" class="timeago"
+                                          title="{{ front }} {{ behind2 }}" datetime="{{ front }}T{{ behind }}">
                                     </time>
                                 </li>
-                                <li id="voting-569344a4420fc2237300101f"
-                                    data-vlink="/things/stansborough-la-rong-yang-mao-gai-tan/reviews/569344a4420fc2237300101f/vote"
-                                    class="votable"><i class="fa fa-thumbs-o-up"></i><span>5</span></li>
-                                <li><a href="activity_detail.html?56935ac2420fc27f7c000089#comments" target="_blank"><i
-                                        class="fa fa-comment-o"></i><span>1</span></a></li>
-                            </ul>
-                        </div>
-                    </section>
-                </li>
+                                    <li id="voting-569344a4420fc2237300101f"
+                                        data-vlink="/things/stansborough-la-rong-yang-mao-gai-tan/reviews/569344a4420fc2237300101f/vote"
+                                        class="votable"><i
+                                            class="fa fa-thumbs-o-up"></i><span>{{ g_replygalike }}</span></li>
+                                    <li><a href="activity_detail.html?56935ac2420fc27f7c000089#comments"
+                                           target="_blank"><i
+                                            class="fa fa-comment-o"></i><span>{{ replycount }}</span></a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </li>
+
             </ul>
             <footer class="page-footer">
-                <ul class="pagination">
-                    <li class="active"><a href="#">1</a></li>
-                    <li class=""><a href="/posts?page=2" rel="next">2</a></li>
-                    <li class=""><a href="/posts?page=3">3</a></li>
-                    <li class=""><a href="/posts?page=4">4</a></li>
-                    <li class=""><a href="/posts?page=5">5</a></li>
-                    <li class="disabled"><a href="#">...</a></li>
-                    <li><a href="/posts?page=2" rel="next">›</a></li>
-                    <li><a href="/posts?page=94">&raquo;</a></li>
-                </ul>
+                    {#        分页#}
+                    <div class="row">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                {% if pagination.has_previous %}
+                                    <li>
+                                        <a href="{% url 'App:article1' pagination.previous_page_number %}"
+                                           aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li class="disabled">
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% for page in pagerange %}
+                                    {% if page == pagination.number %}
+                                        <li class="active"><a href="{% url 'App:article1' page %}">{{ page }}</a></li>
+                                    {% else %}
+                                        <li><a href="{% url 'App:article1' page %}">{{ page }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if pagination.has_next %}
+                                    <li>
+                                        <a href="{% url 'App:article1' pagination.next_page_number %}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li class="disabled">
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+
+                    </div>
+{#                </div>#}
             </footer>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
         <div class="col-md-3">
             <section class="sidemenu">
                 <ul>

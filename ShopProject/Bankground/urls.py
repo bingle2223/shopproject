@@ -53,6 +53,16 @@ urlpatterns = [
     url(r'^log/',views.log,name='log'),
 
 
+#     文章首页
+    url(r'^article/$',views.article1,name='article'),
+    url(r'^article/(\d+)/$',views.article1,name='article1'),
+#     插入文章
+    url(r'^article_add/$',views.article_add,name='article_add'),
+#     个人主页
+    url(r'^member_index/(\w+)/$',views.member_index,name='member_index'),
+# 展示写文章页面
+    url(r'^showarticleadd/$',views.showarticleadd,name='showarticleadd'),
+
 
 
 

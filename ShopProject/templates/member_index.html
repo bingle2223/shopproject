@@ -1,18 +1,18 @@
 {% extends 'index/base.html' %}
 {% load static %}
 {% block head %}
-<html lang="zh-Hans-CN" prefix="og: http://ogp.me/ns#"
-      class="users_show users_activities signed_in production firefox desktop windows js flexbox canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths csscalc landscape scrollbar"
-      style="">
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>个人中心 - 首页</title>
-    <link href="{% static 'css/application.css' %}" media="screen" rel="stylesheet"/>
-    <link href="{% static 'css/application_sub.css' %}" media="screen" rel="stylesheet"/>
-    <link href="{% static 'css/users.css' %}" media="screen" rel="stylesheet"/>
-    <script src="{% static 'js/before_body.js' %}"></script>
-    <!--[if lt IE 9]>
+    <html lang="zh-Hans-CN" prefix="og: http://ogp.me/ns#"
+          class="users_show users_activities signed_in production firefox desktop windows js flexbox canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths csscalc landscape scrollbar"
+          style="">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>个人中心 - 首页</title>
+        <link href="{% static 'css/application.css' %}" media="screen" rel="stylesheet"/>
+        <link href="{% static 'css/application_sub.css' %}" media="screen" rel="stylesheet"/>
+        <link href="{% static 'css/users.css' %}" media="screen" rel="stylesheet"/>
+        <script src="{% static 'js/before_body.js' %}"></script>
+        <!--[if lt IE 9]>
   <script>
     var tip = '建议升级您的浏览器（如 Chrome, Firefox）以获得更好的体验！',
         url = 'http://browsehappy.com';
@@ -22,550 +22,283 @@
     window.location.href = url;
   </script>
 <![endif]-->
-</head>
-<body>
+    </head>
+    <body>
 {% endblock %}
 {% block content %}
-<section id="wrapper">
-    <header itemtype="http://schema.org/Person" itemscope="" class="vcard">
-        <figure class="vcard-canopy">
-            <img src="../static/images/0e8d53847adc2b1e78740c55e553eefa.jpg!background" alt="canopy"/>
-            <div class="vcard-canopy-mask"></div>
-        </figure>
-        <div class="vcard-main">
-            <a href="member_index.html?54a94b2e31302d3665d10100" class="vcard-avatar"><img width="60" height="60"
-                                                                                           src="../static/images/12.png"
-                                                                                           alt="阿斗"
-                                                                                           itemprop="image"/></a>
-            <div class="vcard-setting-avatar">
-                <input type="file" title="上传新头像" accept="image/*" id="user_avatar" name="user[avatar]"/>
-            </div>
-            <div title="阿斗" itemprop="name" class="vcard-name">
-                阿斗
-            </div>
-            <div class="vcard-level" data-original-title="" title="">
-                <div class="level">
-                    <div class="level-number">
-                        lv. 1
-                    </div>
-                    <div class="level-progress">
-                        <div style="width: 61.333333333333336%" class="level-progress_bar"></div>
-                    </div>
+    <section id="wrapper">
+        <header itemtype="http://schema.org/Person" itemscope="" class="vcard">
+            <figure class="vcard-canopy">
+                <img src="/static/images/0e8d53847adc2b1e78740c55e553eefa.jpg!background" alt="canopy"/>
+                <div class="vcard-canopy-mask"></div>
+            </figure>
+            <div class="vcard-main">
+                <a href="member_index.html?54a94b2e31302d3665d10100" class="vcard-avatar"><img width="60" height="60"
+                                                                                               src="{{ u_icon }}"
+                                                                                               alt=""
+                                                                                               itemprop="image"/></a>
+                <div class="vcard-setting-avatar">
+                    <input type="file" title="上传新头像" accept="image/*" id="user_avatar" name="user[avatar]"/>
                 </div>
-            </div>
-            <div itemprop="gender" class="vcard-gender"></div>
-        </div>
-        <div class="vcard-setting-canopy">
-            <button type="button" id="select_canopy_btn" data-toggle="modal" data-target="#user_canopy_picker_modal"
-                    class="btn">选择背景
-            </button>
-            <div id="upload_canopy_btn" class="btn">
-                <span>上传新背景</span>
-                <input type="file" data-domain="https://making-photos.b0.upaiyun.com"
-                       data-url="https://v0.api.upyun.com/making-photos"
-                       data-signature="25114af9c96f13583d34437b1aada43f"
-                       data-policy="eyJidWNrZXQiOiJtYWtpbmctcGhvdG9zIiwiZXhwaXJhdGlvbiI6MTQ1MjUzNjIzMiwic2F2ZS1rZXkiOiIvcGhvdG9zL3tmaWxlbWQ1fXsuc3VmZml4fSIsImFsbG93LWZpbGUtdHlwZSI6ImpwZyxqcGVnLGdpZixwbmciLCJjb250ZW50LWxlbmd0aC1yYW5nZSI6IjAsIDQxOTQzMDQiLCJ4LWdta2VybC1yb3RhdGUiOiJhdXRvIn0="
-                       accept="image/*" id="user_canopy_field" name="file"/>
-            </div>
-        </div>
-        <div class="vcard-setting">
-            <button type="button" id="edit_profile_btn" class="btn">编辑个人信息</button>
-            <button type="button" id="cancel_edit_profile_btn" class="btn">取消</button>
-            <button type="button" id="save_profile_btn" class="btn">保存个人信息</button>
-        </div>
-        <div class="vcard-friendship">
-            <div itemprop="follows" class="vcard-follows">
-                <a href="member_index.html?54a94b2e31302d3665d10100/followings"
-                   class="vcard-followings">关注<em>2</em></a>
-                <a href="member_index.html?54a94b2e31302d3665d10100/followers" class="vcard-followers">关注者<em>0</em></a>
-            </div>
-        </div>
-    </header>
-    <nav class="page-nav--tiny visible-xs-block">
-        <ul>
-            <li class=" active"><a href="member_index.html?54a94b2e31302d3665d10100"><i class="fa fa-home"></i></a></li>
-            <li><a href="member_index.html?54a94b2e31302d3665d10100/fancies"><i class="fa fa-cube"></i></a></li>
-            <li><a href="member_index.html?54a94b2e31302d3665d10100/favorites"><i class="fa fa-star"></i></a></li>
-            <li><a href="member_index.html?54a94b2e31302d3665d10100/lists"><i class="fa fa-list-ko"></i></a></li>
-            <li><a href="member_index.html?54a94b2e31302d3665d10100/articles"><i class="fa fa-pencil"></i></a></li>
-        </ul>
-    </nav>
-    <nav class="page-nav hidden-xs">
-        <ul>
-            <li class="nav-activities active"><a href="member_index.html?54a94b2e31302d3665d10100"><i
-                    class="fa fa-bars"></i>动态</a></li>
-            <li class="nav-fancies"><a href="member_index.html?54a94b2e31302d3665d10100/fancies"><i
-                    class="fa fa-heart"></i>喜欢
-                <small>4</small>
-            </a></li>
-            <li class="nav-desires"><a href="member_index.html?54a94b2e31302d3665d10100/desires"><i
-                    class="fa fa-desire"></i>想要
-                <small>0</small>
-            </a></li>
-            <li class="nav-favorites"><a href="member_index.html?54a94b2e31302d3665d10100/favorites"><i
-                    class="fa fa-star"></i>收藏
-                <small>0</small>
-            </a></li>
-            <li class="nav-owns"><a href="member_index.html?54a94b2e31302d3665d10100/owns"><i
-                    class="fa fa-check-circle-o"></i>拥有
-                <small>1</small>
-            </a></li>
-            <li class="nav-things"><a href="member_index.html?54a94b2e31302d3665d10100/things"><i
-                    class="fa fa-magic"></i>分享
-                <small>2</small>
-            </a></li>
-            <li class="nav-lists"><a href="member_index.html?54a94b2e31302d3665d10100/lists"><i
-                    class="fa fa-list-ko"></i>列表
-                <small>0</small>
-            </a></li>
-            <li class="nav-articles"><a href="member_index.html?54a94b2e31302d3665d10100/articles"><i
-                    class="fa fa-pencil"></i>文章
-                <small>2</small>
-            </a></li>
-            <li class="nav-discussions"><a href="member_index.html?54a94b2e31302d3665d10100/discussions"><i
-                    class="fa fa-comments"></i>讨论
-                <small>1</small>
-            </a></li>
-            <li class="nav-topics"><a href="member_index.html?54a94b2e31302d3665d10100/topics"><i
-                    class="fa fa-leaf"></i>话题
-                <small>0</small>
-            </a></li>
-        </ul>
-    </nav>
-    <div class="page-content">
-        <section class="block_list js-waterfall" style="position: relative; height: 2027.75px;">
-            <div class="activity" style="position: absolute; left: 0px; top: 0px;">
-                <header class="activity-header">
-                    <em><i class="fa fa-pencil"></i><span>写了评测</span></em>
-                    <a href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/5693c662420fc26b5b00026d"
-                       target="_blank" class="activity-timestamp">
-                        <time data-time-ago="2016-01-11T23:12:34+08:00" class="timeago" title="2016-01-11 23:12:34"
-                              datetime="2016-01-11T23:12:34+08:00">4分钟前
-                        </time>
-                    </a>
-                </header>
-                <div class="activity-body">
-                    <article class="review">
-                        <header class="review-header">
-                            <h5 class="review-title"><a
-                                    href="discover_detail.html?vh-zhi-huang-tong-yuan-zi-bi/reviews/5693c662420fc26b5b00026d">评测标题</a>
-                            </h5>
-                            <div class="score">
-                                <div class="rate">
-                                    <span class="star"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                    <span class="star active"></span>
-                                </div>
-                            </div>
-                        </header>
-                        <div class="review-body">
-                            <p>评测内容</p>
+                <div title="{{ u_username }}" itemprop="name" class="vcard-name">
+                    {{ u_username }}
+                </div>
+                <div class="vcard-level" data-original-title="" title="">
+                    <div class="level">
+                        <div class="level-number">
+                            {{ u_credits1 }}
                         </div>
-                        <footer class="review-footer">
-                            <ul class="metas">
-                                <li class="review-time">
-                                    <time data-time-ago="2016-01-11T23:12:34+08:00" class="timeago"
-                                          title="2016-01-11 23:12:34" datetime="2016-01-11T23:12:34+08:00">4分钟前
-                                    </time>
-                                </li>
-                            </ul>
-                        </footer>
-                    </article>
+                        <div class="level-progress">
+                            <div style="width: {{ count }}%" class="level-progress_bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div itemprop="gender" class="vcard-gender"></div>
+            </div>
+            <div class="vcard-setting-canopy">
+                <button type="button" id="select_canopy_btn" data-toggle="modal" data-target="#user_canopy_picker_modal"
+                        class="btn">选择背景
+                </button>
+                <div id="upload_canopy_btn" class="btn">
+                    <span>上传新背景</span>
+                    <input type="file" data-domain="https://making-photos.b0.upaiyun.com"
+                           data-url="https://v0.api.upyun.com/making-photos"
+                           data-signature="25114af9c96f13583d34437b1aada43f"
+                           data-policy="eyJidWNrZXQiOiJtYWtpbmctcGhvdG9zIiwiZXhwaXJhdGlvbiI6MTQ1MjUzNjIzMiwic2F2ZS1rZXkiOiIvcGhvdG9zL3tmaWxlbWQ1fXsuc3VmZml4fSIsImFsbG93LWZpbGUtdHlwZSI6ImpwZyxqcGVnLGdpZixwbmciLCJjb250ZW50LWxlbmd0aC1yYW5nZSI6IjAsIDQxOTQzMDQiLCJ4LWdta2VybC1yb3RhdGUiOiJhdXRvIn0="
+                           accept="image/*" id="user_canopy_field" name="file"/>
                 </div>
             </div>
-            <div class="activity" style="position: absolute; left: 495px; top: 0px;">
-                <header class="activity-header">
-                    <em><i class="fa fa-plus"></i><span>关注</span></em>
-                    <a href="member_index.html?564abbf46e38d637380001f3" target="_blank" class="activity-timestamp">
-                        <time data-time-ago="2016-01-11T23:10:57+08:00" class="timeago" title="2016-01-11 23:10:57"
-                              datetime="2016-01-11T23:10:57+08:00">5分钟前
-                        </time>
-                    </a>
-                </header>
-                <div class="activity-body">
-                    <p class="text">关注了<a href="member_index.html?564abbf46e38d637380001f3">想飞的佐罗</a></p>
+            <div class="vcard-setting">
+                <button type="button" id="edit_profile_btn" class="btn">编辑个人信息</button>
+                <button type="button" id="cancel_edit_profile_btn" class="btn">取消</button>
+                <button type="button" id="save_profile_btn" class="btn">保存个人信息</button>
+            </div>
+            <div class="vcard-friendship">
+                <div itemprop="follows" class="vcard-follows">
+                    <a href="{% url 'App:member_index' u_username %}"
+                       class="vcard-followings">关注<em>{{ guanzhu }}</em></a>
+                    <a href="{% url 'App:member_index' u_username %}" class="vcard-followers">粉丝<em>{{ fensi }}</em></a>
                 </div>
             </div>
-            <div class="activity" style="position: absolute; left: 495px; top: 122px;">
-                <header class="activity-header">
-                    <em><i class="fa fa-comment"></i><span>回复</span></em>
-                    <a href="discover_detail.html?stansborough-la-rong-yang-mao-gai-tan/reviews/569344a4420fc2237300101f"
-                       target="_blank" class="activity-timestamp">
-                        <time data-time-ago="2016-01-11T23:10:24+08:00" class="timeago" title="2016-01-11 23:10:24"
-                              datetime="2016-01-11T23:10:24+08:00">6分钟前
-                        </time>
-                    </a>
-                </header>
-                <div class="activity-body">
-                    <p class="text">回复了对产品<a href="discover_detail.html?stansborough-la-rong-yang-mao-gai-tan">Stansborough
-                        拉绒羊毛盖毯</a>的评测<a
-                            href="discover_detail.html?stansborough-la-rong-yang-mao-gai-tan/reviews/569344a4420fc2237300101f">《霍比特人》系列盖毯，这才是买家秀好吗</a>
-                    </p>
-                </div>
-            </div>
-            <div class="activity" style="position: absolute; left: 0px; top: 227px;"></div>
-            <div class="activity" style="position: absolute; left: 0px; top: 247px;">
-                <header class="activity-header">
-                    <em><i class="fa fa-pencil"></i><span>发表了文章</span></em>
-                    <a href="/articles/5693c5096e24420c35000219" target="_blank" class="activity-timestamp">
-                        <time data-time-ago="2016-01-11T23:06:49+08:00" class="timeago" title="2016-01-11 23:06:49"
-                              datetime="2016-01-11T23:06:49+08:00">9分钟前
-                        </time>
-                    </a>
-                </header>
-                <div class="activity-body">
-                    <article class="review">
-                        <header class="review-header">
-                            <h5 class="review-title"><a href="/articles/5693c5096e24420c35000219">素材火</a></h5>
-                        </header>
-                        <section class="review-body">
-                            <p>www.sucaihuo.com</p>
-                        </section>
-                        <footer class="review-footer">
-                            <ul class="metas">
-                                <li class="review-time">
-                                    <time data-time-ago="2016-01-11T23:06:49+08:00" class="timeago"
-                                          title="2016-01-11 23:06:49" datetime="2016-01-11T23:06:49+08:00">9分钟前
-                                    </time>
-                                </li>
-                                <li><i class="fa fa-comments-o"></i>1</li>
-                            </ul>
-                        </footer>
-                    </article>
-                </div>
-            </div>
-            <div class="activity" style="position: absolute; left: 495px; top: 264px;">
-                <header class="activity-header">
-                    <em><i class="fa fa-comment"></i><span>发起了讨论</span></em>
-                    <a href="discover_detail.html?less-fu-gu-shou-gong-niu-pi-ben/discussions/5693c4c66e24420c35000212"
-                       target="_blank" class="activity-timestamp">
-                        <time data-time-ago="2016-01-11T23:05:42+08:00" class="timeago" title="2016-01-11 23:05:42"
-                              datetime="2016-01-11T23:05:42+08:00">10分钟前
-                        </time>
-                    </a>
-                </header>
-                <div class="activity-body">
-                    <article class="discussion">
-                        <a href="discover_detail.html?less-fu-gu-shou-gong-niu-pi-ben/discussions/5693c4c66e24420c35000212"
-                           class="discussion-content"><p>11111</p></a>
-                        <ul class="discussion-metas metas"></ul>
-                        <a href="discover_detail.html?less-fu-gu-shou-gong-niu-pi-ben" target="_blank"
-                           class="discussion-thing"><img
-                                src="../static/images/cbdeaa91ce6a2f23b155c6923d8170e8.jpg!small" alt="LESS 复古手工牛皮本"/>
-                            <div class="discussion-thing-info">
-                                <h6>LESS 复古手工牛皮本</h6>
-                                <ul class="metas">
-                                    <li><i class="fa fa-heart"></i>8</li>
-                                </ul>
-                            </div>
+        </header>
+        <nav class="page-nav--tiny visible-xs-block">
+            <ul>
+                <li class=" active"><a href="member_index.html?54a94b2e31302d3665d10100"><i class="fa fa-home"></i></a>
+                </li>
+                <li><a href="member_index.html?54a94b2e31302d3665d10100/fancies"><i class="fa fa-cube"></i></a></li>
+                <li><a href="member_index.html?54a94b2e31302d3665d10100/favorites"><i class="fa fa-star"></i></a></li>
+                <li><a href="member_index.html?54a94b2e31302d3665d10100/lists"><i class="fa fa-list-ko"></i></a></li>
+                <li><a href="member_index.html?54a94b2e31302d3665d10100/articles"><i class="fa fa-pencil"></i></a></li>
+            </ul>
+        </nav>
+        <nav class="page-nav hidden-xs">
+            <ul>
+                <li class="nav-activities active"><a href="member_index.html?54a94b2e31302d3665d10100"><i
+                        class="fa fa-bars"></i>动态</a></li>
+                <li class="nav-favorites"><a href="member_index.html?54a94b2e31302d3665d10100/favorites"><i
+                        class="fa fa-star"></i>收藏
+                    <small>{{ collections }}</small>
+                </a></li>
+                <li class="nav-things"><a href="member_index.html?54a94b2e31302d3665d10100/things"><i
+                        class="fa fa-magic"></i>分享
+                    <small>2</small>
+                </a></li>
+                <li class="nav-articles"><a href="member_index.html?54a94b2e31302d3665d10100/articles"><i
+                        class="fa fa-pencil"></i>文章
+                    <small>{{ uid_count }}</small>
+                </a></li>
+            </ul>
+        </nav>
+        <div class="page-content">
+            <section class="block_list js-waterfall" style="position: relative; height: 2027.75px;">
+                <div class="activity" style="position: absolute; left: 0px; top: 0px;">
+                    <header class="activity-header">
+                        <em><i class="fa fa-pencil"></i><span>写了评测</span></em>
+                        <a href="{% url 'App:discover_detail' u_username %}"
+                           target="_blank" class="activity-timestamp">
+                            <time data-time-ago="{{ front }}T{{ behind }}" class="timeago" title="{{ front }} {{ behind2 }}"
+                                  datetime="{{ front }}T{{ behind }}">
+                            </time>
                         </a>
-                    </article>
-                </div>
-            </div>
-            <div class="activity" style="position: absolute; left: 0px; top: 473px;">
-                <header class="activity-header">
-                    <em class="activity-owned"><i class="fa fa-check-circle-o"></i><span>拥有</span></em>
-                    <a href="discover_detail.html?3333-a-sa-sa-shi" target="_blank" class="activity-timestamp">
-                        <time data-time-ago="2016-01-02T09:04:47+08:00" class="timeago" title="2016-01-02 09:04:47"
-                              datetime="2016-01-02T09:04:47+08:00">10天前
-                        </time>
-                    </a>
-                </header>
-                <div class="activity-body">
-                    <article class="thing">
-                        <header class="cover">
-                            <a href="discover_detail.html?3333-a-sa-sa-shi" target="_blank" class="cover-inner"><img
-                                    src="../static/images/50ba35cf6a7b80df8cf51299546edfd0.gif!thing.fixed.big"
-                                    alt="3333 啊飒飒是"/></a>
-                        </header>
-                        <section class="content">
-                            <h4 class="title"><a href="discover_detail.html?3333-a-sa-sa-shi" title="3333 啊飒飒是"
-                                                 target="_blank">3333 啊飒飒是</a></h4>
-                        </section>
-                        <footer class="info">
-                            <div class="stats">
-                                <a href="discover_detail.html?3333-a-sa-sa-shi" target="_blank"><i
-                                        class="fa fa-check-circle-o"></i><span class="owners_count">1</span></a>
+                    </header>
+                    <div class="activity-body">
+                        <article class="review">
+                            <header class="review-header">
+                                <h5 class="review-title"><a
+                                        href="{% url 'App:discover_detail' u_username %}">{{ g_name }}</a>
+                                </h5>
+                                <div class="score">
+                                        <div class="rate">
+                                            {#                                        <span class="star"></span>#}
+                                            {% for i in  g_star %}
+                                            <span class="star active"></span>
+                                            {% endfor %}
+                                        </div>
+                                </div>
+                            </header>
+                            <div class="review-body">
+                                <p>{{ c_reply }}</p>
                             </div>
-                            <div class="interactions">
-                                <span class="fancy_button"><a href="#" data-label="3333 啊飒飒是" data-action="fancy"
-                                                              data-category="thing" data-from="" data-state="owned"
-                                                              data-fancied="true" data-type="fancy"
-                                                              data-fancy="56872226fed5a005170007ef" title="修改产品印象"
-                                                              class="fancied"><i class="fa fa-heart"></i><span
-                                        class="fanciers_count">1</span><small>喜欢</small></a></span>
-                                <a href="#" title="加入列表" data-label="3333 啊飒飒是" data-action="add_to_list"
-                                   data-category="thing" data-thing-id="56872226fed5a005170007ef"
-                                   data-add-to-list="true" class="add_to_list"><i class="fa fa-list-ko"></i></a>
-                            </div>
-                        </footer>
-                    </article>
+                            <footer class="review-footer">
+                                <ul class="metas">
+                                    <li class="review-time">
+                                        <time data-time-ago="{{ front }}T{{ behind }}" class="timeago"
+                                              title="{{ front }} {{ behind2 }}" datetime="{{ front }}T{{ behind }}">}}
+                                        </time>
+                                    </li>
+                                </ul>
+                            </footer>
+                        </article>
+                    </div>
                 </div>
-            </div>
-            <div class="activity" style="position: absolute; left: 495px; top: 506px;">
-                <header class="activity-header">
-                    <em><i class="fa fa-plus"></i><span>分享</span></em>
-                    <a href="discover_detail.html?3333-a-sa-sa-shi" target="_blank" class="activity-timestamp">
-                        <time data-time-ago="2016-01-02T09:04:38+08:00" class="timeago" title="2016-01-02 09:04:38"
-                              datetime="2016-01-02T09:04:38+08:00">10天前
-                        </time>
-                    </a>
-                </header>
-                <div class="activity-body">
-                    <article class="thing">
-                        <header class="cover">
-                            <a href="discover_detail.html?3333-a-sa-sa-shi" target="_blank" class="cover-inner"><img
-                                    src="../static/images/50ba35cf6a7b80df8cf51299546edfd0.gif!thing.fixed.big"
-                                    alt="3333 啊飒飒是"/></a>
-                        </header>
-                        <section class="content">
-                            <h4 class="title"><a href="discover_detail.html?3333-a-sa-sa-shi" title="3333 啊飒飒是"
-                                                 target="_blank">3333 啊飒飒是</a></h4>
-                        </section>
-                        <footer class="info">
-                            <div class="stats">
-                                <a href="discover_detail.html?3333-a-sa-sa-shi" target="_blank"><i
-                                        class="fa fa-check-circle-o"></i><span class="owners_count">1</span></a>
-                            </div>
-                            <div class="interactions">
-                                <span class="fancy_button"><a href="#" data-label="3333 啊飒飒是" data-action="fancy"
-                                                              data-category="thing" data-from="" data-state="owned"
-                                                              data-fancied="true" data-type="fancy"
-                                                              data-fancy="56872226fed5a005170007ef" title="修改产品印象"
-                                                              class="fancied"><i class="fa fa-heart"></i><span
-                                        class="fanciers_count">1</span><small>喜欢</small></a></span>
-                                <a href="#" title="加入列表" data-label="3333 啊飒飒是" data-action="add_to_list"
-                                   data-category="thing" data-thing-id="56872226fed5a005170007ef"
-                                   data-add-to-list="true" class="add_to_list"><i class="fa fa-list-ko"></i></a>
-                            </div>
-                        </footer>
-                    </article>
+                <div class="activity" style="position: absolute; left: 495px; top: 0px;">
+                    <header class="activity-header">
+                        <em><i class="fa fa-plus"></i><span>关注</span></em>
+                        <a href="{% url 'App:member_index' u_username %}" target="_blank" class="activity-timestamp">
+{#                            <time data-time-ago="2016-01-11T23:10:57+08:00" class="timeago" title="2016-01-11 23:10:57"#}
+{#                                  datetime="2016-01-11T23:10:57+08:00">5分钟前#}
+{#                            </time>#}
+                        </a>
+                    </header>
+                    <div class="activity-body">
+                        {% for i in list1 %}
+                        <p class="text">关注了 <a href="{% url 'App:member_index' i %}"> {{ i }}</a></p>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-            <div class="activity" style="position: absolute; left: 0px; top: 978px;">
-                <header class="activity-header">
-                    <em class="activity-fancied"><i class="fa fa-heart"></i><span>喜欢</span></em>
-                    <a href="discover_detail.html?nuans-lighting-bian-xi-shu-ju-xian" target="_blank"
-                       class="activity-timestamp">
-                        <time data-time-ago="2015-12-09T15:29:20+08:00" class="timeago" title="2015-12-09 15:29:20"
-                              datetime="2015-12-09T15:29:20+08:00">1个月前
-                        </time>
-                    </a>
-                </header>
-                <div class="activity-body">
-                    <article class="thing">
-                        <header class="cover">
-                            <a href="discover_detail.html?nuans-lighting-bian-xi-shu-ju-xian" target="_blank"
-                               class="cover-inner"><img
-                                    src="../static/images/8524c6351504382fc23b1cec36d85eb8.jpg!thing.fixed.big"
-                                    alt="NUANS lighting 便携数据线"/></a>
-                        </header>
-                        <section class="content">
-                            <h4 class="title"><a href="discover_detail.html?nuans-lighting-bian-xi-shu-ju-xian"
-                                                 title="NUANS lighting 便携数据线" target="_blank">NUANS lighting 便携数据线</a>
-                            </h4>
-                        </section>
-                        <footer class="info">
-                            <div class="stats">
-                                <a href="discover_detail.html?nuans-lighting-bian-xi-shu-ju-xian" target="_blank"><i
-                                        class="fa fa-check-circle-o"></i><span class="owners_count">1</span></a>
-                            </div>
-                            <div class="interactions">
-                                <span class="fancy_button"><a href="#" data-label="NUANS lighting 便携数据线"
-                                                              data-action="fancy" data-category="thing" data-from=""
-                                                              data-state="none" data-fancied="true" data-type="fancy"
-                                                              data-fancy="56679247102b53520b0006a9" title="修改产品印象"
-                                                              class="fancied"><i class="fa fa-heart"></i><span
-                                        class="fanciers_count">14</span><small>喜欢</small></a></span>
-                                <a href="#" title="加入列表" data-label="NUANS lighting 便携数据线" data-action="add_to_list"
-                                   data-category="thing" data-thing-id="56679247102b53520b0006a9"
-                                   data-add-to-list="true" class="add_to_list"><i class="fa fa-list-ko"></i></a>
-                            </div>
-                        </footer>
-                        <small class="subscription-label">From<a href="discover_detail.html?categories/shou-ji-tong-xin"
-                                                                 target="_blank">手机通信</a></small>
-                    </article>
+                <div class="activity" style="position: absolute; left: 495px; top: 122px;">
+                    <header class="activity-header">
+                        <em><i class="fa fa-comment"></i><span>回复</span></em>
+                        <a href="discover_detail.html?stansborough-la-rong-yang-mao-gai-tan/reviews/569344a4420fc2237300101f"
+                           target="_blank" class="activity-timestamp">
+                            <time data-time-ago="{{ g_front }}T{{ g_behind }}" class="timeago" title="{{ g_front }} {{ g_behind2 }}"
+                                  datetime="{{ g_front }}T{{ g_behind }}">
+                            </time>
+                        </a>
+                    </header>
+                    <div class="activity-body">
+                        <p class="text">回复了对产品<a href="{% url 'App:discover_detail' u_username %}">{{ g_name }}
+                            </a>的评测<a
+                                href="{% url 'App:discover_detail' u_username %}">{{ g_reply }}</a>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="activity" style="position: absolute; left: 495px; top: 1012px;">
-                <header class="activity-header">
-                    <em><i class="fa fa-plus"></i><span>分享</span></em>
-                    <a href="discover_detail.html?bai-du-xia-ni-jiu-zhi-dao-1" target="_blank"
-                       class="activity-timestamp">
-                        <time data-time-ago="2015-01-04T22:36:39+08:00" class="timeago" title="2015-01-04 22:36:39"
-                              datetime="2015-01-04T22:36:39+08:00">1年前
-                        </time>
-                    </a>
-                </header>
-                <div class="activity-body">
-                    <article class="thing">
-                        <header class="cover">
-                            <a href="discover_detail.html?bai-du-xia-ni-jiu-zhi-dao-1" target="_blank"
-                               class="cover-inner"><img
-                                    src="../static/images/20ea785d06ef5ab2d0bbeac950686ccd.png!thing.fixed.big"
-                                    alt="百度一下，你就知道"/></a>
-                        </header>
-                        <section class="content">
-                            <h4 class="title"><a href="discover_detail.html?bai-du-xia-ni-jiu-zhi-dao-1"
-                                                 title="百度一下，你就知道" target="_blank">百度一下，你就知道</a></h4>
-                        </section>
-                        <footer class="info">
-                            <div class="interactions">
-                                <span class="fancy_button"><a href="#" data-label="百度一下，你就知道" data-action="fancy"
-                                                              data-category="thing" data-from="" data-state="none"
-                                                              data-fancied="true" data-type="fancy"
-                                                              data-fancy="54a94ff731302d3684a30100" title="修改产品印象"
-                                                              class="fancied"><i class="fa fa-heart"></i><span
-                                        class="fanciers_count">1</span><small>喜欢</small></a></span>
-                                <a href="#" title="加入列表" data-label="百度一下，你就知道" data-action="add_to_list"
-                                   data-category="thing" data-thing-id="54a94ff731302d3684a30100"
-                                   data-add-to-list="true" class="add_to_list"><i class="fa fa-list-ko"></i></a>
-                            </div>
-                        </footer>
-                    </article>
+                <div class="activity" style="position: absolute; left: 0px; top: 227px;"></div>
+                <div class="activity" style="position: absolute; left: 0px; top: 247px;">
+                    <header class="activity-header">
+                        <em><i class="fa fa-pencil"></i><span>发表了文章</span></em>
+                        <a href="/articles" target="_blank" class="activity-timestamp">
+                            <time data-time-ago="{{ a_front }}T{{ a_behind }}" class="timeago" title="{{ a_front }} {{ a_behind }}"
+                                  datetime="{{ a_front }}T{{ a_behind }}">9分钟前
+                            </time>
+                        </a>
+                    </header>
+                    <div class="activity-body">
+                        <article class="review">
+                            <header class="review-header">
+                                <h5 class="review-title"><a href="{% url 'App:article'   %}">{{ a_title }}</a></h5>
+                            </header>
+                            <section class="review-body">
+                                <p></p>
+                            </section>
+                            <footer class="review-footer">
+                                <ul class="metas">
+                                    <li class="review-time">
+                                        <time data-time-ago="2016-01-11T23:06:49+08:00" class="timeago"
+                                              title="2016-01-11 23:06:49" datetime="2016-01-11T23:06:49+08:00">9分钟前
+                                        </time>
+                                    </li>
+                                </ul>
+                            </footer>
+                        </article>
+                    </div>
                 </div>
-            </div>
-            <div class="activity" style="position: absolute; left: 0px; top: 1484px;">
-                <header class="activity-header">
-                    <em><i class="fa fa-plus"></i><span>关注</span></em>
-                    <a href="member_index.html?54a3c61431302d2c5b020000" target="_blank" class="activity-timestamp">
-                        <time data-time-ago="2015-01-04T22:26:26+08:00" class="timeago" title="2015-01-04 22:26:26"
-                              datetime="2015-01-04T22:26:26+08:00">1年前
-                        </time>
-                    </a>
-                </header>
-                <div class="activity-body">
-                    <p class="text">关注了<a href="member_index.html?54a3c61431302d2c5b020000">rubber</a></p>
-                </div>
-            </div>
-            <div class="activity" style="position: absolute; left: 495px; top: 1494px;">
-                <header class="activity-header">
-                    <em class="activity-fancied"><i class="fa fa-heart"></i><span>喜欢</span></em>
-                    <a href="discover_detail.html?chuang-yi-zao-xing-jian-dan-mo-ju" target="_blank"
-                       class="activity-timestamp">
-                        <time data-time-ago="2015-01-04T22:24:12+08:00" class="timeago" title="2015-01-04 22:24:12"
-                              datetime="2015-01-04T22:24:12+08:00">1年前
-                        </time>
-                    </a>
-                </header>
-                <div class="activity-body">
-                    <article class="thing">
-                        <header class="cover">
-                            <a href="discover_detail.html?chuang-yi-zao-xing-jian-dan-mo-ju" target="_blank"
-                               class="cover-inner"><img
-                                    src="../static/images/d5d93817057fe82b8eb84d66e4e5af89.png!thing.fixed.big"
-                                    alt="创意造型煎蛋模具"/></a>
-                        </header>
-                        <section class="content">
-                            <h4 class="title"><a href="discover_detail.html?chuang-yi-zao-xing-jian-dan-mo-ju"
-                                                 title="创意造型煎蛋模具" target="_blank">创意造型煎蛋模具</a></h4>
-                        </section>
-                        <footer class="info">
-                            <div class="stats">
-                                <a href="discover_detail.html?chuang-yi-zao-xing-jian-dan-mo-ju" target="_blank"><i
-                                        class="fa fa-check-circle-o"></i><span class="owners_count">3</span></a>
-                            </div>
-                            <div class="interactions">
-                                <span class="fancy_button"><a href="#" data-label="创意造型煎蛋模具" data-action="fancy"
-                                                              data-category="thing" data-from="" data-state="none"
-                                                              data-fancied="true" data-type="fancy"
-                                                              data-fancy="53c6258431302d6eab0c0000" title="修改产品印象"
-                                                              class="fancied"><i class="fa fa-heart"></i><span
-                                        class="fanciers_count">63</span><small>喜欢</small></a></span>
-                                <a href="#" title="加入列表" data-label="创意造型煎蛋模具" data-action="add_to_list"
-                                   data-category="thing" data-thing-id="53c6258431302d6eab0c0000"
-                                   data-add-to-list="true" class="add_to_list"><i class="fa fa-list-ko"></i></a>
-                            </div>
-                        </footer>
-                        <small class="subscription-label">From<a href="discover_detail.html?categories/yin-shi"
-                                                                 target="_blank">饮食</a></small>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </div>
-</section>
-<a id="go_top" href="#"><i class="fa fa-angle-up fa-2x"></i></a>
-<div class="message-on-top"></div>
-<div id="state"></div>
-<div class="modals">
-    <div id="new-thing-modal" class="modal fade modal--new_thing modal--new_thing-entry">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"><i class="fa fa-plus"></i>分享新产品</h4>
-                </div>
-                <div class="modal-body clearfix">
-                    <button data-toggle="modal" data-target="#new-thing-from-url-modal" data-dismiss="modal"
-                            class="btn"><i class="fa fa-globe fa-fw"></i>从网站收集
-                    </button>
-                    <button id="btn-to-new-local-thing-modal" data-target="#new-thing-from-local" data-dismiss="modal"
-                            class="btn"><i class="fa fa-cloud-upload fa-fw"></i>本地上传
-                    </button>
-                </div>
-            </div>
+            </section>
         </div>
-    </div>
-    <div id="new-thing-from-url-modal" data-keyboard="false"
-         class="modal fade modal--new_thing modal--new_thing-remote">
-        <form method="get" data-remote="true" accept-charset="UTF-8" action="/things/extract_url" autocomplete="off"
-              id="extract_url_form">
-            <input type="hidden" value="✓" name="utf8"/>
+    </section>
+    <a id="go_top" href="#"><i class="fa fa-angle-up fa-2x"></i></a>
+    <div class="message-on-top"></div>
+    <div id="state"></div>
+    <div class="modals">
+        <div id="new-thing-modal" class="modal fade modal--new_thing modal--new_thing-entry">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" data-dismiss="modal" class="close hidden-md" aria-hidden="true">&times;
+                        <button type="button" data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"><i class="fa fa-plus"></i>分享新产品</h4>
+                    </div>
+                    <div class="modal-body clearfix">
+                        <button data-toggle="modal" data-target="#new-thing-from-url-modal" data-dismiss="modal"
+                                class="btn"><i class="fa fa-globe fa-fw"></i>从网站收集
                         </button>
-                        <div class="new-thing-title">
-                            <a href="#" data-target="#new-thing-from-local" data-dismiss="modal" class="btn">本地上传</a>
-                            <h4>通过网页分享新产品</h4>
-                        </div>
+                        <button id="btn-to-new-local-thing-modal" data-target="#new-thing-from-local"
+                                data-dismiss="modal"
+                                class="btn"><i class="fa fa-cloud-upload fa-fw"></i>本地上传
+                        </button>
                     </div>
-                    <div class="modal-body">
-                        <input type="url" required="required" placeholder="http://" name="url" id="new-thing-url"
-                               class="form-control dark" autofocus="autofocus"/>
-                        <div class="alert hidden">
-                            很抱歉，这个地址我们不支持，您可以通过
-                            <a href="#" data-target="#new-thing-from-local" data-dismiss="modal">本地上传</a> 来分享此产品。
+                </div>
+            </div>
+        </div>
+        <div id="new-thing-from-url-modal" data-keyboard="false"
+             class="modal fade modal--new_thing modal--new_thing-remote">
+            <form method="get" data-remote="true" accept-charset="UTF-8" action="/things/extract_url" autocomplete="off"
+                  id="extract_url_form">
+                <input type="hidden" value="✓" name="utf8"/>
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" class="close hidden-md" aria-hidden="true">
+                                &times;
+                            </button>
+                            <div class="new-thing-title">
+                                <a href="#" data-target="#new-thing-from-local" data-dismiss="modal"
+                                   class="btn">本地上传</a>
+                                <h4>通过网页分享新产品</h4>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" data-dismiss="modal" class="btn btn--gray">取消</button>
-                        <button type="submit" class="btn btn--blue">抓取</button>
-                        <div class="using_bm">
-                            <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion" aria-expanded="true"
-                               aria-controls="collapseOne">使用书签分享<i class="fa fa-angle-double-down"></i></a>
-                            <div role="tabpanel" id="collapseOne" class="panel-collapse collapse"
-                                 aria-labelledby="headingOne">
-                                <div class="drop_bm">
-                                    拖拽到书签栏
-                                    <a href="javascript:(function(win,doc,ko){if(win[ko]){win[ko].ui.show();}else{var script=doc.createElement('script');script.id='KO_script';script.setAttribute('charset','utf-8');script.src='https://knewone.com/assets/bookmarklet.js?_c='+Math.floor(+new Date/1e7);doc.body.appendChild(script);}})(window,document,'KO_ROOM');"
-                                       class="disabled"> 分享到 KnewOne</a>
+                        <div class="modal-body">
+                            <input type="url" required="required" placeholder="http://" name="url" id="new-thing-url"
+                                   class="form-control dark" autofocus="autofocus"/>
+                            <div class="alert hidden">
+                                很抱歉，这个地址我们不支持，您可以通过
+                                <a href="#" data-target="#new-thing-from-local" data-dismiss="modal">本地上传</a> 来分享此产品。
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-dismiss="modal" class="btn btn--gray">取消</button>
+                            <button type="submit" class="btn btn--blue">抓取</button>
+                            <div class="using_bm">
+                                <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion"
+                                   aria-expanded="true"
+                                   aria-controls="collapseOne">使用书签分享<i class="fa fa-angle-double-down"></i></a>
+                                <div role="tabpanel" id="collapseOne" class="panel-collapse collapse"
+                                     aria-labelledby="headingOne">
+                                    <div class="drop_bm">
+                                        拖拽到书签栏
+                                        <a href="javascript:(function(win,doc,ko){if(win[ko]){win[ko].ui.show();}else{var script=doc.createElement('script');script.id='KO_script';script.setAttribute('charset','utf-8');script.src='https://knewone.com/assets/bookmarklet.js?_c='+Math.floor(+new Date/1e7);doc.body.appendChild(script);}})(window,document,'KO_ROOM');"
+                                           class="disabled"> 分享到 KnewOne</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
-    </div>
-    <div id="new-thing-similar-modal" class="modal modal--new_thing modal--new_thing-similiar fade"></div>
-    <div role="dialog" id="new_private_message_modal" class="modal fade" aria-labelledby="写私信">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="post" data-remote="true" accept-charset="UTF-8" action="/dialogs" role="form">
-                    <input type="hidden" value="✓" name="utf8"/>
-                    <div class="modal-header">
-                        <button data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">写私信</h4>
-                    </div>
-                    <div class="modal-body">
-                        <input type="hidden" value="54a94b2e31302d3665d10100" id="dialog_user_id"
-                               name="dialog_user_id"/>
-                        <div class="form-group field-message-receiver">
+            </form>
+        </div>
+        <div id="new-thing-similar-modal" class="modal modal--new_thing modal--new_thing-similiar fade"></div>
+        <div role="dialog" id="new_private_message_modal" class="modal fade" aria-labelledby="写私信">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="post" data-remote="true" accept-charset="UTF-8" action="/dialogs" role="form">
+                        <input type="hidden" value="✓" name="utf8"/>
+                        <div class="modal-header">
+                            <button data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">写私信</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" value="54a94b2e31302d3665d10100" id="dialog_user_id"
+                                   name="dialog_user_id"/>
+                            <div class="form-group field-message-receiver">
          <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input type="text"
                                                                                                    required="required"
                                                                                                    class="form-control tt-hint"
@@ -583,169 +316,178 @@
              <span class="tt-dropdown-menu"
                    style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
            <div class="tt-dataset-users"></div></span></span>
-                        </div>
-                        <div id="message-receiver--preset_53bb8b8831302d77db060000"
-                             class="form-group message-receiver--preset is-hidden">
-                            <div class="conversation media">
-                                <div class="media-left pull-left">
-                                    <a href="member_index.html?53bb8b8831302d77db060000" target="_blank"><img width="48"
-                                                                                                              height="48"
-                                                                                                              alt="5185ccad95e0e3aa6243d1b9fcb6dfed"
-                                                                                                              src="../static/images/5185ccad95e0e3aa6243d1b9fcb6dfed.png!small"
-                                                                                                              class="img-circle"/><span>马文</span></a>
-                                </div>
-                                <p class="media-body">我的脑容量相当于一颗行星，他们却让我当客服。so.. 需要我帮忙吗？</p>
                             </div>
-                        </div>
-                        <div class="form-group field-message-content">
+                            <div id="message-receiver--preset_53bb8b8831302d77db060000"
+                                 class="form-group message-receiver--preset is-hidden">
+                                <div class="conversation media">
+                                    <div class="media-left pull-left">
+                                        <a href="member_index.html?53bb8b8831302d77db060000" target="_blank"><img
+                                                width="48"
+                                                height="48"
+                                                alt="5185ccad95e0e3aa6243d1b9fcb6dfed"
+                                                src="../static/images/5185ccad95e0e3aa6243d1b9fcb6dfed.png!small"
+                                                class="img-circle"/><span>马文</span></a>
+                                    </div>
+                                    <p class="media-body">我的脑容量相当于一颗行星，他们却让我当客服。so.. 需要我帮忙吗？</p>
+                                </div>
+                            </div>
+                            <div class="form-group field-message-content">
                             <textarea placeholder="内容" required="required" class="form-control" rows="5"
                                       id="dialog_content" name="dialog_content"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button data-dismiss="modal" class="btn btn--gray">取消</button>
-                        <button type="submit" class="btn btn--blue">发送</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div id="share_modal" class="modal fade share-modal">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" data-dismiss="modal" class="close">&times;</button>
-                    <h4 class="modal-title">分享</h4>
-                </div>
-                <div class="modal-body">
-                    <section class="box">
-                        <h5>绑定第三方账号</h5>
-                        <p><a href="member_index.html?auth/weibo?state=%2Fusers%2F54a94b2e31302d3665d10100"
-                              class="share-button oauth"><i class="fa fa-weibo fa-4x"></i></a></p>
-                    </section>
-                    <section class="box">
-                        <h5>直接分享</h5>
-                        <p><a href="#socialshare_wechat_modal" data-label="阿斗" data-action="wechat"
-                              data-category="share" data-toggle="modal" class="share-button js-share--wechat"
-                              title="微信朋友圈分享"><i class="fa fa-weixin fa-4x"></i></a><a
-                                href="http://widget.renren.com/dialog/share?link=https://knewone.com/users/54a94b2e31302d3665d10100"
-                                title="分享到人人网" target="_blank" class="share-button"><i
-                                class="fa fa-renren fa-4x"></i></a></p>
-                    </section>
+                        <div class="modal-footer">
+                            <button data-dismiss="modal" class="btn btn--gray">取消</button>
+                            <button type="submit" class="btn btn--blue">发送</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-    <div tabindex="-1" role="dialog" id="socialshare_wechat_modal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" data-dismiss="modal" class="close"><span
-                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title">扫描二维码分享到微信</h4>
+        <div id="share_modal" class="modal fade share-modal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close">&times;</button>
+                        <h4 class="modal-title">分享</h4>
+                    </div>
+                    <div class="modal-body">
+                        <section class="box">
+                            <h5>绑定第三方账号</h5>
+                            <p><a href="member_index.html?auth/weibo?state=%2Fusers%2F54a94b2e31302d3665d10100"
+                                  class="share-button oauth"><i class="fa fa-weibo fa-4x"></i></a></p>
+                        </section>
+                        <section class="box">
+                            <h5>直接分享</h5>
+                            <p><a href="#socialshare_wechat_modal" data-label="阿斗" data-action="wechat"
+                                  data-category="share" data-toggle="modal" class="share-button js-share--wechat"
+                                  title="微信朋友圈分享"><i class="fa fa-weixin fa-4x"></i></a><a
+                                    href="http://widget.renren.com/dialog/share?link=https://knewone.com/users/54a94b2e31302d3665d10100"
+                                    title="分享到人人网" target="_blank" class="share-button"><i
+                                    class="fa fa-renren fa-4x"></i></a></p>
+                        </section>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <div class="qrcode">
-                        <img role="dialog" id="fallback_help_modal" class="modal fade" aria-hidden="true"/>
-                        <div class="modal-dialog modal-sm">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span
-                                            class="sr-only">Close</span></button>
-                                    <h4 class="modal-title">和我们聊天</h4>
+            </div>
+        </div>
+        <div tabindex="-1" role="dialog" id="socialshare_wechat_modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">扫描二维码分享到微信</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="qrcode">
+                            <img role="dialog" id="fallback_help_modal" class="modal fade" aria-hidden="true"/>
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" data-dismiss="modal" class="close"><span
+                                                aria-hidden="true">&times;</span><span
+                                                class="sr-only">Close</span></button>
+                                        <h4 class="modal-title">和我们聊天</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>抱歉，客服系统现在繁忙。请邮件留言至邮箱&nbsp;<a href="mailto:help@knewone.com" target="_blank">help@knewone.com</a>&nbsp;，或私信账号“KnewOne销售”，我们将尽快给予回复。不便之处，敬请谅解！
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="modal-body">
-                                    <p>抱歉，客服系统现在繁忙。请邮件留言至邮箱&nbsp;<a href="mailto:help@knewone.com" target="_blank">help@knewone.com</a>&nbsp;，或私信账号“KnewOne销售”，我们将尽快给予回复。不便之处，敬请谅解！
-                                    </p>
+                            </div>
+                        </div>
+                        <div id="user_canopy_picker_modal" class="modal image_picker fade" aira-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <a href="#" data-dismiss="modal" class="close">&times;</a>
+                                    </div>
+                                    <div class="modal-body">
+                                        <a href="#"
+                                           data-url="https://making-photos.b0.upaiyun.com/photos/0e8d53847adc2b1e78740c55e553eefa.jpg"
+                                           class="image_picker-item is-active"><i
+                                                class="image_picker-checkbox fa fa-check"></i><img
+                                                alt="0e8d53847adc2b1e78740c55e553eefa.jpg!thing.fixed"
+                                                src="/static/images/0e8d53847adc2b1e78740c55e553eefa.jpg!thing.fixed.small"/></a>
+                                        <a href="#"
+                                           data-url="https://making-photos.b0.upaiyun.com/photos/71a9c6b6b64def98c19f0c19f399cfba.jpg"
+                                           class="image_picker-item"><i
+                                                class="image_picker-checkbox fa fa-check"></i><img
+                                                alt="71a9c6b6b64def98c19f0c19f399cfba.jpg!thing.fixed"
+                                                src="/static/images/71a9c6b6b64def98c19f0c19f399cfba.jpg!thing.fixed.small"/></a>
+                                        <a href="#"
+                                           data-url="https://making-photos.b0.upaiyun.com/photos/dd2699adc803ccf0420f442b29674d79.jpg"
+                                           class="image_picker-item"><i
+                                                class="image_picker-checkbox fa fa-check"></i><img
+                                                alt="Dd2699adc803ccf0420f442b29674d79.jpg!thing.fixed"
+                                                src="/static/images/dd2699adc803ccf0420f442b29674d79.jpg!thing.fixed.small"/></a>
+                                        <a href="#"
+                                           data-url="https://making-photos.b0.upaiyun.com/photos/38613cb2a18c3d3d7604b5f94efaa281.jpg"
+                                           class="image_picker-item"><i
+                                                class="image_picker-checkbox fa fa-check"></i><img
+                                                alt="38613cb2a18c3d3d7604b5f94efaa281.jpg!thing.fixed"
+                                                src="/static/images/38613cb2a18c3d3d7604b5f94efaa281.jpg!thing.fixed.small"/></a>
+                                        <a href="#"
+                                           data-url="https://making-photos.b0.upaiyun.com/photos/a3feeac5922c1ca976e32463360ccc6b.jpg"
+                                           class="image_picker-item"><i
+                                                class="image_picker-checkbox fa fa-check"></i><img
+                                                alt="A3feeac5922c1ca976e32463360ccc6b.jpg!thing.fixed"
+                                                src="/static/images/a3feeac5922c1ca976e32463360ccc6b.jpg!thing.fixed.small"/></a>
+                                        <a href="#"
+                                           data-url="https://making-photos.b0.upaiyun.com/photos/ea4d728679d3d14db4ae2c988e5c307a.jpg"
+                                           class="image_picker-item"><i
+                                                class="image_picker-checkbox fa fa-check"></i><img
+                                                alt="Ea4d728679d3d14db4ae2c988e5c307a.jpg!thing.fixed"
+                                                src="/static/images/ea4d728679d3d14db4ae2c988e5c307a.jpg!thing.fixed.small"/></a>
+                                        <a href="#"
+                                           data-url="https://making-photos.b0.upaiyun.com/photos/1c5228b8da2d5b38ea355a6a7bb58dc0.jpg"
+                                           class="image_picker-item"><i
+                                                class="image_picker-checkbox fa fa-check"></i><img
+                                                alt="1c5228b8da2d5b38ea355a6a7bb58dc0.jpg!thing.fixed"
+                                                src="/static/images/1c5228b8da2d5b38ea355a6a7bb58dc0.jpg!thing.fixed.small"/></a>
+                                        <a href="#"
+                                           data-url="https://making-photos.b0.upaiyun.com/photos/417630b019e3c3a180b510d1c7ad5bb4.jpg"
+                                           class="image_picker-item"><i
+                                                class="image_picker-checkbox fa fa-check"></i><img
+                                                alt="417630b019e3c3a180b510d1c7ad5bb4.jpg!thing.fixed"
+                                                src="/static/images/417630b019e3c3a180b510d1c7ad5bb4.jpg!thing.fixed.small"/></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="user_canopy_picker_modal" class="modal image_picker fade" aira-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <a href="#" data-dismiss="modal" class="close">&times;</a>
-                                </div>
-                                <div class="modal-body">
-                                    <a href="#"
-                                       data-url="https://making-photos.b0.upaiyun.com/photos/0e8d53847adc2b1e78740c55e553eefa.jpg"
-                                       class="image_picker-item is-active"><i
-                                            class="image_picker-checkbox fa fa-check"></i><img
-                                            alt="0e8d53847adc2b1e78740c55e553eefa.jpg!thing.fixed"
-                                            src="../static/images/0e8d53847adc2b1e78740c55e553eefa.jpg!thing.fixed.small"/></a>
-                                    <a href="#"
-                                       data-url="https://making-photos.b0.upaiyun.com/photos/71a9c6b6b64def98c19f0c19f399cfba.jpg"
-                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
-                                            alt="71a9c6b6b64def98c19f0c19f399cfba.jpg!thing.fixed"
-                                            src="../static/images/71a9c6b6b64def98c19f0c19f399cfba.jpg!thing.fixed.small"/></a>
-                                    <a href="#"
-                                       data-url="https://making-photos.b0.upaiyun.com/photos/dd2699adc803ccf0420f442b29674d79.jpg"
-                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
-                                            alt="Dd2699adc803ccf0420f442b29674d79.jpg!thing.fixed"
-                                            src="../static/images/dd2699adc803ccf0420f442b29674d79.jpg!thing.fixed.small"/></a>
-                                    <a href="#"
-                                       data-url="https://making-photos.b0.upaiyun.com/photos/38613cb2a18c3d3d7604b5f94efaa281.jpg"
-                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
-                                            alt="38613cb2a18c3d3d7604b5f94efaa281.jpg!thing.fixed"
-                                            src="../static/images/38613cb2a18c3d3d7604b5f94efaa281.jpg!thing.fixed.small"/></a>
-                                    <a href="#"
-                                       data-url="https://making-photos.b0.upaiyun.com/photos/a3feeac5922c1ca976e32463360ccc6b.jpg"
-                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
-                                            alt="A3feeac5922c1ca976e32463360ccc6b.jpg!thing.fixed"
-                                            src="../static/images/a3feeac5922c1ca976e32463360ccc6b.jpg!thing.fixed.small"/></a>
-                                    <a href="#"
-                                       data-url="https://making-photos.b0.upaiyun.com/photos/ea4d728679d3d14db4ae2c988e5c307a.jpg"
-                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
-                                            alt="Ea4d728679d3d14db4ae2c988e5c307a.jpg!thing.fixed"
-                                            src="../static/images/ea4d728679d3d14db4ae2c988e5c307a.jpg!thing.fixed.small"/></a>
-                                    <a href="#"
-                                       data-url="https://making-photos.b0.upaiyun.com/photos/1c5228b8da2d5b38ea355a6a7bb58dc0.jpg"
-                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
-                                            alt="1c5228b8da2d5b38ea355a6a7bb58dc0.jpg!thing.fixed"
-                                            src="../static/images/1c5228b8da2d5b38ea355a6a7bb58dc0.jpg!thing.fixed.small"/></a>
-                                    <a href="#"
-                                       data-url="https://making-photos.b0.upaiyun.com/photos/417630b019e3c3a180b510d1c7ad5bb4.jpg"
-                                       class="image_picker-item"><i class="image_picker-checkbox fa fa-check"></i><img
-                                            alt="417630b019e3c3a180b510d1c7ad5bb4.jpg!thing.fixed"
-                                            src="../static/images/417630b019e3c3a180b510d1c7ad5bb4.jpg!thing.fixed.small"/></a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="site_maps hidden">
+                        <a href="/maps/things">产品</a>
+                        <a href="/maps/reviews">评测</a>
+                        <a href="/maps/groups">小组</a>
+                        <a href="/maps/topics">帖子</a>
+                        <a href="/maps/categories">分类</a>
+                        <a href="/maps/entries">发现</a>
                     </div>
-                </div>
-                <div class="site_maps hidden">
-                    <a href="/maps/things">产品</a>
-                    <a href="/maps/reviews">评测</a>
-                    <a href="/maps/groups">小组</a>
-                    <a href="/maps/topics">帖子</a>
-                    <a href="/maps/categories">分类</a>
-                    <a href="/maps/entries">发现</a>
-                </div>
-                <script src="../static/js/vendor.js"></script>
-                <script src="../static/js/application.js"></script>
-                <script>$('.vcard-level').popover({
-                    title: '等级：1',
-                    content: '<p>当前经验值：92</p><p>升级进度：61.3%</p><p>分享产品被推荐即获 120 个KO币</p><p><p>写文章被推荐即获 1100 个KO币</p>',
-                    html: true,
-                    trigger: 'hover'
-                })</script>
-                <!--      <script type="text/javascript">
-                //<![CDATA[
-                $(function() { Making.start(['Users', 'UsersShow']) });
-                //]]>
-                </script>-->
-                <div id="fancy-modal-container"></div>
-                <div id="add-to-list-modal-container"></div>
-                <div class="atwho-container">
-                    <div id="atwho-ground-dialog_content">
-                        <div class="atwho-view" id="at-view-64">
-                            <ul class="atwho-view-ul"></ul>
+                    <script src="/static/js/vendor.js"></script>
+                    <script src="/static/js/application.js"></script>
+                    <script>$('.vcard-level').popover({
+                        title: '等级：1',
+                        content: '<p>当前经验值：92</p><p>升级进度：61.3%</p><p>分享产品被推荐即获 120 个KO币</p><p><p>写文章被推荐即获 1100 个KO币</p>',
+                        html: true,
+                        trigger: 'hover'
+                    })</script>
+                    <!--      <script type="text/javascript">
+                    //<![CDATA[
+                    $(function() { Making.start(['Users', 'UsersShow']) });
+                    //]]>
+                    </script>-->
+                    <div id="fancy-modal-container"></div>
+                    <div id="add-to-list-modal-container"></div>
+                    <div class="atwho-container">
+                        <div id="atwho-ground-dialog_content">
+                            <div class="atwho-view" id="at-view-64">
+                                <ul class="atwho-view-ul"></ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

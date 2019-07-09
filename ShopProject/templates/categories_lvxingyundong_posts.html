@@ -1,0 +1,291 @@
+{% extends 'index/base.html' %}
+{% load static %}
+{% block head %}
+<html lang="zh-Hans-CN" prefix="og: http://ogp.me/ns#"
+      class="posts_index posts_index signed_in production firefox desktop windows js flexbox canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths csscalc landscape scrollbar"
+      style="">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>文章</title>
+    <link href="{% static 'css/application.css' %}" media="screen" rel="stylesheet"/>
+    <link href="{% static 'css/application_sub.css' %}" media="screen" rel="stylesheet"/>
+    <link href="{% static 'css/posts.css' %}" media="screen" rel="stylesheet"/>
+    <script src="{% static 'js/before_body.js' %}"></script>
+    <!--[if lt IE 9]>
+  <script>
+    var tip = '建议升级您的浏览器（如 Chrome, Firefox）以获得更好的体验！',
+        url = 'http://browsehappy.com';
+
+    document.execCommand('stop');
+    alert(tip);
+    window.location.href = url;
+  </script>
+<![endif]-->
+</head>
+{% endblock %}
+{% block content %}
+<section id="wrapper">
+    <header class="page-header">
+        <h1><a href="../article" class="logo"><em>KnewOne</em>文章</a></h1>
+        <div id="write_article">
+            <a href="../article_add" target="_blank" class="btn btn--large btn--orange"><i
+                    class="fa fa-pencil-square-o"></i>我要写</a>
+        </div>
+    </header>
+    <div class="row">
+        <div class="col-md-9">
+            <nav class="entries_nav">
+                <a href="../article" class="active">首页</a>
+                <a href="/posts/reviews">评测</a>
+                <a href="/posts/specials">专题</a>
+                <a href="/posts/talks">访谈</a>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <ul class="block_list">
+
+
+
+
+            </ul>
+            <footer class="page-footer">
+                <ul class="pagination">
+                    <li class="active"><a href="#">1</a></li>
+                    <li class=""><a href="/posts?page=2" rel="next">2</a></li>
+                    <li class=""><a href="/posts?page=3">3</a></li>
+                    <li class=""><a href="/posts?page=4">4</a></li>
+                    <li class=""><a href="/posts?page=5">5</a></li>
+                    <li class="disabled"><a href="#">...</a></li>
+                    <li><a href="/posts?page=2" rel="next">›</a></li>
+                    <li><a href="/posts?page=94">&raquo;</a></li>
+                </ul>
+            </footer>
+        </div>
+        <div class="col-md-3">
+            <section class="sidemenu">
+                <ul>
+                    <li><a href="../article">全部</a></li>
+                    <li><a href="../categories_gerenpeishi_posts">个人配饰</a></li>
+                    <li><a href="../categories_gehu_posts">个护</a></li>
+                    <li><a href="../categories_jiankang_posts">健康</a></li>
+                    <li><a href="../categories_shoujitongxin_posts">手机通信</a></li>
+                    <li><a href="../categories_sheying_posts">摄影</a></li>
+                    <li><a href="../categories_wenju_posts">文具</a></li>
+                    <li><a href="../categories_lvxingyundong_posts">旅行运动</a></li>
+                    <li><a href="../categories_youxi_posts">游戏</a></li>
+                    <li><a href="../categories_wanju_posts">玩具</a></li>
+                    <li><a href="../categories_shenghuo_posts">生活</a></li>
+                    <li><a href="../categories_diannao_posts">电脑</a></li>
+                    <li><a href="../categories_yinyue_posts">音乐</a></li>
+                    <li><a href="../categories_yinshi_posts">饮食</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</section>
+<a id="go_top" href="#"><i class="fa fa-angle-up fa-2x"></i></a>
+<div class="message-on-top"></div>
+<div id="state"></div>
+<div class="modals">
+    <div id="new-thing-modal" class="modal fade modal--new_thing modal--new_thing-entry">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-plus"></i>分享新产品</h4>
+                </div>
+                <div class="modal-body clearfix">
+                    <button data-toggle="modal" data-target="#new-thing-from-url-modal" data-dismiss="modal"
+                            class="btn"><i class="fa fa-globe fa-fw"></i>从网站收集
+                    </button>
+                    <button id="btn-to-new-local-thing-modal" data-target="#new-thing-from-local" data-dismiss="modal"
+                            class="btn"><i class="fa fa-cloud-upload fa-fw"></i>本地上传
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="new-thing-from-url-modal" data-keyboard="false"
+         class="modal fade modal--new_thing modal--new_thing-remote">
+        <form method="get" data-remote="true" accept-charset="UTF-8" action="/things/extract_url" autocomplete="off"
+              id="extract_url_form">
+            <input type="hidden" value="✓" name="utf8"/>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close hidden-md" aria-hidden="true">&times;
+                        </button>
+                        <div class="new-thing-title">
+                            <a href="#" data-target="#new-thing-from-local" data-dismiss="modal" class="btn">本地上传</a>
+                            <h4>通过网页分享新产品</h4>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <input type="url" required="required" placeholder="http://" name="url" id="new-thing-url"
+                               class="form-control dark" autofocus="autofocus"/>
+                        <div class="alert hidden">
+                            很抱歉，这个地址我们不支持，您可以通过
+                            <a href="#" data-target="#new-thing-from-local" data-dismiss="modal">本地上传</a> 来分享此产品。
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-dismiss="modal" class="btn btn--gray">取消</button>
+                        <button type="submit" class="btn btn--blue">抓取</button>
+                        <div class="using_bm">
+                            <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion" aria-expanded="true"
+                               aria-controls="collapseOne">使用书签分享<i class="fa fa-angle-double-down"></i></a>
+                            <div role="tabpanel" id="collapseOne" class="panel-collapse collapse"
+                                 aria-labelledby="headingOne">
+                                <div class="drop_bm">
+                                    拖拽到书签栏
+                                    <a href="javascript:(function(win,doc,ko){if(win[ko]){win[ko].ui.show();}else{var script=doc.createElement('script');script.id='KO_script';script.setAttribute('charset','utf-8');script.src='https://knewone.com/assets/bookmarklet.js?_c='+Math.floor(+new Date/1e7);doc.body.appendChild(script);}})(window,document,'KO_ROOM');"
+                                       class="disabled"> 分享到 KnewOne</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="new-thing-similar-modal" class="modal modal--new_thing modal--new_thing-similiar fade"></div>
+    <div role="dialog" id="new_private_message_modal" class="modal fade" aria-labelledby="写私信">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" data-remote="true" accept-charset="UTF-8" action="/dialogs" role="form">
+                    <input type="hidden" value="✓" name="utf8"/>
+                    <div class="modal-header">
+                        <button data-dismiss="modal" class="close" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">写私信</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="dialog_user_id" name="dialog_user_id"/>
+                        <div class="form-group field-message-receiver">
+         <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input type="text"
+                                                                                                   required="required"
+                                                                                                   class="form-control tt-hint"
+                                                                                                   style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: rgb(255, 255, 255) none repeat scroll 0% 0%;"
+                                                                                                   disabled=""
+                                                                                                   autocomplete="off"
+                                                                                                   spellcheck="false"/><input
+                 type="text" placeholder="用户昵称" required="required" class="form-control tt-input" id="dialog_user_name"
+                 name="dialog_user_name" autocomplete="off" spellcheck="false"
+                 style="position: relative; vertical-align: top; background-color: transparent;" dir="auto"/><pre
+                 aria-hidden="true"
+                 style="position: absolute; visibility: hidden; white-space: nowrap; font-family: Helvetica,Arial,"
+                 microsoft="" yahei",sans-serif;="" font-size:="" 14px;="" font-style:="" normal;="" font-variant:="" font-weight:="" 400;="" word-spacing:="" 0px;="" letter-spacing:="" text-indent:="" text-rendering:="" optimizelegibility;="" text-transform:="" none;"=""></pre>
+             <span class="tt-dropdown-menu"
+                   style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+           <div class="tt-dataset-users"></div></span></span>
+                        </div>
+                        <div id="message-receiver--preset_53bb8b8831302d77db060000"
+                             class="form-group message-receiver--preset is-hidden">
+                            <div class="conversation media">
+                                <div class="media-left pull-left">
+                                    <a href="member_index.html?53bb8b8831302d77db060000" target="_blank"><img width="48"
+                                                                                                              height="48"
+                                                                                                              alt="5185ccad95e0e3aa6243d1b9fcb6dfed"
+                                                                                                              src="../static/images/5185ccad95e0e3aa6243d1b9fcb6dfed.png!small"
+                                                                                                              class="img-circle"/><span>马文</span></a>
+                                </div>
+                                <p class="media-body">我的脑容量相当于一颗行星，他们却让我当客服。so.. 需要我帮忙吗？</p>
+                            </div>
+                        </div>
+                        <div class="form-group field-message-content">
+                            <textarea placeholder="内容" required="required" class="form-control" rows="5"
+                                      id="dialog_content" name="dialog_content"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn--gray">取消</button>
+                        <button type="submit" class="btn btn--blue">发送</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="share_modal" class="modal fade share-modal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close">&times;</button>
+                    <h4 class="modal-title">分享</h4>
+                </div>
+                <div class="modal-body">
+                    <section class="box">
+                        <h5>绑定第三方账号</h5>
+                        <p><a href="member_index.html?auth/weibo?state=%2Fposts" class="share-button oauth"><i
+                                class="fa fa-weibo fa-4x"></i></a></p>
+                    </section>
+                    <section class="box">
+                        <h5>直接分享</h5>
+                        <p><a href="#socialshare_wechat_modal" data-label="阿斗" data-action="wechat"
+                              data-category="share" data-toggle="modal" class="share-button js-share--wechat"
+                              title="微信朋友圈分享"><i class="fa fa-weixin fa-4x"></i></a><a
+                                href="http://widget.renren.com/dialog/share?link=https://knewone.com/posts"
+                                title="分享到人人网" target="_blank" class="share-button"><i
+                                class="fa fa-renren fa-4x"></i></a></p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div tabindex="-1" role="dialog" id="socialshare_wechat_modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" class="close"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">扫描二维码分享到微信</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="qrcode">
+                        <img role="dialog" id="fallback_help_modal" class="modal fade" aria-hidden="true"/>
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span
+                                            class="sr-only">Close</span></button>
+                                    <h4 class="modal-title">和我们聊天</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>抱歉，客服系统现在繁忙。请邮件留言至邮箱&nbsp;<a href="mailto:help@knewone.com" target="_blank">help@knewone.com</a>&nbsp;，或私信账号“KnewOne销售”，我们将尽快给予回复。不便之处，敬请谅解！
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site_maps hidden">
+                    <a href="/maps/things">产品</a>
+                    <a href="/maps/reviews">评测</a>
+                    <a href="/maps/groups">小组</a>
+                    <a href="/maps/topics">帖子</a>
+                    <a href="/maps/categories">分类</a>
+                    <a href="/maps/entries">发现</a>
+                </div>
+                <script src="/static/js/vendor.js"></script>
+                <script src="/static/js/application.js"></script>
+                <!--      <script>Making.InitPostIndex([]);</script>
+                      <script type="text/javascript">
+                //<![CDATA[
+                $(function() { Making.start(['Posts', 'PostsIndex']) });
+                //]]>
+                </script>-->
+                <div id="fancy-modal-container"></div>
+                <div id="add-to-list-modal-container"></div>
+                <div class="atwho-container">
+                    <div id="atwho-ground-dialog_content">
+                        <div class="atwho-view" id="at-view-64">
+                            <ul class="atwho-view-ul"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

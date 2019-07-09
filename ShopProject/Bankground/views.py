@@ -378,4 +378,199 @@ def vipadd(request):
 def vipreset(request):
     return render(request,'vipreset.html')
 
+# 文章首页
+def article1(request, page=1):
+    article_obj = models.Article.objects.first()
+    article_obj_uid = article_obj.uid.u_username
+    article_obj1_uid = article_obj.uid.u_icon
+    article_obj2_uid = article_obj.uid.id
+    article_obj1_g_image = article_obj.a_goods.g_image
+    # typeid=AppGoods.objects.filter(g_image=article_obj1_g_image)
+    a_title = Article.objects.filter(uid=article_obj2_uid)
+    a = a_title[0].a_title
+    a_publish_time = Article.objects.filter(uid=article_obj2_uid)
+    b = a_publish_time[0].a_publish_time
+    a_goods_id = Article.objects.filter(uid=article_obj2_uid)
+    c = a_goods_id[0].a_goods_id
+    g_replygalike = Reply.objects.filter(g_goodsid=c)
+    d = g_replygalike[0].g_replygalike
+    e = Reply.objects.filter(g_goodsid=c).values('g_reply').count()
+    ti = str(b)
+    front = ti.split(' ')[0]
+    behind1 = ti.split(' ')[1]
+    behind2 = behind1.split('+')[0]
+    behind = behind1.split('+')[0] + "+08:00"
+    data = Article.objects.all()
+    paginator = Paginator(data, 8)
+    page = int(page)
+    pagination = paginator.page(page)
+    if paginator.num_pages > 10:
+        if page - 5 <= 0:
+            customRange = range(1, 11)
+        elif page + 4 > paginator.num_pages:
+            customRange = range(paginator.num_pages - 9, paginator.num_pages + 1)
+        else:
+            customRange = range(page - 5, page + 5)
+    else:
+        customRange = paginator.page_range
+    return render(request, 'article.html', context={
+        'data': pagination.object_list,
+        'pagerange': customRange,
+        'pagination': pagination,
+        'u_username': article_obj_uid,
+        'u_icon': article_obj1_uid,
+        'a_title': a,
+        'g_replygalike': d,
+        'replycount': e,
+        'g_image': article_obj1_g_image,
+        'front': front,
+        'behind': behind,
+        'behind2': behind2,
 
+    })
+
+
+# 插入文章
+def article_add(request):
+    if request.method=='POST':
+        u_username = request.session.get('username')
+        id1 = AppUser.objects.filter(u_username=u_username)
+        id2=id1[0].id
+        gid_id=AppListgoods.objects.filter(uid_id=id2)
+        gid_id1=gid_id[0].gid_id
+        g_image=AppGoods.objects.filter(id=gid_id).values('g_image')
+        # g_image1=g_image[0].g_image
+        subject = request.POST.get('subject')
+        print(subject)
+        content = request.POST.get('content')
+        a_publish_time = datetime.datetime.now()
+        # print('$$$$$$$$$$$$$')
+        # print(g_image)
+        Article.objects.create(a_title=subject, a_content=content,a_image=g_image, a_read_count=0, a_publish_time=a_publish_time,
+                a_is_delete=0, a_hot=0, a_type=0, a_bord=0, uid=id1[0], a_goods_id=gid_id1)
+    return redirect(reverse('App:article'))
+
+
+# 展示写文章页面
+def showarticleadd(request):
+    if request.method=='POST':
+        u_username = request.session.get('username')
+        id1 = AppUser.objects.filter(u_username=u_username)
+        id2=id1[0].id
+        gid_id=AppListgoods.objects.filter(uid_id=id2)
+        gid_id1=gid_id[0].gid_id
+        g_image=AppGoods.objects.filter(id=gid_id).values('g_image')
+        # g_image1=g_image[0].g_image
+        subject = request.POST.get('subject')
+        print(subject)
+        content = request.POST.get('content')
+        a_publish_time = datetime.datetime.now()
+        # print('$$$$$$$$$$$$$')
+        # print(g_image)
+        Article.objects.create(a_title=subject, a_content=content,a_image=g_image, a_read_count=0, a_publish_time=a_publish_time,
+                a_is_delete=0, a_hot=0, a_type=0, a_bord=0, uid=id1[0], a_goods_id=gid_id1)
+    return render(request,'article_add.html')
+
+
+# 个人主页
+def member_index(request,name):
+    id=AppUser.objects.filter(u_username=name)
+    id1=id[0].id
+    a_title=Article.objects.filter(uid=id)
+    a_title1=a_title[0].a_title
+    a_publish_time=Article.objects.filter(uid=id)
+    a_publish_time1=a_publish_time[0].a_publish_time
+    ti2 = str(a_publish_time1)
+    a_front = ti2.split(' ')[0]
+    a_behind1 = ti2.split(' ')[1]
+    a_behind2 = a_behind1.split('+')[0]
+    a_behind = a_behind1.split('+')[0] + "+08:00"
+    uid_count=Article.objects.filter(uid=id).count()
+    uid_collection=AppCollection.objects.filter(uid_id=id).count()
+    u_icon=AppUser.objects.filter(u_username=name)
+    u_icon1=u_icon[0].u_icon
+    u_credits=AppUser.objects.filter(u_username=name)
+    u_credits1=u_credits[0].u_credits
+    if 50<=u_credits1<150:
+        a='lv.0'
+        b=u_credits1-50
+    elif 150<=u_credits1<250:
+        a='lv.1'
+        b=u_credits1-50
+    elif 250<=u_credits1<350:
+        a='lv.2'
+        b=u_credits1-50
+    else:
+        a='lv.3'
+        b=u_credits1-50
+    c=Focuson.objects.filter(f_type=0,f_userid=id).count()
+    f_focus=Focuson.objects.filter(f_type=0)
+    list = []
+    list1=[]
+    for i in f_focus:
+        id = AppUser.objects.filter(u_username=name)
+        id1=id[0].id
+        d=i.f_focus
+        f= d.split(" ")[1]
+        h=d.split(" ")[0]
+        if int(h)==id1:
+            f1=d.split(" ")[1]
+            u_username=AppUser.objects.filter(id=f1)
+            u_username1=u_username[0].u_username
+            list1.append(u_username1)
+        print(list1)
+        if int(f)==id1:
+            list.append(f)
+    g=len(list)
+    gid_id = AppListgoods.objects.filter(uid_id=id)
+    gid_id1 = gid_id[0].gid_id
+    g_reply=Reply.objects.filter(g_goodsid=gid_id1)
+    g_reply1=g_reply[0].g_reply
+    g_replytime=Reply.objects.filter(g_goodsid=gid_id1)
+    g_replytime1=g_replytime[0].g_replytime
+    ti1 = str(g_replytime1)
+    g_front = ti1.split(' ')[0]
+    g_behind1 = ti1.split(' ')[1]
+    g_behind2 = g_behind1.split('+')[0]
+    g_behind = g_behind1.split('+')[0] + "+08:00"
+    g_name = AppGoods.objects.filter(id=gid_id1)
+    g_name1 = g_name[0].g_name
+    id = Reply.objects.filter(g_goodsid=gid_id1)
+    reply_id1 = id[0].id
+    g_star=Reply.objects.filter(g_goodsid=gid_id1)
+    g_star1 = g_star[0].g_star
+    c_reply = Commentreply.objects.filter(user=reply_id1)
+    c_reply1 = c_reply[0].c_reply
+    c_replytime = Commentreply.objects.filter(user=reply_id1)
+    c_replytime1 = c_replytime[0].c_replytime
+    ti = str(c_replytime1)
+    front = ti.split(' ')[0]
+    behind1 = ti.split(' ')[1]
+    behind2 = behind1.split('+')[0]
+    behind = behind1.split('+')[0] + "+08:00"
+    return render(request,'member_index.html',context={
+        'u_username':name,
+        'a_title':a_title1,
+        'u_icon':u_icon1,
+        'u_credits1':a,
+        'g_reply':g_reply1,
+        'count':b,
+        'list1':list1,
+        'guanzhu':c,
+        'fensi':g,
+        'uid_count':uid_count,
+        'collections':uid_collection,
+        'c_reply':c_reply1,
+        'g_name':g_name1,
+        ' c_replytime1': c_replytime1,
+        'front':front,
+        'behind':behind,
+        'behind2':behind2,
+        'g_front':g_front,
+        'g_behind':g_behind,
+        'g_behind2':g_behind2,
+        'g_star':range(g_star1),
+        'a_front':a_front,
+        'a_behind':a_behind,
+        'a_behind2':a_behind2
+    })
