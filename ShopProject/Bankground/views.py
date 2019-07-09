@@ -19,7 +19,7 @@ from werkzeug.exceptions import abort
 from Bankground.forms import GoodsAdd, UseraddForm
 from Bankground.models import AppGoodstype, AppGoods, AppUser
 from Bankground.send_sms import send_sms
-from ShopProject.settings import ADMIN, MEDIA_ROOT, ALLOWED_FILEEXTS, MEDIA_ROOT_GOODS, SMSCONFIG
+from ShopProject.settings import ADMIN, MEDIA_ROOT, ALLOWED_FILEEXTS, MEDIA_ROOT_GOODS, SMSCONFIG, SUPER
 
 
 def index(request):
@@ -104,7 +104,8 @@ def login(request):
                 if code.lower() == verify_code.lower():
                     title = '后台主页'
                     request.session.flush()
-                    request.session['username'] = username
+                    print(res[0])
+                    request.session['user'] = {'u_username':res[0].u_username,'u_type':res[0].u_type}
                     request.session['title'] = title
 
                     return redirect(reverse('bankground:main'))
@@ -132,12 +133,12 @@ def logout(request):
 # 首页
 def main(request):
 
-    if request.META['REMOTE_ADDR'] == '192.168.140.132':
-        username = request.session.get('username')
-        title = request.session.get('title')
+    # if request.META['REMOTE_ADDR'] == '10.0.113.226':
+    username = request.session.get('username')
+    title = request.session.get('title')
 
-        return render(request,'admins/main.html',locals())
-    return redirect(reverse('app:index'))
+    return render(request,'admins/main.html',locals())
+    # return redirect(reverse('app:index'))
 
 # 管理员管理
 def user(request,page=1):
@@ -160,6 +161,9 @@ def user(request,page=1):
             customRange = range(page - 5, page + 5)
     else:  # 页码总数小于10
         customRange = paginator.page_range
+
+    # 控制权限
+
 
     return render(request,'admins/user.html',locals())
 
@@ -212,12 +216,19 @@ def useradd(request):
             return redirect(reverse('bankground:user'))
     return render(request,'admins/useradd.html',context={'form':form})
 
-def userupdate(request):
+def userupdate(request,uid):
+    user = AppUser.objects.get(pk=uid)
+    username = request.session.get('username')
+    print(username)
+    # 当前登录的用户和超级管理员有修改权限
+
+    # if user.u_type != SUPER or
     if request.method == 'POST':
-        pass
+
+        return HttpResponse('ok')
 
 
-    return render(request, 'admins/userupdate.html')
+    return render(request, 'admins/userupdate.html',context={'uid':uid,'user':user})
 
 
 # 广告管理

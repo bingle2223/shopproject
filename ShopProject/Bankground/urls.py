@@ -19,7 +19,7 @@ urlpatterns = [
     # 管理员管理
     url(r'^user/$', views.user, name='user'),
     url(r'^user/(\d+)/$',views.user,name='user'),
-    url(r'^userupdate/',views.userupdate,name='userupdate'),
+    url(r'^userupdate/(\d+)/$',views.userupdate,name='userupdate'),
     url(r'^getmsgcode/',views.getcode,name='getmsgcode'),
     url(r'^useradd/',views.useradd,name='useradd'),
 

@@ -11,7 +11,7 @@
 {% block ext_js %}
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npython pm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 
 
 
@@ -37,6 +37,7 @@
                             <td width="66px" class="tdColor tdC">序号</td>
                             <td width="435px" class="tdColor">管理员邮箱</td>
                             <td width="400px" class="tdColor">用户名</td>
+                            <td width="400px" class="tdColor">手机号</td>
                             <td width="630px" class="tdColor">添加时间</td>
                             <td width="130px" class="tdColor">操作</td>
                         </tr>
@@ -46,10 +47,21 @@
                                 <td>{{ adminuser.id }}</td>
                                 <td>{{ adminuser.u_email }}</td>
                                 <td>{{ adminuser.u_username }}</td>
+                                <td>{{ adminuser.u_phone }}</td>
                                 <td>{{ adminuser.u_register_time }}</td>
-                                <td><a href="{% url 'bankground:userupdate' %}"><img class="operation" src="{% static 'img/update.png' %}"></a>
 
-                                   <img class="operation delban" src="{% static 'img/delete.png' %}"></td>
+
+                                <td>
+                                    {% if request.session.user.u_username == adminuser.u_username or request.session.user.u_type == SUPER %}
+                                     <a href="{% url 'bankground:userupdate' adminuser.id %}"><img class="operation" src="{% static 'img/update.png' %}"></a>
+
+                                   <img class="operation delban" src="{% static 'img/delete.png' %}">
+                                        {% else %}
+                                        <img class="operation" src="{% static 'img/update.png' %}">
+
+                                   <img class="operation" src="{% static 'img/delete.png' %}">
+                                    {% endif %}
+                                   </td>
                             </tr>
                         {% endfor %}
 
@@ -123,8 +135,18 @@
             </p>
         </div>
     </div>
-    <!-- 删除弹出框  end-->
-
+    <!-- 警告弹出框  end-->
+    <div class="banDel">
+        <div class="delete">
+            <div class="close">
+                <a><img src="{% static 'img/shanchu.png' %}"/></a>
+            </div>
+            <p class="delP1">您没有权限操作该用户</p>
+            <p class="delP2">
+                <a href="#" class="ok yes">确定</a><a class="ok no">取消</a>
+            </p>
+        </div>
+    </div>
 
 
     {#        分页#}

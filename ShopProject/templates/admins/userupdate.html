@@ -16,15 +16,16 @@
 					<span>修改信息</span>
 				</div>
 				<div class="baBody">
-					<div class="bbD">
-						&nbsp;&nbsp;&nbsp;用户名：<input type="text" class="input3" />
+                    <form action="{% url 'bankground:userupdate' uid %}" method="post">
+                        {% csrf_token %}
+                        <div class="bbD">
+						&nbsp;&nbsp;&nbsp;用户名：<input type="text" name='username' class="input3" value={{ user.u_username }}>
 					</div>
 					<div class="bbD">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password"
-							class="input3" />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password" name="password" class="input3" value={{ user.u_password_has }}>
 					</div>
 					<div class="bbD">
-						用户邮箱：<input type="password" class="input3" />
+						用户邮箱：<input type="email" name="email" class="input3" value={{ user.u_email }}>
 					</div>
 					<div class="bbD">
 						<p class="bbDP">
@@ -32,6 +33,8 @@
 							<a class="btn_ok btn_no" href="#">取消</a>
 						</p>
 					</div>
+
+                    </form>
 				</div>
 			</div>
 

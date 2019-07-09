@@ -144,7 +144,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 #用户类型
 ADMIN = 1
 USER =0
-
+SUPER =2
 
 MEDIA_ROOT =os.path.join(BASE_DIR,'static/media')
 MEDIA_ROOT_GOODS =os.path.join(BASE_DIR,'static/goodsimg')
