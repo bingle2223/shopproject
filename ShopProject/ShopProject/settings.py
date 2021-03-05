@@ -127,10 +127,10 @@ USE_TZ = True
 
 #阿里云短信验证码配置
 SMSCONFIG = {
-    'ACCESS_KEY_ID':"LTAIcSGoIj5GMniL",
-    'ACCESS_KEY_SECRET':"MRhK9S4QxovAZmM3ftSsnloQcqdcA7",
-    'SignName':"bingle",
-    'TemplateCode':"SMS_169103661"
+    'ACCESS_KEY_ID':"LGoIj5GMniL",
+    'ACCESS_KEY_SECRET':"MRh9S4QxovAZoQcqdcA7",
+    'SignName':"binle",
+    'TemplateCode':"SMS_103661"
 }
 
 
